@@ -83,7 +83,7 @@ header{position:sticky;top:env(safe-area-inset-top,0px);z-index:80;background:va
 /* hero */
 .hero{position:relative;height:min(810px,88vh);min-height:520px;overflow:hidden;background:#222}
 .hero img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
-@media (max-width:600px){.hero img{object-position:60% 40%!important}}
+@media (max-width:600px){.hero img{object-position:60% 40%!important}#page-chalets .hero.sub img{object-position:8% 30%!important}}
 
 /* intro */
 .intro{max-width:1100px;margin:0 auto;text-align:center;padding-top:77px;padding-bottom:20px;padding-left:var(--gl);padding-right:var(--gr)}
@@ -149,7 +149,7 @@ header{position:sticky;top:env(safe-area-inset-top,0px);z-index:80;background:va
 .promo3 p{line-height:1.7;max-width:26em;margin:0 auto}
 @media (max-width:860px){.promo3{grid-template-columns:1fr}}
 .feat{display:grid;grid-template-columns:minmax(0,380px) 1fr;gap:clamp(40px,7vw,110px);align-items:center;max-width:1180px;margin:0 auto}
-.phone{border:10px solid #111;border-radius:42px;overflow:hidden;aspect-ratio:9/19;max-width:100%;box-shadow:0 30px 60px -30px rgba(0,0,0,.35);background:#111}
+.phone{border:10px solid #111;border-radius:42px;overflow:hidden;aspect-ratio:1309/2576;max-width:100%;display:block;box-shadow:0 30px 60px -30px rgba(0,0,0,.35);background:#111}
 .phone img{width:100%;height:100%;object-fit:cover;object-position:50% 0}
 .feat-txt{display:flex;flex-direction:column;gap:20px}
 .feat-txt .lead{font-family:var(--display);font-size:clamp(1.5rem,2.4vw,1.95rem);line-height:1.35}
@@ -554,7 +554,7 @@ footer ul a:hover{color:var(--wine)}
     <div class="c">
       <small>Ski Queens</small>
       <h2>Follow us on Instagram</h2>
-      <p style="margin-top:14px;font-size:.8rem;letter-spacing:.12em;text-transform:uppercase">@skiqueens · 150K followers · verified</p>
+      <p style="margin-top:14px;font-size:.8rem;letter-spacing:.12em;text-transform:uppercase">@skiqueens · 138K followers · verified</p>
       <div class="ig-row">
         <a href="https://www.instagram.com/skiqueens/" target="_blank" rel="noopener"><img src="images/matterhorn-burgundy-pair-2576.jpg" srcset="images/matterhorn-burgundy-pair-800.jpg 800w, images/matterhorn-burgundy-pair-1400.jpg 1400w, images/matterhorn-burgundy-pair-2576.jpg 2576w" sizes="(max-width:860px) 100vw, 50vw" loading="lazy" decoding="async" alt="Ski Queens Instagram post" style="object-position:20% 50%"></a>
         <a href="https://www.instagram.com/skiqueens/" target="_blank" rel="noopener"><img src="images/red-suit-matterhorn-2576.jpg" srcset="images/red-suit-matterhorn-800.jpg 800w, images/red-suit-matterhorn-1400.jpg 1400w, images/red-suit-matterhorn-2576.jpg 2576w" sizes="(max-width:860px) 100vw, 50vw" loading="lazy" decoding="async" alt="Ski Queens Instagram post" style="object-position:85% 50%"></a>
@@ -606,8 +606,8 @@ footer ul a:hover{color:var(--wine)}
         <div><div class="ph"><img src="images/courchevel-chalets-dusk-2576.jpg" srcset="images/courchevel-chalets-dusk-800.jpg 800w, images/courchevel-chalets-dusk-1400.jpg 1400w, images/courchevel-chalets-dusk-2576.jpg 2576w" sizes="(max-width:860px) 100vw, 50vw" loading="lazy" decoding="async" alt="Courchevel" style="object-position:55% 50%"></div><b>Courchevel</b><i>France · launching first</i></div>
         <div><div class="ph"><img src="images/gstaad-black-gown-2576.jpg" srcset="images/gstaad-black-gown-800.jpg 800w, images/gstaad-black-gown-1400.jpg 1400w, images/gstaad-black-gown-2576.jpg 2576w" sizes="(max-width:860px) 100vw, 50vw" loading="lazy" decoding="async" alt="Gstaad" style="object-position:55% 50%"></div><b>Gstaad</b><i>Switzerland</i></div>
         <div><div class="ph"><img src="images/heels-chairlift-zermatt-2576.jpg" srcset="images/heels-chairlift-zermatt-800.jpg 800w, images/heels-chairlift-zermatt-1400.jpg 1400w, images/heels-chairlift-zermatt-2576.jpg 2576w" sizes="(max-width:860px) 100vw, 50vw" loading="lazy" decoding="async" alt="Zermatt" style="object-position:40% 50%"></div><b>Zermatt</b><i>Switzerland</i></div>
-        <div><div class="ph"><span>Photo</span></div><b>Aspen</b><i>United States</i></div>
-        <div><div class="ph"><span>Photo</span></div><b>Japan</b><i>Powder season</i></div>
+        <div><div class="ph"><img src="images/site/d-aspen.jpg" alt="Aspen" loading="lazy" style="object-position:62% 50%"></div><b>Aspen</b><i>United States</i></div>
+        <div><div class="ph"><img src="images/site/d-japan.jpg" alt="Japan" loading="lazy" style="object-position:55% 40%"></div><b>Japan</b><i>Powder season</i></div>
       </div>
     </div>
   </section>
@@ -618,13 +618,13 @@ footer ul a:hover{color:var(--wine)}
   <div class="intro">
     <h1>Features on <em>Instagram</em></h1>
     <div class="rule"></div>
-    <p>Be featured on @skiqueens: 150K verified followers and over 15,000,000 monthly views in peak season. Choose your feature, pay securely online, and our team will be in touch to plan it with you.</p>
+    <p>Be featured on @skiqueens: 138K followers and over 15,000,000 monthly views in peak season. Choose your feature, pay securely online, and our team will be in touch to plan it with you.</p>
   </div>
   <section class="sec c" id="features-list" style="padding-top:40px">
     <div class="feat">
-      <div class="phone"><img src="images/site/ig-profile.jpg" alt="The Ski Queens Instagram profile, @skiqueens" loading="lazy"></div>
+      <a class="phone" href="https://www.instagram.com/skiqueens/" target="_blank" rel="noopener" aria-label="Open @skiqueens on Instagram"><img src="images/site/ig-profile-2.jpg" alt="The Ski Queens Instagram profile, @skiqueens: 138K followers and 14.9M views in the last 30 days"></a>
       <div class="feat-txt">
-        <p class="lead">We are the fastest growing portal dedicated to the pleasure of skiing and winter aesthetics, with exposure to more than 9 million snow lovers.</p>
+        <p class="lead">We are the fastest growing portal dedicated to the pleasure of skiing and winter aesthetics, with exposure to more than 15 million snow lovers.</p>
         <p>We currently offer Instagram features on Ski Queens:</p>
         <ul class="offers">
           <li><b>£100</b><span>1 Post &amp; 1 Story<small>For individuals</small></span><button class="more" data-pay="Instagram feature: 1 Post &amp; 1 Story, £100">Buy a post</button></li>
@@ -658,7 +658,7 @@ footer ul a:hover{color:var(--wine)}
 </div>
 
 <div id="page-chalets" class="page" hidden>
-  <div class="hero sub"><img src="images/site/c-village1.jpg" alt="Snow-covered Alpine chalets among the pines" style="object-position:50% 60%"></div>
+  <div class="hero sub"><img src="images/site/c-hero.jpg" alt="Two women in burgundy with skis beside a snow-covered log chalet" style="object-position:30% 30%"></div>
   <div class="intro">
     <h1>The Chalet <em>Collection</em></h1>
     <div class="rule"></div>
@@ -729,7 +729,7 @@ footer ul a:hover{color:var(--wine)}
   <div class="intro">
     <h1>Brand <em>Partners</em></h1>
     <div class="rule"></div>
-    <p>Collaborations, media promotions and partnerships with the most engaged luxury ski audience online: 150K verified followers and over 15,000,000 monthly views in peak season.</p>
+    <p>Collaborations, media promotions and partnerships with the most engaged luxury ski audience online: 138K followers and over 15,000,000 monthly views in peak season.</p>
   </div>
   <section class="sec c" id="media">
     <div class="pk-head">
@@ -754,6 +754,25 @@ footer ul a:hover{color:var(--wine)}
     </div>
   </section>
 
+
+  <section class="sec c" style="padding-top:50px">
+    <div class="collab">
+      <div class="collab-l">
+        <span class="kicker">Brand Collaboration</span>
+        <h3>One project, everything included</h3>
+        <div class="price" style="font-family:var(--display);font-size:2.4rem;color:var(--wine)">£1,000 <small style="font-family:var(--sans);font-size:.7rem;letter-spacing:.12em;text-transform:uppercase;color:var(--soft)">per project</small></div>
+        <button class="book" data-pay="Brand Collaboration, £1,000" style="align-self:flex-start">Purchase</button>
+      </div>
+      <ul class="collab-r">
+        <li>Bespoke content creation for your brand</li>
+        <li>2 Instagram Reels featuring your brand, posted to @skiqueens, with all material shared with you for your own use</li>
+        <li>5 Instagram Stories tagging your brand</li>
+        <li>1 post with pictures</li>
+        <li>Feature on our website as a recommended brand partner</li>
+      </ul>
+    </div>
+  </section>
+
   <section class="amb" id="ambassador">
     <div class="c amb-in">
       <div class="amb-l">
@@ -774,24 +793,6 @@ footer ul a:hover{color:var(--wine)}
         <li><b>Events and activations</b><span>Your brand present at Ski Queens events during the season</span></li>
         <li><b>Reporting</b><span>A monthly performance report and a full end-of-season review</span></li>
         <li><b>Exclusivity</b><span>Category exclusivity available on request</span></li>
-      </ul>
-    </div>
-  </section>
-
-  <section class="sec c" style="padding-top:50px">
-    <div class="collab">
-      <div class="collab-l">
-        <span class="kicker">Brand Collaboration</span>
-        <h3>One project, everything included</h3>
-        <div class="price" style="font-family:var(--display);font-size:2.4rem;color:var(--wine)">£1,000 <small style="font-family:var(--sans);font-size:.7rem;letter-spacing:.12em;text-transform:uppercase;color:var(--soft)">per project</small></div>
-        <button class="book" data-pay="Brand Collaboration, £1,000" style="align-self:flex-start">Purchase</button>
-      </div>
-      <ul class="collab-r">
-        <li>Bespoke content creation for your brand</li>
-        <li>2 Instagram Reels featuring your brand, posted to @skiqueens, with all material shared with you for your own use</li>
-        <li>5 Instagram Stories tagging your brand</li>
-        <li>1 post with pictures</li>
-        <li>Feature on our website as a recommended brand partner</li>
       </ul>
     </div>
   </section>
@@ -966,12 +967,11 @@ footer ul a:hover{color:var(--wine)}
   var SV={
     'Helicopter':{unit:'Per flight',price:'From €2,500',list:[['Helicopter Services','Private helicopter transfers from airports to resorts across the Alps.',1,'images/site/p-heli.jpg']]},
     'Drivers':{unit:'Per transfer',list:[['Go Transfer Peak','Ski Queens recommends Go Transfer Peak\u2019s two-vehicle arrangement for safety and seamless comfort. A Renault Trafic leads the journey, handling road safety, luggage and passenger security, while a Mercedes-Benz V-Class carries you in VIP comfort, for a discreet, smooth arrival in the Alps.',1,'images/site/p-gotransfer.jpg','Promo code SKIQUEENS'],['4F Transfers','Touch down in style \u2014 we highly recommend 4F Transfers for seamless, private rides from Geneva to Courchevel. Chauffeured comfort, zero stress, all glamour. Use promo code SKIQUEENS for an exclusive little discount and arrive like royalty.',1,'images/site/p-4f.jpg','Promo code SKIQUEENS'],['Loyal Transfers','From an airport meet and greet by uniformed drivers to smooth journeys straight to your chalet, Loyal Transfers makes your travel as effortless as your apr\u00e8s-ski. Arrive in elegance, ski in style, like mountain royalty.',1,'images/site/p-loyal.jpg']]},
-    'Nannies':{unit:'Per day',list:[['Anastasia','Private nanny in Courchevel, caring for your little ones at the chalet while you ski. Daytime and evening care, by the day or for your whole stay.',1,'images/site/s-anastasia.jpg']]},
+    'Nannies':{unit:'Per day',list:[['Anastasia','Private nanny in Courchevel, caring for your little ones at the chalet while you ski. Daytime and evening care, by the day or for your whole stay.',1,'images/site/s-anastasia.jpg'],['Julia','Private nanny on the slopes and at the chalet — playtime in the snow, chairlift outings and gentle evening routines, so the little ones have their own Alpine adventure while you ski.',1,'images/site/s-julia.jpg']]},
     'Ski instructors':{unit:'Per day',list:[['Private ski instructors','Our own team of hand-picked private instructors for the 2026\u201327 season, for every level from first turns to off-piste. Tell us your level and dates and we will match you with the right instructor.',1]]},
-    'Private chefs':{unit:'Per dinner',list:[['Provider name 1','Chalet dinners and events.',0],['Provider name 2','Menus planned with you before arrival.',0],['Provider name 3','Breakfast, lunch and dinner service.',0]]},
+    'Private chefs':{unit:'Per dinner',list:[['Raphaël Moreau','Private chef in the Alps, cooking at your chalet throughout your stay. Seasonal menus planned with you before arrival — from relaxed breakfasts to candlelit dinners and celebration feasts.',1,'images/site/s-chef-raphael.jpg'],['Martin Dubois','Private chef bringing restaurant-standard cooking to your chalet table. Theatrical, flame-kissed dishes cooked in front of you, intimate tasting menus and long Alpine dinners to share.',1,'images/site/s-chef-martin.jpg']]},
     'Butlers':{unit:'Per week',list:[['Provider name 1','Butler and house management for your stay.',0],['Provider name 2','Unpacking, reservations and daily service.',0],['Provider name 3','Discreet, multilingual service.',0]]},
-    'Stylists':{unit:'Per session',list:[['Provider name 1','Hair, make-up and wardrobe styling in your chalet.',0],['Provider name 2','Ski-wear shopping with a personal stylist.',0],['Provider name 3','Event and evening styling.',0]]},
-    'Events':{unit:'On request',list:[['Provider name 1','Private parties and dinners on the mountain.',0],['Provider name 2','Venues, music, flowers and photography.',0],['Provider name 3','Celebrations arranged for you.',0]]}
+    'Stylists':{unit:'Per session',list:[['Provider name 1','Hair, make-up and wardrobe styling in your chalet.',0],['Provider name 2','Ski-wear shopping with a personal stylist.',0],['Provider name 3','Event and evening styling.',0]]}
   };
   var CATS=Object.keys(SV),tabs=document.getElementById('tabs'),sg=document.getElementById('svc-grid');
   tabs.innerHTML=CATS.map(function(c,i){return '<button role="tab" aria-selected="'+(i===0)+'" data-cat="'+c+'">'+c+'</button>'}).join('');
@@ -980,7 +980,7 @@ footer ul a:hover{color:var(--wine)}
     var hb=document.getElementById('heli-block'),isH=c==='Helicopter';hb.hidden=!isH;sg.hidden=isH;
     var v=SV[c],L=v.list,one=L.length===1;
     sg.style.gridTemplateColumns=one?'minmax(0,720px)':'';sg.style.justifyContent=one?'center':'';
-    sg.innerHTML=L.map(function(p){return '<div class="pv"><div class="ph">'+(p[3]?'<img src="'+p[3]+'" alt="'+esc(p[0])+'" loading="lazy" decoding="async" style="object-position:'+(p[0]==='Anastasia'?'48% 40%':'50% 35%')+'">':'<span>Photo · '+esc(p[0])+'</span>')+'</div><span class="kicker">'+c+(p[2]?' · Ski Queens partner':' · sample')+'</span><h3>'+esc(p[0])+'</h3><p>'+esc(p[1])+'</p>'+(p[4]?'<span class="perk">'+esc(p[4])+'</span>':'')+'<div class="row"><span class="from">'+(v.price||'From £ —')+' <small style="font-family:var(--sans);font-size:.62rem;letter-spacing:.12em;text-transform:uppercase;color:var(--soft)">'+v.unit+'</small></span>'+(p[0]==='Helicopter Services'?'<a class="more" href="#helicopter">View &amp; request</a>':'<button class="more" data-req="'+esc(c+' · '+p[0])+'">Request</button>')+'</div></div>'}).join('');
+    sg.innerHTML=L.map(function(p){return '<div class="pv"><div class="ph">'+(p[3]?'<img src="'+p[3]+'" alt="'+esc(p[0])+'" loading="lazy" decoding="async" style="object-position:'+(p[0]==='Anastasia'?'48% 40%':p[0]==='Julia'?'80% 70%':p[0]==='Raphaël Moreau'?'42% 30%':p[0]==='Martin Dubois'?'70% 50%':'50% 35%')+'">':'<span>Photo · '+esc(p[0])+'</span>')+'</div><span class="kicker">'+c+(p[2]?' · Ski Queens partner':' · sample')+'</span><h3>'+esc(p[0])+'</h3><p>'+esc(p[1])+'</p>'+(p[4]?'<span class="perk">'+esc(p[4])+'</span>':'')+'<div class="row"><span class="from">'+(v.price||'From £ —')+' <small style="font-family:var(--sans);font-size:.62rem;letter-spacing:.12em;text-transform:uppercase;color:var(--soft)">'+v.unit+'</small></span>'+(p[0]==='Helicopter Services'?'<a class="more" href="#helicopter">View &amp; request</a>':'<button class="more" data-req="'+esc(c+' · '+p[0])+'">Request</button>')+'</div></div>'}).join('');
   }
   tabs.addEventListener('click',function(e){var b=e.target.closest('button');if(b)showCat(b.getAttribute('data-cat'))});
   sg.addEventListener('click',function(e){var b=e.target.closest('[data-req]');if(!b)return;document.getElementById('f-msg').value=b.getAttribute('data-req')+'. Dates: ';openDr('Booking a stay or service')});
