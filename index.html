@@ -179,6 +179,9 @@ header{position:sticky;top:env(safe-area-inset-top,0px);z-index:80;background:va
 .pcard .ph img{object-position:50% 30%}
 .pcard h3{font-size:1.75rem;font-weight:400}
 .pcard p{font-size:.9rem;line-height:1.7}
+.pcard .pvisit{align-self:flex-start;font-size:.62rem;letter-spacing:.14em;padding-bottom:3px;gap:5px;color:var(--soft)}
+.pcard .pvisit::after{display:none}
+.pcard .pvisit:hover{color:var(--wine);opacity:1}
 .pv .perk,.pcard .perk{align-self:flex-start;font-size:.6rem;letter-spacing:.16em;text-transform:uppercase;background:var(--burgundy);color:var(--white);padding:5px 9px}
 @media (max-width:960px){.pgrid{grid-template-columns:1fr 1fr}}
 @media (max-width:600px){.pgrid{grid-template-columns:1fr}}
@@ -1001,7 +1004,7 @@ footer ul a:hover{color:var(--wine)}
   pf.innerHTML=PCATS.map(function(c,i){return '<button aria-pressed="'+(i===0)+'" data-pc="'+c+'">'+c+'</button>'}).join('');
   function showP(c){
     pf.querySelectorAll('button').forEach(function(b){b.setAttribute('aria-pressed',b.getAttribute('data-pc')===c)});
-    pg.innerHTML=PARTNERS.filter(function(p){return c==='All'||p[1]===c}).map(function(p){return '<article class="pcard">'+(p[5]?'<a href="'+p[5]+'" target="_blank" rel="noopener" class="ph" aria-label="'+esc(p[0])+' website">':'<div class="ph">')+(p[4]?'<img src="'+p[4]+'" alt="'+esc(p[0])+' with Ski Queens" loading="lazy" decoding="async">':'<span>Photo · '+esc(p[0])+'</span>')+(p[5]?'</a>':'</div>')+'<span class="kicker">'+esc(p[1])+'</span><h3>'+esc(p[0])+'</h3><p>'+esc(p[2])+'</p>'+(p[3]?'<span class="perk">'+esc(p[3])+'</span>':'')+(p[5]?'<a class="more" href="'+p[5]+'" target="_blank" rel="noopener" style="align-self:flex-start">'+(p[5].indexOf('instagram.com')>-1?'View on Instagram':'Visit website')+' ↗</a>':'')+'</article>'}).join('');
+    pg.innerHTML=PARTNERS.filter(function(p){return c==='All'||p[1]===c}).map(function(p){return '<article class="pcard">'+(p[5]?'<a href="'+p[5]+'" target="_blank" rel="noopener" class="ph" aria-label="'+esc(p[0])+' website">':'<div class="ph">')+(p[4]?'<img src="'+p[4]+'" alt="'+esc(p[0])+' with Ski Queens" loading="lazy" decoding="async">':'<span>Photo · '+esc(p[0])+'</span>')+(p[5]?'</a>':'</div>')+'<span class="kicker">'+esc(p[1])+'</span><h3>'+esc(p[0])+'</h3><p>'+esc(p[2])+'</p>'+(p[3]?'<span class="perk">'+esc(p[3])+'</span>':'')+(p[5]?'<a class="more pvisit" href="'+p[5]+'" target="_blank" rel="noopener">'+(p[5].indexOf('instagram.com')>-1?'View on Instagram':'Visit website')+' ↗</a>':'')+'</article>'}).join('');
   }
   pf.addEventListener('click',function(e){var b=e.target.closest('button');if(b)showP(b.getAttribute('data-pc'))});
   showP('All');
