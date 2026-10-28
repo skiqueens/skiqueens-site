@@ -134,6 +134,14 @@ header{position:sticky;top:env(safe-area-inset-top,0px);z-index:80;background:va
 /* banner (spa-style) */
 .banner.r{justify-content:flex-end}
 .viewall{text-align:center;margin-top:50px}
+.locs{padding-block:80px;border-top:1px solid var(--line)}
+.locs-in{display:grid;grid-template-columns:1.2fr 1fr 1fr 1fr;gap:40px;align-items:start}
+.locs h2{font-size:clamp(2.6rem,4.5vw,3.8rem);color:var(--wine);line-height:1}
+.loc{display:flex;flex-direction:column;gap:10px}
+.loc p{font-size:1.05rem;line-height:1.75}
+.loc-mail{border-bottom:1px solid currentColor;align-self:flex-start;font-size:.98rem}
+@media (max-width:900px){.locs-in{grid-template-columns:1fr 1fr}.locs h2{grid-column:1/-1}}
+@media (max-width:520px){.locs-in{grid-template-columns:1fr}}
 .promo3{display:grid;grid-template-columns:repeat(3,1fr);gap:28px}
 .promo3 article{display:flex;flex-direction:column;gap:14px;text-align:center}
 .promo3 .ph{aspect-ratio:4/5;border-radius:14px}
@@ -570,11 +578,20 @@ footer ul a:hover{color:var(--wine)}
     </div>
   </section>
 
+  <section class="locs" id="locations">
+    <div class="c locs-in">
+      <h2>Locations</h2>
+      <div class="loc"><span class="kicker">Headquarters</span><p>Ski Queens Headquarters<br>Knightsbridge<br>London<br>United Kingdom</p><a href="mailto:arina@skiqueens.co.uk" class="loc-mail">arina@skiqueens.co.uk</a></div>
+      <div class="loc"><span class="kicker">The Alps</span><p>Ski Queens Courchevel<br>Courchevel 1850<br>73120<br>France</p></div>
+      <div class="loc"><span class="kicker">United States</span><p>Marina del Rey<br>90066<br>Los Angeles<br>California<br>United States</p></div>
+    </div>
+  </section>
+
   <div class="strip">
     <div class="c">
       <div class="col">
         <h4>Ski Queens</h4>
-        <p>London · French Riviera · Courchevel<br>arina@skiqueens.co.uk</p>
+        <p>London · Courchevel · Los Angeles<br>arina@skiqueens.co.uk</p>
         <a class="more" href="https://www.instagram.com/skiqueens/" target="_blank" rel="noopener">Instagram</a>
       </div>
       <div class="col">
