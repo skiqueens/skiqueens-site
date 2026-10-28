@@ -1,0 +1,1033 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="Ski Queens: luxury chalets, services and brand partners in Courchevel and the Alps.">
+<link rel="preload" as="image" href="images/opening-matterhorn-pair-1672.jpg">
+<title>Ski Queens · Luxury Ski Chalets, Services &amp; Brand Partners</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,300;0,400;1,300;1,400&family=Lato:wght@300;400&display=swap">
+<style>
+/* Layout: a close structural match of a palace-hotel page — white header bar, full-bleed hero, centred intro with rule, offset picture/text pairs, cream card slider, overlay banner, three-up stories, quote band, Instagram row, contact strip, destinations row, footer. Ski Queens content and colours. */
+:root{
+  --ink:#373737;
+  --soft:#6B6B6B;
+  --white:#FFFFFF;
+  --cream:#FBF6F1;
+  --burgundy:#4A1920;
+  --wine:#6D1F33;
+  --line:#E6DDD5;
+  --ph:#EDE6DF;
+  --display:"Cormorant", "Cormorant Garamond", Georgia, serif;
+  --sans:"Gill Sans","Gill Sans MT","Lato","Helvetica Neue",Arial,sans-serif;
+  --gl:max(15px, env(safe-area-inset-left, 0px));
+  --gr:max(15px, env(safe-area-inset-right, 0px));
+  color-scheme:light;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
+html{font-size:19px}
+body{background:var(--white);color:var(--ink);font-family:var(--sans);font-size:18.5px;line-height:1.65;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:90;background:var(--white)}
+a{color:inherit;text-decoration:none}
+h1,h2,h3{font-family:var(--display);font-weight:300;margin:0;line-height:1.1;text-wrap:balance}
+h2{font-size:clamp(2.1rem,3.4vw,2.6rem)}
+em{font-style:italic}
+p{margin:0}
+img{display:block}
+.c{max-width:1350px;margin:0 auto;padding-left:var(--gl);padding-right:var(--gr)}
+.more{display:inline-flex;align-items:center;gap:8px;font-size:.84rem;letter-spacing:.07em;text-transform:uppercase;border-bottom:1px solid currentColor;padding-bottom:6px;align-self:flex-start;cursor:pointer;background:none;border-top:0;border-left:0;border-right:0;color:inherit;font-family:var(--sans)}
+.more::after{content:"";width:5px;height:5px;border-top:1px solid currentColor;border-right:1px solid currentColor;transform:rotate(45deg)}
+.more:hover{opacity:.7}
+:focus-visible{outline:1px solid var(--wine);outline-offset:4px}
+.sec{padding-block:90px}
+
+/* photo slot */
+.ph{position:relative;background:var(--ph);overflow:hidden;max-width:100%}
+.ph::before{content:"";position:absolute;left:50%;top:50%;width:64px;height:40px;transform:translate(-50%,-70%);background:
+  linear-gradient(135deg,transparent 49%,#CDBFB3 50%,#CDBFB3 52%,transparent 53%) 0 0/50% 100% no-repeat,
+  linear-gradient(225deg,transparent 49%,#CDBFB3 50%,#CDBFB3 52%,transparent 53%) 100% 0/50% 100% no-repeat}
+.ph span{position:absolute;left:0;right:0;top:50%;margin-top:14px;text-align:center;font-size:.66rem;letter-spacing:.2em;text-transform:uppercase;color:#9A8A7E;padding:0 12px}
+.ph.dark{background:#3A1A1F}.ph.dark::before{filter:brightness(.6)}.ph.dark span{color:#B99A9E}
+.ph img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+
+/* header */
+header{position:sticky;top:env(safe-area-inset-top,0px);z-index:80;background:var(--white);height:72px;box-shadow:0 1px 0 rgba(0,0,0,.06)}
+.hb{height:100%;display:grid;grid-template-columns:1fr auto 1fr;align-items:center;padding-left:max(30px,env(safe-area-inset-left,0px));padding-right:max(30px,env(safe-area-inset-right,0px))}
+.burger{width:40px;height:30px;background:none;border:0;cursor:pointer;display:flex;flex-direction:column;justify-content:center;gap:7px;padding:0;color:var(--ink)}
+.burger i{display:block;height:1px;background:currentColor;width:40px}
+.logo{text-align:center;line-height:1;display:flex;justify-content:center}
+.logo-img{height:54px;width:auto}
+@media (max-width:600px){.logo-img{height:30px}}
+.logo b{display:block;font-family:var(--display);font-weight:400;font-size:1.5rem;letter-spacing:.14em}
+.logo small{display:block;font-size:.55rem;letter-spacing:.32em;margin-top:5px}
+.book{justify-self:end;background:var(--burgundy);color:var(--white);font-size:.78rem;letter-spacing:.12em;text-transform:uppercase;padding:13px 26px;border:0;cursor:pointer;font-family:var(--sans)}
+.book:hover{background:var(--wine)}
+@media (max-width:600px){.hb{padding-left:var(--gl);padding-right:var(--gr)}.burger i{width:28px}.book{padding:11px 14px;font-size:.68rem}.logo b{font-size:1.15rem}}
+
+/* menu overlay */
+.menu{position:fixed;inset:0;z-index:100;background:var(--white);display:grid;grid-template-columns:1fr 1fr;transform:translateX(-100%);transition:transform .5s cubic-bezier(.7,0,.2,1)}
+.menu.open{transform:none}
+.menu nav{padding:calc(40px + env(safe-area-inset-top,0px)) 40px 40px max(40px,env(safe-area-inset-left,0px));display:flex;flex-direction:column;gap:6px;overflow:auto}
+.menu .close{align-self:flex-start;background:none;border:0;font-size:.78rem;letter-spacing:.14em;text-transform:uppercase;cursor:pointer;margin-bottom:40px;color:var(--ink);font-family:var(--sans)}
+.menu nav a{font-family:var(--display);font-size:clamp(1.8rem,3vw,2.5rem);font-weight:300;line-height:1.3}
+.menu nav a:hover{font-style:italic;color:var(--wine)}
+.menu .side{background:var(--cream);position:relative}
+.menu .side img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 20%}
+@media (max-width:760px){.menu{grid-template-columns:1fr}.menu .side{display:none}}
+
+/* hero */
+.hero{position:relative;height:min(810px,88vh);min-height:520px;overflow:hidden;background:#222}
+.hero img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+@media (max-width:600px){.hero img{object-position:60% 40%!important}}
+
+/* intro */
+.intro{max-width:1100px;margin:0 auto;text-align:center;padding-top:77px;padding-bottom:20px;padding-left:var(--gl);padding-right:var(--gr)}
+.intro h1{font-size:clamp(2.4rem,5.2vw,4rem);line-height:1.14}
+.rule{width:120px;height:1px;background:var(--wine);margin:34px auto}
+.intro p{max-width:900px;margin:0 auto;font-size:1rem;line-height:1.75}
+
+/* picture + text */
+.pt{display:grid;grid-template-columns:641fr 100fr 429fr;padding-top:70px}
+.pt .big{grid-column:1;aspect-ratio:641/477;margin-top:294px}
+.pt .right{grid-column:3;display:flex;flex-direction:column;gap:24px}
+.pt .small{aspect-ratio:429/319}
+.pt .right p{line-height:1.75}
+.pt .right .txt{display:flex;flex-direction:column;gap:18px;padding-top:30px}
+@media (max-width:860px){.pt{grid-template-columns:1fr;gap:28px}.pt .big{margin-top:0;grid-row:2}.pt .right{grid-column:1}}
+
+/* cards */
+.cards{background:var(--cream);padding-block:90px;overflow:hidden}
+.cards .c{display:grid;grid-template-columns:395px 1fr;gap:30px;align-items:start}
+.cards .lead{display:flex;flex-direction:column;gap:26px;padding-right:20px}
+.cards .lead h2{font-size:clamp(2.6rem,5vw,4.4rem);line-height:1.05}
+.cards .lead p{line-height:1.75;max-width:30em}
+.arrows{display:flex;gap:18px;margin-top:6px}
+.arrows button{width:34px;height:34px;border:0;background:none;cursor:pointer;position:relative;color:var(--ink)}
+.arrows button::after{content:"";position:absolute;left:50%;top:50%;width:10px;height:10px;border-top:1px solid currentColor;border-left:1px solid currentColor}
+.arrows .prev::after{transform:translate(-30%,-50%) rotate(-45deg)}
+.arrows .next::after{transform:translate(-70%,-50%) rotate(135deg)}
+.track{display:flex;gap:20px;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;margin-right:calc(-1 * var(--gr));padding-right:var(--gr);min-width:0}
+.track::-webkit-scrollbar{display:none}
+.card{flex:0 0 298px;aspect-ratio:298/484;scroll-snap-align:start;position:relative;max-width:80vw}
+.card .ph{position:absolute;inset:0}
+.card .ph span{top:38%}
+.card h3{position:absolute;left:24px;bottom:22px;color:var(--white);font-size:1.6rem;z-index:2;font-weight:400}
+.card::after{content:"";position:absolute;inset:50% 0 0;background:linear-gradient(transparent,rgba(42,17,20,.65))}
+@media (max-width:960px){.cards .c{grid-template-columns:1fr}.track{margin-right:0;padding-right:0}}
+
+/* founder (dining-style) */
+.fd{display:grid;grid-template-columns:641fr 100fr 429fr}
+.fd .big{grid-column:1;grid-row:1/3;aspect-ratio:641/850;align-self:start}
+.fd .txt{grid-column:3;display:flex;flex-direction:column;gap:22px;padding-top:70px}
+.fd .txt p{line-height:1.75}
+.fd .portrait{grid-column:3;aspect-ratio:429/319;margin-top:60px;align-self:start;position:relative}
+.fd .portrait img{object-position:50% 14%}
+.seal{position:absolute;right:16px;top:-26px;width:58px;height:66px;background:var(--burgundy);color:var(--white);display:flex;align-items:center;justify-content:center;clip-path:polygon(0 0,100% 0,100% 80%,50% 100%,0 80%);z-index:2}
+.seal svg{width:26px;height:22px;margin-top:-6px}
+@media (max-width:860px){.fd{grid-template-columns:1fr;gap:28px}.fd .big,.fd .txt,.fd .portrait{grid-column:1;grid-row:auto}.fd .txt{padding-top:0}.fd .portrait{margin-top:20px}}
+
+/* banner (spa-style) */
+.banner.r{justify-content:flex-end}
+.viewall{text-align:center;margin-top:50px}
+.promo3{display:grid;grid-template-columns:repeat(3,1fr);gap:28px}
+.promo3 article{display:flex;flex-direction:column;gap:14px;text-align:center}
+.promo3 .ph{aspect-ratio:4/5;border-radius:14px}
+.promo3 h3{font-size:2rem;font-weight:400;margin-top:8px}
+.promo3 p{line-height:1.7;max-width:26em;margin:0 auto}
+@media (max-width:860px){.promo3{grid-template-columns:1fr}}
+.feat{display:grid;grid-template-columns:minmax(0,380px) 1fr;gap:clamp(40px,7vw,110px);align-items:center;max-width:1180px;margin:0 auto}
+.phone{border:10px solid #111;border-radius:42px;overflow:hidden;aspect-ratio:9/19;max-width:100%;box-shadow:0 30px 60px -30px rgba(0,0,0,.35);background:#111}
+.phone img{width:100%;height:100%;object-fit:cover;object-position:50% 0}
+.feat-txt{display:flex;flex-direction:column;gap:20px}
+.feat-txt .lead{font-family:var(--display);font-size:clamp(1.5rem,2.4vw,1.95rem);line-height:1.35}
+.offers{list-style:none;margin:0;padding:0;border-top:1px solid var(--line)}
+.offers li{display:grid;grid-template-columns:120px 1fr auto;gap:20px;align-items:center;padding:20px 0;border-bottom:1px solid var(--line)}
+.offers b{font-family:var(--display);font-weight:400;font-size:2rem;color:var(--wine);line-height:1}
+.offers span{font-size:1.08rem}
+.offers small{display:block;font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:var(--soft);margin-top:4px}
+@media (max-width:860px){.feat{grid-template-columns:1fr}.phone{max-width:300px;margin:0 auto}.offers li{grid-template-columns:90px 1fr}.offers li .more{grid-column:2}}
+.heli{display:grid;grid-template-columns:1fr 1fr;min-height:min(900px,calc(100vh - 72px));margin-top:10px}
+.heli-img{position:relative;min-height:520px;background:var(--ph)}
+.heli-img img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 40%}
+.heli-txt{display:flex;flex-direction:column;justify-content:center;gap:22px;padding-block:70px;padding-left:clamp(28px,5vw,80px);padding-right:max(28px,env(safe-area-inset-right,0px));max-width:720px}
+.heli-txt h1{font-size:clamp(3rem,5.5vw,4.6rem);line-height:1.02}
+.heli-txt .kicker{font-size:.82rem}
+.heli-txt .lead{font-family:var(--display);font-size:clamp(1.45rem,2.2vw,1.8rem);line-height:1.35}
+.heli-txt p{font-size:1.08rem;line-height:1.8}
+.heli-facts{list-style:none;margin:6px 0 0;padding:0;display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.heli-facts li{padding:16px 14px 16px 0;display:grid;gap:4px}
+.heli-facts b{font-family:var(--display);font-weight:400;font-size:1.35rem}
+.heli-facts span{font-size:.9rem;color:var(--soft);line-height:1.5}
+.heli-txt .price{font-family:var(--display);font-size:2.1rem;color:var(--wine);line-height:1}
+.heli-txt .price small{font-family:var(--sans);font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:var(--soft);margin-left:6px}
+.heli-form{display:grid;grid-template-columns:1.4fr 1fr .7fr;gap:14px;align-items:end;background:var(--cream);padding:22px}
+.heli-form label{display:grid;gap:6px;font-size:.68rem;letter-spacing:.14em;text-transform:uppercase;color:var(--soft)}
+.heli-form select,.heli-form input{font-family:var(--display);font-size:1.15rem;color:var(--ink);border:0;border-bottom:1px solid var(--line);background:transparent;padding:6px 0;width:100%;min-width:0}
+.heli-form .book{grid-column:1/-1;padding:16px}
+@media (max-width:900px){.heli{grid-template-columns:1fr}.heli-img{min-height:auto;aspect-ratio:4/5}.heli-txt{padding-left:var(--gl);padding-right:var(--gr);max-width:none}.heli-form{grid-template-columns:1fr 1fr}.heli-facts{grid-template-columns:1fr}}
+.pfilter{display:flex;flex-wrap:wrap;gap:6px 28px;justify-content:center;border-bottom:1px solid var(--line);margin-bottom:44px}
+.pfilter button{background:none;border:0;border-bottom:1px solid transparent;margin-bottom:-1px;padding:12px 0;font-family:var(--sans);font-size:.76rem;letter-spacing:.12em;text-transform:uppercase;color:var(--soft);cursor:pointer}
+.pfilter button[aria-pressed="true"]{color:var(--ink);border-bottom-color:var(--wine)}
+.pgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:50px 22px}
+.pcard{display:flex;flex-direction:column;gap:10px;min-width:0}
+.pcard .ph{aspect-ratio:4/5}
+.pcard .ph img{object-position:50% 30%}
+.pcard h3{font-size:1.75rem;font-weight:400}
+.pcard p{font-size:.9rem;line-height:1.7}
+.pv .perk,.pcard .perk{align-self:flex-start;font-size:.6rem;letter-spacing:.16em;text-transform:uppercase;background:var(--burgundy);color:var(--white);padding:5px 9px}
+@media (max-width:960px){.pgrid{grid-template-columns:1fr 1fr}}
+@media (max-width:600px){.pgrid{grid-template-columns:1fr}}
+.prev4{display:grid;grid-template-columns:repeat(4,1fr);gap:15px}
+.prev4 .ph{aspect-ratio:3/4}
+@media (max-width:860px){.prev4{grid-template-columns:1fr 1fr}}
+.banner{position:relative;min-height:453px;display:flex;align-items:flex-start;padding:46px}
+.banner .ph{position:absolute;inset:0}
+.banner .box{position:relative;z-index:2;background:var(--white);padding:38px 48px 40px 30px;max-width:420px;display:flex;flex-direction:column;gap:18px}
+.banner .box p{line-height:1.75}
+@media (max-width:600px){.banner{padding:180px 16px 16px}.banner .box{padding:28px 24px}}
+
+/* packages */
+.pk-head{text-align:center;display:flex;flex-direction:column;gap:14px;align-items:center;margin-bottom:46px}
+.pk-head p{max-width:40em;line-height:1.75}
+.pk.pk2{grid-template-columns:repeat(2,1fr);max-width:900px;margin:0 auto}
+.pk{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.pk > div{padding:40px 34px;display:flex;flex-direction:column;gap:14px;border-right:1px solid var(--line);min-width:0}
+.pk > div:last-child{border-right:0}
+.kicker{font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--soft)}
+.pk h3{font-size:1.9rem}
+.pk .price{font-family:var(--display);font-size:1.5rem;color:var(--wine)}
+.pk p{line-height:1.7;flex:1}
+.paynote{text-align:center;font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:var(--soft);margin-top:22px}
+@media (max-width:860px){.pk{grid-template-columns:1fr}.pk > div{border-right:0;border-bottom:1px solid var(--line)}}
+
+/* what's on */
+.won h2{margin-bottom:34px}
+.won-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:15px}
+.story{display:flex;flex-direction:column;gap:12px}
+.story .ph{aspect-ratio:380/250}
+.story .ph img{object-position:50% 30%}
+.story h3{font-size:1.55rem}
+@media (max-width:860px){.won-grid{grid-template-columns:1fr}}
+
+/* quote */
+.quote{position:relative;padding:44px 46px;background:
+  conic-gradient(from 45deg at 20% 30%,#4A1920,#6D1F33,#8E4A55,#C7A3A7,#4A1920),
+  var(--burgundy)}
+.quote::before{content:"";position:absolute;inset:0;background:repeating-linear-gradient(115deg,rgba(255,255,255,.06) 0 18px,transparent 18px 46px),repeating-linear-gradient(25deg,rgba(0,0,0,.08) 0 30px,transparent 30px 80px)}
+.quote blockquote{position:relative;margin:0;background:var(--white);padding:42px clamp(20px,6vw,90px);text-align:center;font-family:var(--display);font-weight:300;font-size:clamp(1.5rem,2.6vw,2.05rem);line-height:1.3}
+@media (max-width:600px){.quote{padding:20px}}
+
+/* instagram */
+.ig{background:linear-gradient(var(--white),var(--cream));text-align:center}
+.ig small{display:block;font-size:.8rem;margin-bottom:8px}
+.ig-row{display:grid;grid-template-columns:repeat(6,1fr);gap:12px;margin-top:40px}
+.ig-row a{aspect-ratio:4/5;position:relative;overflow:hidden;background:var(--ph)}
+.ig-row img{width:100%;height:100%;object-fit:cover;transition:transform .6s}
+.ig-row a:hover img{transform:scale(1.04)}
+@media (max-width:860px){.ig-row{grid-template-columns:repeat(3,1fr)}}
+
+/* contact strip */
+.strip{background:var(--cream);padding-block:50px 70px}
+.strip .c{display:grid;grid-template-columns:1fr 1fr;gap:60px}
+.strip .col{display:grid;grid-template-columns:1fr auto;gap:10px 30px;align-items:end}
+.strip h4{grid-column:1/-1;margin:0 0 8px;font-weight:400;font-size:.95rem;letter-spacing:.06em;text-transform:uppercase}
+.strip p{font-size:.88rem;line-height:1.7}
+@media (max-width:860px){.strip .c{grid-template-columns:1fr;gap:36px}}
+
+/* brand + destinations */
+.brand{background:var(--cream);text-align:center;padding-bottom:70px}
+.social{display:flex;justify-content:center;gap:22px;margin-bottom:34px}
+.social a{width:20px;height:20px;display:block}
+.social svg{width:100%;height:100%}
+.brand .wm{font-family:var(--display);font-size:clamp(2.2rem,4vw,3rem);letter-spacing:.12em;line-height:1}
+.brand .sub{font-family:var(--display);font-size:1.3rem;margin-top:8px;letter-spacing:.06em}
+.dest{display:grid;grid-template-columns:repeat(5,1fr);gap:12px;margin-top:50px}
+.dest div{display:flex;flex-direction:column;gap:10px}
+.dest .ph{aspect-ratio:200/250}
+.dest b{font-weight:400;font-size:.92rem;letter-spacing:.1em;text-transform:uppercase}
+.dest i{font-style:normal;font-size:.58rem;letter-spacing:.16em;text-transform:uppercase;color:var(--soft);margin-top:-8px}
+@media (max-width:860px){.dest{grid-template-columns:repeat(2,1fr)}}
+
+/* footer */
+footer{padding-block:50px 30px;font-size:.84rem}
+.fg{display:grid;grid-template-columns:2fr 1fr 1fr;gap:40px}
+footer h4{margin:0 0 14px;font-weight:400;font-size:.95rem;letter-spacing:.06em;text-transform:uppercase}
+footer ul{list-style:none;margin:0;padding:0;display:grid;gap:6px;font-size:.74rem;letter-spacing:.06em;text-transform:uppercase}
+footer ul a:hover{color:var(--wine)}
+.nl p{line-height:1.7;max-width:30em;margin-bottom:16px}
+.nl form{display:flex;gap:14px;align-items:center;flex-wrap:wrap}
+.nl input{border:0;border-bottom:1px solid var(--ink);font:inherit;padding:8px 0;min-width:0;flex:1;max-width:280px;background:transparent;color:var(--ink)}
+.nl .msg{width:100%;font-size:.78rem;color:var(--wine);min-height:1.2em}
+.lang{margin-top:22px;font-size:.7rem;letter-spacing:.06em;text-transform:uppercase}
+.lang u{text-underline-offset:3px}
+.legal{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;border-top:1px solid var(--line);margin-top:46px;padding-top:20px;font-size:.62rem;letter-spacing:.1em;text-transform:uppercase}
+@media (max-width:760px){.fg{grid-template-columns:1fr 1fr}.nl{grid-column:1/-1}}
+
+/* enquiry drawer */
+.drawer{position:fixed;inset:0;z-index:110;display:none}
+.drawer.open{display:block}
+.drawer .veil{position:absolute;inset:0;background:rgba(42,17,20,.45)}
+.drawer .panel{position:absolute;top:0;right:0;bottom:0;width:min(520px,100%);background:var(--white);padding:calc(36px + env(safe-area-inset-top,0px)) max(36px,env(safe-area-inset-right,0px)) 36px 36px;overflow:auto;display:flex;flex-direction:column;gap:20px}
+.drawer h2{font-size:2.3rem}
+.drawer form{display:grid;gap:16px}
+.drawer label{font-size:.68rem;letter-spacing:.14em;text-transform:uppercase;color:var(--soft);display:grid;gap:6px}
+.drawer input,.drawer select,.drawer textarea{font:inherit;font-size:.95rem;color:var(--ink);border:0;border-bottom:1px solid var(--line);padding:8px 0;background:transparent;width:100%;border-radius:0}
+.drawer textarea{min-height:90px;resize:vertical}
+.drawer .book{justify-self:start;margin-top:8px}
+.drawer .msg{font-size:.84rem;color:var(--wine);min-height:1.3em}
+
+/* chalet collection */
+.coll{padding-block:60px 100px}
+.hero.sub{height:min(560px,62vh);min-height:360px}
+.coll-head{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:end;margin-bottom:40px}
+.coll-head h2{font-size:clamp(2.6rem,5vw,4.4rem);line-height:1.05}
+.coll-head p{line-height:1.75;max-width:34em}
+.filters{display:flex;flex-wrap:wrap;gap:12px 28px;align-items:end;padding-block:18px;border-top:1px solid var(--line);border-bottom:1px solid var(--line);margin-bottom:40px}
+.filters label{display:grid;gap:4px;font-size:.62rem;letter-spacing:.16em;text-transform:uppercase;color:var(--soft)}
+.filters select{font-family:var(--display);font-size:1.15rem;color:var(--ink);border:0;background:transparent;padding:2px 0;min-width:140px}
+.filters .count{margin-left:auto;font-size:.78rem;letter-spacing:.08em;text-transform:uppercase}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:46px 20px}
+.ch{display:flex;flex-direction:column;gap:10px;cursor:pointer;text-align:left;background:none;border:0;padding:0;color:inherit;font:inherit}
+.ch .ph{aspect-ratio:4/3;width:100%}
+.ph .no{position:absolute;top:14px;left:14px;right:auto;margin-top:0;text-align:left;background:var(--white);font-size:.62rem;letter-spacing:.16em;padding:5px 9px;z-index:2;color:var(--ink)}
+.cp-bar .more{align-self:center}
+.ch h3{font-size:1.8rem;font-weight:400}
+.ch .spec{font-size:.8rem;letter-spacing:.06em;color:var(--soft)}
+.ch .from{font-family:var(--display);font-size:1.15rem;color:var(--wine)}
+.ch:hover h3{font-style:italic}
+@media (max-width:960px){.grid{grid-template-columns:1fr 1fr}.coll-head{grid-template-columns:1fr}}
+@media (max-width:600px){.grid{grid-template-columns:1fr}.filters .count{margin-left:0;width:100%}}
+
+/* chalet page */
+.cp{position:fixed;inset:0;z-index:105;background:var(--white);overflow:auto;display:none}
+.cp.open{display:block}
+.cp-bar{position:sticky;top:0;z-index:3;background:var(--white);height:63px;display:flex;align-items:center;justify-content:space-between;padding-top:env(safe-area-inset-top,0px);padding-left:max(30px,env(safe-area-inset-left,0px));padding-right:max(30px,env(safe-area-inset-right,0px));box-shadow:0 1px 0 rgba(0,0,0,.06)}
+.gal{display:grid;grid-template-columns:2fr 1fr 1fr;grid-template-rows:1fr 1fr;gap:8px;height:min(620px,70vh);min-height:360px}
+.gal .ph:first-child{grid-row:1/3}
+.cp-body{display:grid;grid-template-columns:1.4fr 1fr;gap:70px;padding-block:60px 90px}
+.cp-body .main{display:flex;flex-direction:column;gap:24px;min-width:0}
+.cp-body h1{font-size:clamp(2.6rem,5vw,4rem)}
+.cp-body .main > p{line-height:1.8}
+.facts{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid var(--line);border-left:1px solid var(--line)}
+.facts div{padding:18px 16px;border-right:1px solid var(--line);border-bottom:1px solid var(--line);display:grid;gap:2px}
+.facts b{font-family:var(--display);font-weight:400;font-size:1.6rem}
+.facts span{font-size:.62rem;letter-spacing:.16em;text-transform:uppercase;color:var(--soft)}
+.amen{columns:2;gap:30px;list-style:none;padding:0;margin:0;font-size:.9rem;line-height:2}
+.amen li::before{content:"—  ";color:var(--wine)}
+.aside{position:sticky;top:93px;align-self:start;background:var(--cream);padding:30px;display:flex;flex-direction:column;gap:16px}
+.aside .price{font-family:var(--display);font-size:2rem;color:var(--wine);line-height:1}
+.aside .price small{font-family:var(--sans);font-size:.7rem;letter-spacing:.12em;text-transform:uppercase;color:var(--soft)}
+.weeks{display:grid;grid-template-columns:repeat(3,1fr);gap:6px}
+.wk{border:1px solid var(--line);background:var(--white);padding:8px 6px;font-size:.72rem;text-align:center;cursor:pointer;color:var(--ink);font-family:var(--sans);line-height:1.3}
+.wk small{display:block;font-size:.56rem;letter-spacing:.12em;text-transform:uppercase;color:var(--soft)}
+.wk.booked{background:transparent;color:#B5ABA3;text-decoration:line-through;cursor:not-allowed}
+.wk.sel{background:var(--burgundy);color:var(--white);border-color:var(--burgundy)}
+.wk.sel small{color:#E3C9CC}
+.legend{display:flex;gap:16px;font-size:.66rem;letter-spacing:.1em;text-transform:uppercase;color:var(--soft)}
+.legend i{display:inline-block;width:10px;height:10px;border:1px solid var(--line);background:var(--white);margin-right:6px;vertical-align:-1px}
+.legend i.b{background:#E6DDD5}.legend i.s{background:var(--burgundy);border-color:var(--burgundy)}
+.aside .book{width:100%;padding:16px}
+@media (max-width:900px){.cp-body{grid-template-columns:1fr;gap:40px}.aside{position:static}.gal{grid-template-columns:1fr 1fr;grid-template-rows:2fr 1fr 1fr;height:auto}.gal .ph{aspect-ratio:4/3}.gal .ph:first-child{grid-column:1/-1;grid-row:auto}.gal .ph:nth-child(n+4){display:none}.facts{grid-template-columns:repeat(2,1fr)}.amen{columns:1}}
+
+/* services listing */
+.svc{padding-block:90px 100px}
+.svc-head{text-align:center;display:flex;flex-direction:column;gap:14px;align-items:center;margin-bottom:34px}
+.svc-head p{max-width:40em;line-height:1.75}
+.tabs{display:flex;gap:6px 30px;justify-content:center;flex-wrap:wrap;border-bottom:1px solid var(--line);margin-bottom:40px}
+.tabs button{background:none;border:0;border-bottom:1px solid transparent;margin-bottom:-1px;padding:12px 0;font-family:var(--sans);font-size:.78rem;letter-spacing:.12em;text-transform:uppercase;color:var(--soft);cursor:pointer}
+.tabs button[aria-selected="true"]{color:var(--ink);border-bottom-color:var(--wine)}
+.svc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:40px 20px}
+.pv{display:flex;flex-direction:column;gap:10px}
+.pv .ph{aspect-ratio:4/5}
+.pv h3{font-size:1.6rem;font-weight:400}
+.pv p{font-size:.88rem;line-height:1.65}
+.pv .row{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-top:4px}
+.pv .from{font-family:var(--display);font-size:1.1rem;color:var(--wine)}
+@media (max-width:960px){.svc-grid{grid-template-columns:1fr 1fr}}
+@media (max-width:600px){.svc-grid{grid-template-columns:1fr}}
+
+.amb{background:var(--burgundy);color:var(--white);padding-block:90px}
+.amb-in{display:grid;grid-template-columns:1fr 1.15fr;gap:70px;align-items:start}
+.amb-l{display:flex;flex-direction:column;gap:20px}
+.amb .kicker{color:#D8B9BD}
+.amb h2{color:var(--white)}
+.amb h2 em{color:#E9C9C6}
+.amb-l p{line-height:1.8;color:rgba(255,255,255,.85)}
+.amb .price{font-family:var(--display);font-size:2.8rem;line-height:1}
+.amb .price small{font-family:var(--sans);font-size:.7rem;letter-spacing:.12em;text-transform:uppercase;color:#D8B9BD;margin-left:6px}
+.amb .book{background:var(--white);color:var(--burgundy);align-self:flex-start}
+.amb .book:hover{background:#F3E6E7}
+.amb-note{font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:#D8B9BD}
+.amb-r{list-style:none;margin:0;padding:0;border-top:1px solid rgba(255,255,255,.18)}
+.amb-r li{display:grid;grid-template-columns:200px 1fr;gap:20px;padding:16px 0;border-bottom:1px solid rgba(255,255,255,.18)}
+.amb-r b{font-family:var(--display);font-weight:400;font-size:1.3rem;line-height:1.2}
+.amb-r span{font-size:.9rem;line-height:1.6;color:rgba(255,255,255,.82)}
+@media (max-width:900px){.amb-in{grid-template-columns:1fr;gap:40px}.amb-r li{grid-template-columns:1fr;gap:4px}}
+.collab{display:grid;grid-template-columns:1fr 1.2fr;gap:50px;border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding-block:44px}
+.collab-l{display:flex;flex-direction:column;gap:16px}
+.collab-l h3{font-size:2.2rem}
+.collab-r{list-style:none;margin:0;padding:0;display:grid;gap:0;align-self:center}
+.collab-r li{padding:14px 0;border-bottom:1px solid var(--line);font-size:.95rem}
+.collab-r li:last-child{border-bottom:0}
+.collab-r li::before{content:"—  ";color:var(--wine)}
+@media (max-width:860px){.collab{grid-template-columns:1fr;gap:24px}}
+.partners-list{display:grid;gap:26px;max-width:900px}
+.partners-list span{white-space:nowrap}
+.partners-list i{font-style:normal;color:var(--wine);margin:0 .2em}
+.partners-list p{font-family:var(--display);font-size:clamp(1.4rem,2.4vw,1.9rem);line-height:1.5;margin-top:6px}
+
+
+.draft{background:#FFF4D6;color:#5A4300;font-size:.72rem;text-align:center;padding:7px 16px}
+</style>
+<style>body{margin:0}[hidden]{display:none!important}img{max-width:100%}</style>
+</head>
+<body>
+
+
+
+<header>
+  <div class="hb">
+    <button class="burger" id="openMenu" aria-label="Open menu"><i></i><i></i></button>
+    <a class="logo" href="#top" aria-label="Ski Queens home"><img src="images/ski-queens-logo.png" alt="Ski Queens" class="logo-img"></a>
+    <a class="book" href="#chalets">Book</a>
+  </div>
+</header>
+
+<div class="menu" id="menu" aria-hidden="true">
+  <nav>
+    <button class="close" id="closeMenu">Close</button>
+    <img src="images/ski-queens-logo.png" alt="Ski Queens" style="width:200px;height:auto;margin-bottom:34px">
+    <a href="#top">Home</a>
+    <a href="#chalets">The Chalets</a>
+    <a href="#services">Services</a>
+    <a href="#brand-partners">Brand Partners</a>
+    <a href="#features">Features on Instagram</a>
+    <a href="#partners">Our Partners</a>
+    <a href="#instagram">Instagram</a>
+    <a href="#founder">The Founder</a>
+    <a href="#" data-enquire="Booking a stay or service">Contact</a>
+  </nav>
+  <div class="side"><img src="images/matterhorn-burgundy-pair-2576.jpg" srcset="images/matterhorn-burgundy-pair-800.jpg 800w, images/matterhorn-burgundy-pair-1400.jpg 1400w, images/matterhorn-burgundy-pair-2576.jpg 2576w" sizes="(max-width:860px) 100vw, 50vw" loading="lazy" decoding="async" alt="" style="object-position:22% 50%"></div>
+</div>
+
+<main id="top">
+  <div class="hero"><img src="images/opening-matterhorn-pair-1672.jpg" srcset="images/opening-matterhorn-pair-800.jpg 800w, images/opening-matterhorn-pair-1400.jpg 1400w, images/opening-matterhorn-pair-1672.jpg 1672w" sizes="100vw" alt="Two women in burgundy holding skis before snow-covered Alpine peaks" style="object-position:52% 40%"></div>
+
+  <div class="intro" id="platform">
+    <h1>The luxury ski season, <em>curated</em> and booked in one click</h1>
+    <div class="rule"></div>
+    <p>Ski Queens is the leading platform dedicated to winter sports and luxury mountain lifestyle, with over 15,000,000 monthly views in peak season. From the chalet to the chef, the instructor to the driver, every detail of your stay is now one booking away.</p>
+  </div>
+
+  <div class="c pt">
+    <div class="ph big"><img src="images/freeride-skier-2576.jpg" srcset="images/freeride-skier-800.jpg 800w, images/freeride-skier-1400.jpg 1400w, images/freeride-skier-2576.jpg 2576w" sizes="(max-width:860px) 100vw, 50vw" loading="lazy" decoding="async" alt="Freeride skier in burgundy jumping through powder" style="object-position:45% 50%"></div>
+    <div class="right">
+      <div class="ph small"><img src="images/vintage-crossed-skis-2576.jpg" srcset="images/vintage-crossed-skis-800.jpg 800w, images/vintage-crossed-skis-1400.jpg 1400w, images/vintage-crossed-skis-2576.jpg 2576w" sizes="(max-width:860px) 100vw, 50vw" loading="lazy" decoding="async" alt="Vintage-style skier with crossed skis on a snowfield" style="object-position:30% 50%"></div>
+      <div class="txt">
+        <p>This season, Ski Queens becomes the place to book the mountain. Palace hotels, private chalets and the people who make them run, all on live calendars with instant confirmation.</p>
+        <p>Followed by Olympic champions, supermodels, celebrities and real royalty, Ski Queens is not only a trend. It is a style of skiing, a person and a movement.</p>
+        <a class="more" href="#chalets">Discover the chalets</a>
+      </div>
+    </div>
+  </div>
+
+  <div style="height:90px"></div>
+
+  <section class="cards" id="pillars">
+    <div class="c">
+      <div class="lead">
+        <h2>Chalets,<br>Services,<br>Media<br>&amp; <em>Partners</em></h2>
+        <p>Six ways into the world of Ski Queens. Book a chalet and the people who make the season run, or bring your brand to the most engaged luxury ski audience online.</p>
+        <a class="more" href="#chalets">Discover</a>
+        <div class="arrows"><button class="prev" aria-label="Previous"></button><button class="next" aria-label="Next"></button></div>
+      </div>
+      <div class="track" id="track">
+        <a class="card" href="#chalets"><div class="ph"><img src="images/courchevel-chalets-dusk-2576.jpg" srcset="images/courchevel-chalets-dusk-800.jpg 800w, images/courchevel-chalets-dusk-1400.jpg 1400w, images/courchevel-chalets-dusk-2576.jpg 2576w" sizes="(max-width:860px) 100vw, 50vw" loading="lazy" decoding="async" alt="" style="object-position:22% 50%"></div><h3>The Chalets</h3></a>
+        <a class="card" href="#services"><div class="ph"><img src="images/freeride-skier-2576.jpg" srcset="images/freeride-skier-800.jpg 800w, images/freeride-skier-1400.jpg 1400w, images/freeride-skier-2576.jpg 2576w" sizes="(max-width:860px) 100vw, 50vw" loading="lazy" decoding="async" alt="" style="object-position:52% 50%"></div><h3>Services</h3></a>
+        <a class="card" href="#features"><div class="ph"><img src="images/heels-chairlift-zermatt-2576.jpg" srcset="images/heels-chairlift-zermatt-800.jpg 800w, images/heels-chairlift-zermatt-1400.jpg 1400w, images/heels-chairlift-zermatt-2576.jpg 2576w" sizes="(max-width:860px) 100vw, 50vw" loading="lazy" decoding="async" alt="" style="object-position:18% 50%"></div><h3>Instagram Features</h3></a>
+        <a class="card" href="#brands"><div class="ph"><img src="images/red-suit-matterhorn-2576.jpg" srcset="images/red-suit-matterhorn-800.jpg 800w, images/red-suit-matterhorn-1400.jpg 1400w, images/red-suit-matterhorn-2576.jpg 2576w" sizes="(max-width:860px) 100vw, 50vw" loading="lazy" decoding="async" alt="" style="object-position:86% 50%"></div><h3>Brand Partnerships</h3></a>
+        <a class="card" href="#partners"><div class="ph"><img src="images/gstaad-black-gown-2576.jpg" srcset="images/gstaad-black-gown-800.jpg 800w, images/gstaad-black-gown-1400.jpg 1400w, images/gstaad-black-gown-2576.jpg 2576w" sizes="(max-width:860px) 100vw, 50vw" loading="lazy" decoding="async" alt="" style="object-position:10% 50%"></div><h3>Partners</h3></a>
+        <a class="card" href="#instagram"><div class="ph"><img src="images/holographic-jacket-chairlift-2576.jpg" srcset="images/holographic-jacket-chairlift-800.jpg 800w, images/holographic-jacket-chairlift-1400.jpg 1400w, images/holographic-jacket-chairlift-2576.jpg 2576w" sizes="(max-width:860px) 100vw, 50vw" loading="lazy" decoding="async" alt="" style="object-position:16% 50%"></div><h3>Instagram</h3></a>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec" id="chalets-teaser">
+    <div class="c">
+      <div class="coll-head">
+        <h2>The Chalet<br><em>Collection</em></h2>
+        <p>Five private chalets in Courchevel, each chosen by Ski Queens and fully staffed, with live availability for the 2026–27 season.</p>
+      </div>
+      <div class="grid" id="home-chalets"></div>
+      <div class="viewall"><a class="book" href="#chalets">View all 5 chalets</a></div>
+    </div>
+  </section>
+
+  <section class="sec" id="services-teaser" style="background:var(--cream)">
+    <div class="c">
+      <div class="svc-head">
+        <span class="kicker">The Services Collection</span>
+        <h2>The best of the mountain, <em>on call</em></h2>
+        <p>Every provider is vetted by Ski Queens. Book them with your chalet, or on their own.</p>
+      </div>
+      <div class="prev4">
+        <a class="story" href="#helicopter"><div class="ph"><img src="images/site/p-heli.jpg" alt="Helicopter Services Group helicopter" loading="lazy" style="object-position:50% 40%"></div><span class="kicker">Helicopter Services</span><h3>Helicopter</h3><span class="more">Discover</span></a>
+        <a class="story" href="#services" data-cat-link="Drivers"><div class="ph"><img src="images/site/p-gotransfer.jpg" alt="Chauffeured transfer in Courchevel" loading="lazy" style="object-position:50% 40%"></div><span class="kicker">3 transfer partners</span><h3>Drivers</h3><span class="more">Discover</span></a>
+        <a class="story" href="#services" data-cat-link="Ski instructors"><div class="ph"><img src="images/freeride-skier-2576.jpg" srcset="images/freeride-skier-800.jpg 800w, images/freeride-skier-1400.jpg 1400w, images/freeride-skier-2576.jpg 2576w" sizes="(max-width:860px) 100vw, 50vw" loading="lazy" decoding="async" alt="" style="object-position:50% 45%"></div><span class="kicker">Private instructors</span><h3>Ski instructors</h3><span class="more">Discover</span></a>
+        <a class="story" href="#services" data-cat-link="Nannies"><div class="ph"><img src="images/site/s-anastasia.jpg" alt="Anastasia, Ski Queens nanny, with a child outside a chalet" loading="lazy" style="object-position:48% 40%"></div><span class="kicker">Anastasia</span><h3>Nannies</h3><span class="more">Discover</span></a>
+      </div>
+      <div class="viewall"><a class="book" href="#services">View all services</a></div>
+    </div>
+  </section>
+
+  <section class="sec c" id="media-teaser">
+    <div class="pk-head">
+      <span class="kicker">Features on Instagram</span>
+      <h2>Be featured on <em>@skiqueens</em></h2>
+      <p>The fastest growing portal dedicated to skiing and winter aesthetics, with exposure to more than 9 million snow lovers.</p>
+    </div>
+    <div class="pk">
+      <div><span class="kicker">For individuals</span><h3>1 Post &amp; 1 Story</h3><div class="price">£100</div><a class="more" href="#features">Buy a post</a></div>
+      <div><span class="kicker">For individuals</span><h3>3 Posts &amp; 3 Stories</h3><div class="price">£250</div><a class="more" href="#features">Buy a post</a></div>
+      <div><span class="kicker">For companies</span><h3>Brand Collaboration</h3><div class="price">£1,000</div><a class="more" href="#brands">Discover</a></div>
+    </div>
+    <div class="viewall"><a class="book" href="#features">View all features</a></div>
+  </section>
+
+  <section class="c" id="brands-teaser">
+    <div class="banner">
+      <div class="ph dark"><img src="images/red-suit-matterhorn-2576.jpg" srcset="images/red-suit-matterhorn-800.jpg 800w, images/red-suit-matterhorn-1400.jpg 1400w, images/red-suit-matterhorn-2576.jpg 2576w" sizes="(max-width:860px) 100vw, 50vw" loading="lazy" decoding="async" alt="Model in a red suit with skis before the Matterhorn" style="object-position:75% 40%"></div>
+      <div class="box">
+        <span class="kicker">Brand Partnerships</span>
+        <h2>Brand Partnerships</h2>
+        <p>A Brand Collaboration from £1,000 per project, or become our Season Ambassador for three months at £5,000.</p>
+        <a class="more" href="#brands">Discover</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec" id="partners-teaser">
+    <div class="c" style="text-align:center;display:flex;flex-direction:column;gap:30px;align-items:center">
+      <div class="pk-head" style="margin:0"><span class="kicker">Partners</span><h2>In <em>good</em> company</h2></div>
+      <div class="partners-list"><p><span>Rosewood Courchevel</span> <i>·</i> <span>Bagatelle Courchevel</span> <i>·</i> <span>Madlein Ischgl</span> <i>·</i> <span>Alpes Hôtel du Pralong</span> <i>·</i> <span>High Society</span> <i>·</i> <span>Bluebird Ski Wear</span> <i>·</i> <span>Casa Malka</span> <i>·</i> <span>Après Provence</span> <i>·</i> <span>Helicopter Services</span> <i>·</i> <span>Go Transfer Peak</span></p></div>
+      <a class="more" href="#partners" style="align-self:center">View all 20 partners</a>
+    </div>
+  </section>
+
+  <section class="sec" id="founder">
+    <div class="c fd">
+      <div class="ph big"><img src="images/founder-black-gown-2576.jpg" srcset="images/founder-black-gown-800.jpg 800w, images/founder-black-gown-1400.jpg 1400w, images/founder-black-gown-2576.jpg 2576w" sizes="(max-width:860px) 100vw, 50vw" loading="lazy" decoding="async" alt="Arina in a black gown before an Alpine peak at dusk" style="object-position:50% 40%"></div>
+      <div class="txt">
+        <h2>The Founder</h2>
+        <p>Arina founded Ski Queens after a career in luxury branding, as Brand Director of Hanging Gardens of Bali and founder of EME Branding. An avid, well-travelled skier, she has grown Ski Queens from a style into a movement, with brand collaborations since 2024 and partnerships secured for the 2026–27 season.</p>
+        <a class="more" href="#brands">Work with us</a>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="c" id="whatson" style="padding-bottom:90px">
+    <div class="won">
+      <h2>What's on</h2>
+      <div class="won-grid">
+        <a class="story" href="#" data-enquire="Booking a stay or service"><div class="ph"><img src="images/courchevel-chalets-dusk-2576.jpg" srcset="images/courchevel-chalets-dusk-800.jpg 800w, images/courchevel-chalets-dusk-1400.jpg 1400w, images/courchevel-chalets-dusk-2576.jpg 2576w" sizes="(max-width:860px) 100vw, 50vw" loading="lazy" decoding="async" alt="Luxury chalets in Courchevel at dusk" style="object-position:40% 50%"></div><span class="kicker">Launching this season</span><h3>Courchevel, 2026–27</h3><span class="more">Learn more</span></a>
+        <a class="story" href="https://www.instagram.com/skiqueens/" target="_blank" rel="noopener"><div class="ph"><img src="images/heels-chairlift-zermatt-2576.jpg" srcset="images/heels-chairlift-zermatt-800.jpg 800w, images/heels-chairlift-zermatt-1400.jpg 1400w, images/heels-chairlift-zermatt-2576.jpg 2576w" sizes="(max-width:860px) 100vw, 50vw" loading="lazy" decoding="async" alt="Heels on skis before the Matterhorn" style="object-position:30% 50%"></div><span class="kicker">On Instagram</span><h3>The season on @skiqueens</h3><span class="more">Learn more</span></a>
+        <a class="story" href="#brands"><div class="ph"><img src="images/holographic-jacket-chairlift-2576.jpg" srcset="images/holographic-jacket-chairlift-800.jpg 800w, images/holographic-jacket-chairlift-1400.jpg 1400w, images/holographic-jacket-chairlift-2576.jpg 2576w" sizes="(max-width:860px) 100vw, 50vw" loading="lazy" decoding="async" alt="Model in a holographic ski jacket by a chairlift" style="object-position:20% 40%"></div><span class="kicker">Brand partnerships</span><h3>Season 2026–27</h3><span class="more">Learn more</span></a>
+      </div>
+    </div>
+  </section>
+
+  <section class="c">
+    <div class="quote"><blockquote>“Ski Queens is not only a trend, it is a style of skiing, a person, a <em>movement</em>.”</blockquote></div>
+  </section>
+
+  <section class="sec ig" id="instagram">
+    <div class="c">
+      <small>Ski Queens</small>
+      <h2>Follow us on Instagram</h2>
+      <p style="margin-top:14px;font-size:.8rem;letter-spacing:.12em;text-transform:uppercase">@skiqueens · 150K followers · verified</p>
+      <div class="ig-row">
+        <a href="https://www.instagram.com/skiqueens/" target="_blank" rel="noopener"><img src="images/matterhorn-burgundy-pair-2576.jpg" srcset="images/matterhorn-burgundy-pair-800.jpg 800w, images/matterhorn-burgundy-pair-1400.jpg 1400w, images/matterhorn-burgundy-pair-2576.jpg 2576w" sizes="(max-width:860px) 100vw, 50vw" loading="lazy" decoding="async" alt="Ski Queens Instagram post" style="object-position:20% 50%"></a>
+        <a href="https://www.instagram.com/skiqueens/" target="_blank" rel="noopener"><img src="images/red-suit-matterhorn-2576.jpg" srcset="images/red-suit-matterhorn-800.jpg 800w, images/red-suit-matterhorn-1400.jpg 1400w, images/red-suit-matterhorn-2576.jpg 2576w" sizes="(max-width:860px) 100vw, 50vw" loading="lazy" decoding="async" alt="Ski Queens Instagram post" style="object-position:85% 50%"></a>
+        <a href="https://www.instagram.com/skiqueens/" target="_blank" rel="noopener"><img src="images/freeride-skier-2576.jpg" srcset="images/freeride-skier-800.jpg 800w, images/freeride-skier-1400.jpg 1400w, images/freeride-skier-2576.jpg 2576w" sizes="(max-width:860px) 100vw, 50vw" loading="lazy" decoding="async" alt="Ski Queens Instagram post" style="object-position:50% 50%"></a>
+        <a href="https://www.instagram.com/skiqueens/" target="_blank" rel="noopener"><img src="images/courchevel-chalets-dusk-2576.jpg" srcset="images/courchevel-chalets-dusk-800.jpg 800w, images/courchevel-chalets-dusk-1400.jpg 1400w, images/courchevel-chalets-dusk-2576.jpg 2576w" sizes="(max-width:860px) 100vw, 50vw" loading="lazy" decoding="async" alt="Ski Queens Instagram post" style="object-position:25% 50%"></a>
+        <a href="https://www.instagram.com/skiqueens/" target="_blank" rel="noopener"><img src="images/heels-chairlift-zermatt-2576.jpg" srcset="images/heels-chairlift-zermatt-800.jpg 800w, images/heels-chairlift-zermatt-1400.jpg 1400w, images/heels-chairlift-zermatt-2576.jpg 2576w" sizes="(max-width:860px) 100vw, 50vw" loading="lazy" decoding="async" alt="Ski Queens Instagram post" style="object-position:20% 50%"></a>
+        <a href="https://www.instagram.com/skiqueens/" target="_blank" rel="noopener"><img src="images/founder-black-gown-2576.jpg" srcset="images/founder-black-gown-800.jpg 800w, images/founder-black-gown-1400.jpg 1400w, images/founder-black-gown-2576.jpg 2576w" sizes="(max-width:860px) 100vw, 50vw" loading="lazy" decoding="async" alt="Ski Queens Instagram post" style="object-position:50% 50%"></a>
+      </div>
+    </div>
+  </section>
+
+  <div class="strip">
+    <div class="c">
+      <div class="col">
+        <h4>Ski Queens</h4>
+        <p>London · French Riviera · Courchevel<br>arina@skiqueens.co.uk</p>
+        <a class="more" href="https://www.instagram.com/skiqueens/" target="_blank" rel="noopener">Instagram</a>
+      </div>
+      <div class="col">
+        <h4>Bookings &amp; Partnerships</h4>
+        <p>You can contact our team for stays, services and brand collaborations. We reply within one working day.</p>
+        <button class="more" data-enquire="Booking a stay or service">Contact us</button>
+      </div>
+    </div>
+  </div>
+
+  <section class="brand" id="destinations">
+    <div class="c">
+      <div class="social">
+        <a href="https://www.instagram.com/skiqueens/" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".8" fill="currentColor"/></svg></a>
+        <a href="https://www.youtube.com/@SkiQueens" target="_blank" rel="noopener" aria-label="YouTube"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M22 8.2a3 3 0 0 0-2.1-2.1C18 5.6 12 5.6 12 5.6s-6 0-7.9.5A3 3 0 0 0 2 8.2 31 31 0 0 0 1.6 12 31 31 0 0 0 2 15.8a3 3 0 0 0 2.1 2.1c1.9.5 7.9.5 7.9.5s6 0 7.9-.5a3 3 0 0 0 2.1-2.1 31 31 0 0 0 .4-3.8 31 31 0 0 0-.4-3.8zM10 15V9l5.2 3z"/></svg></a>
+        <a href="#" aria-label="TikTok"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M16.5 3c.4 2.3 1.8 3.7 4 4v3a7 7 0 0 1-4-1.3V15a6 6 0 1 1-6-6v3.1a3 3 0 1 0 3 2.9V3z"/></svg></a>
+      </div>
+      <img src="images/ski-queens-logo.png" alt="Ski Queens" style="width:min(420px,80%);height:auto;margin:0 auto">
+      <div class="sub">Luxury Mountain Lifestyle</div>
+      <div class="dest">
+        <div><div class="ph"><img src="images/courchevel-chalets-dusk-2576.jpg" srcset="images/courchevel-chalets-dusk-800.jpg 800w, images/courchevel-chalets-dusk-1400.jpg 1400w, images/courchevel-chalets-dusk-2576.jpg 2576w" sizes="(max-width:860px) 100vw, 50vw" loading="lazy" decoding="async" alt="Courchevel" style="object-position:55% 50%"></div><b>Courchevel</b><i>France · launching first</i></div>
+        <div><div class="ph"><img src="images/gstaad-black-gown-2576.jpg" srcset="images/gstaad-black-gown-800.jpg 800w, images/gstaad-black-gown-1400.jpg 1400w, images/gstaad-black-gown-2576.jpg 2576w" sizes="(max-width:860px) 100vw, 50vw" loading="lazy" decoding="async" alt="Gstaad" style="object-position:55% 50%"></div><b>Gstaad</b><i>Switzerland</i></div>
+        <div><div class="ph"><img src="images/heels-chairlift-zermatt-2576.jpg" srcset="images/heels-chairlift-zermatt-800.jpg 800w, images/heels-chairlift-zermatt-1400.jpg 1400w, images/heels-chairlift-zermatt-2576.jpg 2576w" sizes="(max-width:860px) 100vw, 50vw" loading="lazy" decoding="async" alt="Zermatt" style="object-position:40% 50%"></div><b>Zermatt</b><i>Switzerland</i></div>
+        <div><div class="ph"><span>Photo</span></div><b>Aspen</b><i>United States</i></div>
+        <div><div class="ph"><span>Photo</span></div><b>Japan</b><i>Powder season</i></div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<div id="page-features" class="page" hidden>
+  <div class="hero sub"><img src="images/holographic-jacket-chairlift-2576.jpg" srcset="images/holographic-jacket-chairlift-800.jpg 800w, images/holographic-jacket-chairlift-1400.jpg 1400w, images/holographic-jacket-chairlift-2576.jpg 2576w" sizes="(max-width:860px) 100vw, 50vw" loading="lazy" decoding="async" alt="" style="object-position:20% 35%"></div>
+  <div class="intro">
+    <h1>Features on <em>Instagram</em></h1>
+    <div class="rule"></div>
+    <p>Be featured on @skiqueens: 150K verified followers and over 15,000,000 monthly views in peak season. Choose your feature, pay securely online, and our team will be in touch to plan it with you.</p>
+  </div>
+  <section class="sec c" id="features-list" style="padding-top:40px">
+    <div class="feat">
+      <div class="phone"><img src="images/site/ig-profile.jpg" alt="The Ski Queens Instagram profile, @skiqueens" loading="lazy"></div>
+      <div class="feat-txt">
+        <p class="lead">We are the fastest growing portal dedicated to the pleasure of skiing and winter aesthetics, with exposure to more than 9 million snow lovers.</p>
+        <p>We currently offer Instagram features on Ski Queens:</p>
+        <ul class="offers">
+          <li><b>£100</b><span>1 Post &amp; 1 Story<small>For individuals</small></span><button class="more" data-pay="Instagram feature: 1 Post &amp; 1 Story, £100">Buy a post</button></li>
+          <li><b>£250</b><span>3 Posts &amp; 3 Stories<small>For individuals</small></span><button class="more" data-pay="Instagram feature: 3 Posts &amp; 3 Stories, £250">Buy a post</button></li>
+          <li><b>£1,000</b><span>Brand Collaboration<small>For companies · per project</small></span><a class="more" href="#brands">Discover</a></li>
+          <li><b>£5,000</b><span>Season Ambassadorship<small>For companies · 3-month season</small></span><a class="more" href="#ambassador">Discover</a></li>
+        </ul>
+        <p class="paynote" style="text-align:left;margin-top:4px">Secure payment by Stripe · Card, Apple Pay and Google Pay</p>
+      </div>
+    </div>
+  </section>
+</div>
+
+<div id="page-partners" class="page" hidden>
+  <div class="hero sub"><img src="images/gstaad-black-gown-2576.jpg" srcset="images/gstaad-black-gown-800.jpg 800w, images/gstaad-black-gown-1400.jpg 1400w, images/gstaad-black-gown-2576.jpg 2576w" sizes="(max-width:860px) 100vw, 50vw" loading="lazy" decoding="async" alt="" style="object-position:20% 45%"></div>
+  <div class="intro">
+    <h1>Our Brand <em>Partners</em></h1>
+    <div class="rule"></div>
+    <p>The hotels, restaurants, fashion houses and mountain specialists we work with, each chosen for the way they live the season. Several offer exclusive benefits to the Ski Queens community.</p>
+  </div>
+  <section class="sec" id="partners">
+    <div class="c">
+      <div class="pfilter" id="pfilter"></div>
+      <div class="pgrid" id="pgrid"></div>
+      <div class="viewall" style="display:flex;flex-direction:column;gap:16px;align-items:center">
+        <p style="max-width:34em;line-height:1.75">Would you like your brand alongside them?</p>
+        <button class="book" data-enquire="Brand partnership">Become a partner</button>
+      </div>
+    </div>
+  </section>
+</div>
+
+<div id="page-chalets" class="page" hidden>
+  <div class="hero sub"><img src="images/site/c-village1.jpg" alt="Snow-covered Alpine chalets among the pines" style="object-position:50% 60%"></div>
+  <div class="intro">
+    <h1>The Chalet <em>Collection</em></h1>
+    <div class="rule"></div>
+    <p>Five private chalets in Courchevel, each chosen by Ski Queens for its location, its service and its sense of occasion. Every chalet comes fully staffed, with a chef, a chalet manager and transfers, and every calendar shows live availability for the 2026–27 season.</p>
+  </div>
+  <section class="coll" id="chalet-list">
+    <div class="c">
+      <div class="coll-head">
+        <h2>The Chalet<br><em>Collection</em></h2>
+        <p>Five private chalets, each chosen by Ski Queens for its location, its service and its sense of occasion. Every chalet comes fully staffed, with live availability for the 2026–27 season.</p>
+      </div>
+      <div class="filters">
+        <label for="fl-area">Resort<select id="fl-area"><option value="">All resorts</option></select></label>
+        <label for="fl-bed">Bedrooms<select id="fl-bed"><option value="0">Any</option><option value="4">4+</option><option value="5">5+</option><option value="6">6+</option><option value="7">7+</option></select></label>
+        <label for="fl-guests">Guests<select id="fl-guests"><option value="0">Any</option><option value="8">8+</option><option value="10">10+</option><option value="12">12+</option><option value="14">14+</option></select></label>
+        <label for="fl-feat">Must have<select id="fl-feat"><option value="">Anything</option><option>Ski-in, ski-out</option><option>Indoor pool</option><option>Spa &amp; hammam</option><option>Cinema room</option><option>Private chef</option></select></label>
+        <span class="count" id="count"></span>
+      </div>
+      <div class="grid" id="grid"></div>
+      <div style="text-align:center;margin-top:50px"><button class="book" id="morech">View all 5 chalets</button></div>
+    </div>
+  </section>
+</div>
+
+<div id="page-services" class="page" hidden>
+  <div class="hero sub"><img src="images/freeride-skier-2576.jpg" srcset="images/freeride-skier-800.jpg 800w, images/freeride-skier-1400.jpg 1400w, images/freeride-skier-2576.jpg 2576w" sizes="(max-width:860px) 100vw, 50vw" loading="lazy" decoding="async" alt="" style="object-position:50% 45%"></div>
+  <div class="intro">
+    <h1>The Services <em>Collection</em></h1>
+    <div class="rule"></div>
+    <p>Every provider is vetted by Ski Queens. Book them with your chalet, or on their own, from helicopter transfers to private chefs.</p>
+  </div>
+  <section class="svc" id="services-list">
+    <div class="c">
+      <div class="tabs" role="tablist" id="tabs"></div>
+      <div class="svc-grid" id="svc-grid"></div>
+    </div>
+  <section class="heli" id="heli-block" hidden>
+    <div class="heli-img"><img src="images/site/h-heli-bw.jpg" alt="Arina in a white fur coat beside a Helicopter Services Group helicopter on an Alpine helipad" style="object-position:40% 45%"></div>
+    <div class="heli-txt">
+      <span class="kicker">Helicopter · Ski Queens partner</span>
+      <h1>Helicopter <em>Services</em></h1>
+      <div class="rule" style="margin:0"></div>
+      <p class="lead">Private helicopter transfers from the airport straight to the slopes. Skip the mountain roads and land in Courchevel in minutes, not hours.</p>
+      <p>Helicopter Services Group flies between the Alpine airports and the resorts all winter, including the Annecy – Courchevel route. Every flight is private: your party, your luggage and your schedule.</p>
+      <ul class="heli-facts">
+        <li><b>Private</b><span>The whole helicopter for your party</span></li>
+        <li><b>Door to slope</b><span>Land at Courchevel Altiport</span></li>
+        <li><b>All winter</b><span>Flights through the 2026–27 season</span></li>
+      </ul>
+      <div class="price">From €2,500 <small>per flight</small></div>
+      <form class="heli-form" id="heli-form">
+        <label>Route<select id="h-route"><option>Chambéry → Courchevel</option><option>Annecy → Courchevel</option><option>Geneva → Courchevel</option><option>Lyon → Courchevel</option><option>Courchevel → Chambéry</option><option>Courchevel → Annecy</option><option>Courchevel → Geneva</option><option>Other route</option></select></label>
+        <label>Date<input id="h-date" type="date" value="2027-01-16"></label>
+        <label>Passengers<select id="h-pax"><option>1</option><option selected>2</option><option>3</option><option>4</option><option>5</option><option>6</option></select></label>
+        <button class="book" type="submit">Request a flight</button>
+      </form>
+      <a class="more" href="https://www.instagram.com/heliservicesgroup/" target="_blank" rel="noopener" style="align-self:flex-start">See Helicopter Services Group on Instagram · @heliservicesgroup</a>
+    </div>
+  </section>
+    <div class="c">
+    </div>
+  </section>
+
+</div>
+
+<div id="page-brands" class="page" hidden>
+  <div class="hero sub"><img src="images/red-suit-matterhorn-2576.jpg" srcset="images/red-suit-matterhorn-800.jpg 800w, images/red-suit-matterhorn-1400.jpg 1400w, images/red-suit-matterhorn-2576.jpg 2576w" sizes="(max-width:860px) 100vw, 50vw" loading="lazy" decoding="async" alt="" style="object-position:80% 40%"></div>
+  <div class="intro">
+    <h1>Brand <em>Partners</em></h1>
+    <div class="rule"></div>
+    <p>Collaborations, media promotions and partnerships with the most engaged luxury ski audience online: 150K verified followers and over 15,000,000 monthly views in peak season.</p>
+  </div>
+  <section class="sec c" id="media">
+    <div class="pk-head">
+      <span class="kicker">Brand Promotions</span>
+      <h2>What we do for your <em>brand</em></h2>
+    </div>
+    <div class="promo3">
+      <article><div class="ph"><img src="images/site/p-perfect.jpg" alt="Model in a black visor on the slopes" loading="lazy" style="object-position:50% 30%"></div><h3>Content Creation</h3><p>Ski Queens creates bespoke videos and photos that showcase your brand's luxury and adventure, perfectly tailored for our audience.</p></article>
+      <article><div class="ph"><img src="images/site/p-diavolezza.jpg" alt="Couple in colourful ski wear" loading="lazy" style="object-position:50% 30%"></div><h3>Feature on Instagram</h3><p>Feature your brand on Ski Queens' Instagram, reaching 15,000,000 monthly visitors during peak season.</p></article>
+      <article><div class="ph"><img src="images/site/p-sunpatch.jpg" alt="Skier on a chairlift wearing sun patches" loading="lazy" style="object-position:50% 30%"></div><h3>Showcase on our website</h3><p>Get featured on Ski Queens' website and be showcased on our portal as a recommended partner.</p></article>
+    </div>
+  </section>
+
+  <section class="c" id="brands">
+    <div class="banner">
+      <div class="ph dark"><img src="images/matterhorn-burgundy-pair-2576.jpg" srcset="images/matterhorn-burgundy-pair-800.jpg 800w, images/matterhorn-burgundy-pair-1400.jpg 1400w, images/matterhorn-burgundy-pair-2576.jpg 2576w" sizes="(max-width:860px) 100vw, 50vw" loading="lazy" decoding="async" alt="Two women in burgundy with skis before the Matterhorn" style="object-position:20% 40%"></div>
+      <div class="box">
+        <h2>Brand Partnerships</h2>
+        <p>Season-long collaborations for luxury, fashion, beauty and hospitality brands. Paid collaborations since 2024, with brand partnerships secured for the 2026–27 season.</p>
+        <button class="more" data-enquire="Brand partnership">Enquire</button>
+      </div>
+    </div>
+  </section>
+
+  <section class="amb" id="ambassador">
+    <div class="c amb-in">
+      <div class="amb-l">
+        <span class="kicker">Season Ambassadorship</span>
+        <h2>Your brand, the face of the <em>season</em></h2>
+        <p>Three months as the official Ski Queens Season Ambassador. We announce you proudly, create content with you on the mountain, and keep your brand in front of our community from the first snow to the last run.</p>
+        <div class="price">£5,000 <small>per 3-month season</small></div>
+        <button class="book" data-pay="Season Ambassadorship, £5,000">Become our Ambassador</button>
+        <span class="amb-note">December to February, or January to March</span>
+      </div>
+      <ul class="amb-r">
+        <li><b>The announcement</b><span>A launch Reel, carousel and Stories proudly introducing your brand as our Season Ambassador</span></li>
+        <li><b>6 Instagram Reels</b><span>Two each month, filmed on location in resort and posted to @skiqueens</span></li>
+        <li><b>3 feed posts or carousels</b><span>One each month, written and designed by our team</span></li>
+        <li><b>30 Instagram Stories</b><span>Ten each month, tagging your brand, with link stickers</span></li>
+        <li><b>A dedicated content shoot</b><span>Photos and video in resort for your own channels, with usage rights for the season</span></li>
+        <li><b>Official Season Partner</b><span>Your logo and story featured on the Ski Queens website all season</span></li>
+        <li><b>Events and activations</b><span>Your brand present at Ski Queens events during the season</span></li>
+        <li><b>Reporting</b><span>A monthly performance report and a full end-of-season review</span></li>
+        <li><b>Exclusivity</b><span>Category exclusivity available on request</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="sec c" style="padding-top:50px">
+    <div class="collab">
+      <div class="collab-l">
+        <span class="kicker">Brand Collaboration</span>
+        <h3>One project, everything included</h3>
+        <div class="price" style="font-family:var(--display);font-size:2.4rem;color:var(--wine)">£1,000 <small style="font-family:var(--sans);font-size:.7rem;letter-spacing:.12em;text-transform:uppercase;color:var(--soft)">per project</small></div>
+        <button class="book" data-pay="Brand Collaboration, £1,000" style="align-self:flex-start">Purchase</button>
+      </div>
+      <ul class="collab-r">
+        <li>Bespoke content creation for your brand</li>
+        <li>2 Instagram Reels featuring your brand, posted to @skiqueens, with all material shared with you for your own use</li>
+        <li>5 Instagram Stories tagging your brand</li>
+        <li>1 post with pictures</li>
+        <li>Feature on our website as a recommended brand partner</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="sec" style="background:var(--cream);text-align:center">
+    <div class="c" style="display:flex;flex-direction:column;gap:18px;align-items:center">
+      <span class="kicker">Our partners</span>
+      <h2>In <em>good</em> company</h2>
+      <p style="max-width:36em;line-height:1.75">Meet the hotels, brands and operators who already work with Ski Queens.</p>
+      <a class="book" href="#partners">View our brand partners</a>
+    </div>
+  </section>
+
+</div>
+
+<footer>
+  <div class="c">
+    <div class="fg">
+      <div class="nl">
+        <h4>Newsletter</h4>
+        <p>If you would like to hear first about the Ski Queens launch, new partners and the season ahead, please sign up below.</p>
+        <form id="nl" name="newsletter" method="POST" data-netlify="true"><input type="hidden" name="form-name" value="newsletter"><label for="nl-email" style="position:absolute;left:-9999px">Email address</label><input id="nl-email" name="email" type="email" placeholder="Your email address" required><button class="more" type="submit">Sign up</button><span class="msg" id="nl-msg" aria-live="polite"></span></form>
+        <div class="lang">Language: <u>English</u> · Français</div>
+      </div>
+      <div><h4>Ski Queens</h4><ul><li><a href="#chalets">The Chalets</a></li><li><a href="#services">Services</a></li><li><a href="#features">Features on Instagram</a></li><li><a href="#brands">Brand Partnerships</a></li><li><a href="#partners">Partners</a></li><li><a href="#" data-enquire="Press">Press</a></li><li><a href="#" data-enquire="Investment">Investors</a></li><li><a href="#" data-enquire="Booking a stay or service">Contact</a></li></ul></div>
+      <div><h4>Legal</h4><ul><li><a href="#">Privacy policy</a></li><li><a href="#">Cookies</a></li><li><a href="#">Terms</a></li><li><a href="#">Legal notice</a></li></ul></div>
+    </div>
+    <div class="legal"><span>© 2026 Ski Queens</span><span>Ski Queens® · Registered UK and EU trade mark</span></div>
+  </div>
+</footer>
+
+<div class="cp" id="cp" aria-hidden="true" role="dialog" aria-labelledby="cp-name">
+  <div class="cp-bar">
+    <button class="more" id="cp-back" style="border:0">All chalets</button>
+    <a class="logo" href="#top" aria-label="Ski Queens home"><img src="images/ski-queens-logo.png" alt="Ski Queens" style="height:34px;width:auto"></a>
+    <span class="kicker" id="cp-no"></span>
+  </div>
+  <div class="c" style="padding-top:20px">
+    <div class="gal" id="cp-gal"></div>
+    <div class="cp-body">
+      <div class="main">
+        <span class="kicker" id="cp-area"></span>
+        <h1 id="cp-name"></h1>
+        <div class="rule" style="margin:0"></div>
+        <p id="cp-desc"></p>
+        <div class="facts" id="cp-facts"></div>
+        <h3 style="font-size:1.8rem;margin-top:16px">The chalet</h3>
+        <ul class="amen" id="cp-amen"></ul>
+        <h3 style="font-size:1.8rem;margin-top:16px">Included in every stay</h3>
+        <ul class="amen"><li>Chalet manager and housekeeping</li><li>Private chef, breakfast and dinner</li><li>Airport and resort transfers</li><li>Ski pass and equipment delivery</li><li>Concierge by Ski Queens</li><li>Add-ons: instructors, nannies, stylists</li></ul>
+      </div>
+      <aside class="aside">
+        <span class="kicker">Season 2026–27 · Saturday to Saturday</span>
+        <div class="price" id="cp-price"></div>
+        <div class="legend"><span><i></i>Available</span><span><i class="b"></i>Booked</span><span><i class="s"></i>Selected</span></div>
+        <div class="weeks" id="cp-weeks"></div>
+        <p id="cp-sel" style="font-size:.84rem;min-height:1.4em"></p>
+        <button class="book" id="cp-book">Request to book</button>
+        <p style="font-size:.74rem;color:var(--soft);line-height:1.6">Secure deposit by Stripe once your week is confirmed.</p>
+      </aside>
+    </div>
+  </div>
+</div>
+
+<div class="drawer" id="drawer" aria-hidden="true">
+  <div class="veil" data-close></div>
+  <div class="panel" role="dialog" aria-labelledby="dr-title">
+    <button class="more" data-close style="border:0">Close</button>
+    <h2 id="dr-title">Contact us</h2>
+    <p id="dr-sub" style="line-height:1.7">Tell us about your stay or your brand, and our team will reply within one working day.</p>
+    <form id="enq" name="enquiry" method="POST" data-netlify="true" netlify-honeypot="bot-field"><input type="hidden" name="form-name" value="enquiry"><p hidden><label>Leave empty<input name="bot-field"></label></p>
+      <label>Name<input id="f-name" name="name" required autocomplete="name"></label>
+      <label>Email<input id="f-email" name="email" type="email" required autocomplete="email"></label>
+      <label>I am interested in<select id="f-topic" name="topic"><option>Booking a stay or service</option><option>Brand partnership</option><option>Listing my chalet or service</option><option>Press</option><option>Investment</option></select></label>
+      <label>Message<textarea id="f-msg" name="message" placeholder="Resort, dates, number of guests, or your campaign idea"></textarea></label>
+      <button class="book" type="submit">Send</button>
+      <p class="msg" id="enq-msg" aria-live="polite"></p>
+    </form>
+  </div>
+</div>
+
+<script>
+(function(){
+  var menu=document.getElementById('menu');
+  document.getElementById('openMenu').onclick=function(){menu.classList.add('open');menu.setAttribute('aria-hidden','false')};
+  document.getElementById('closeMenu').onclick=function(){menu.classList.remove('open');menu.setAttribute('aria-hidden','true')};
+  menu.querySelectorAll('nav a').forEach(function(a){a.addEventListener('click',function(){menu.classList.remove('open')})});
+
+  var tr=document.getElementById('track');
+  function step(d){tr.scrollBy({left:d*318,behavior:'smooth'})}
+  document.querySelector('.arrows .prev').onclick=function(){step(-1)};
+  document.querySelector('.arrows .next').onclick=function(){step(1)};
+
+  var dr=document.getElementById('drawer'),topic=document.getElementById('f-topic'),sub=document.getElementById('dr-sub'),msg=document.getElementById('enq-msg');
+  function openDr(t,note){if(t)topic.value=t;msg.textContent=note||'';dr.classList.add('open');dr.setAttribute('aria-hidden','false');setTimeout(function(){document.getElementById('f-name').focus()},50)}
+  function closeDr(){dr.classList.remove('open');dr.setAttribute('aria-hidden','true')}
+  document.querySelectorAll('[data-enquire]').forEach(function(el){el.addEventListener('click',function(e){e.preventDefault();openDr(el.getAttribute('data-enquire'))})});
+  document.querySelectorAll('[data-pay]').forEach(function(el){el.addEventListener('click',function(e){e.preventDefault();openDr('Brand partnership','"'+el.getAttribute('data-pay')+'": send us your details and we will email you a secure payment link.')})});
+  dr.querySelectorAll('[data-close]').forEach(function(el){el.addEventListener('click',closeDr)});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape'){closeDr();menu.classList.remove('open')}});
+  function post(f){return fetch('/',{method:'POST',headers:{'Content-Type':'application/x-www-form-urlencoded'},body:new URLSearchParams(new FormData(f)).toString()})}
+  document.getElementById('enq').addEventListener('submit',function(e){e.preventDefault();var f=this;msg.textContent='Sending…';post(f).then(function(r){if(!r.ok)throw 0;msg.textContent='Thank you. Our team will reply within one working day.';f.reset()}).catch(function(){msg.textContent='Your message could not be sent. Please try again in a moment.'})});
+  document.getElementById('nl').addEventListener('submit',function(e){e.preventDefault();var f=this,m=document.getElementById('nl-msg');post(f).then(function(r){if(!r.ok)throw 0;m.textContent='Thank you for signing up.';f.reset()}).catch(function(){m.textContent='Sign-up failed. Please try again.'})});
+
+  /* ---- Chalet collection: sample data until the real list arrives ---- */
+  var AREAS=['Courchevel 1850','Courchevel Moriond','Courchevel Village','Courchevel Le Praz'];
+  var FEATS=['Ski-in, ski-out','Indoor pool','Spa & hammam','Cinema room','Private chef','Outdoor hot tub','Wine cellar','Boot room with heaters','Gym','Fireplace lounge','Kids’ playroom','Chauffeur service'];
+  var seed=7;function rnd(){seed=(seed*9301+49297)%233280;return seed/233280}
+  var CH=[];
+  for(var i=1;i<=5;i++){
+    var bed=4+Math.floor(rnd()*5), area=AREAS[i<=2?0:i-2];
+    var f=FEATS.slice().sort(function(){return rnd()-.5}).slice(0,6);
+    if(area==='Courchevel 1850'&&f.indexOf('Ski-in, ski-out')<0)f[0]='Ski-in, ski-out';
+    if(f.indexOf('Private chef')<0)f[5]='Private chef';
+    CH.push({img:['','images/site/c-ext.jpg','images/site/c-village1.jpg','images/site/c-village2.jpg','images/site/c-village1.jpg','images/site/c-village2.jpg'][i]||'',pos:['','50% 50%','45% 70%','30% 65%','78% 60%','80% 72%'][i],gal:i===1?[['images/site/c-living.jpg','Living room'],['images/site/c-ext.jpg','Exterior'],['images/site/c-dining.jpg','Dining room'],['images/site/c-pool.jpg','Pool'],['images/site/c-gym.jpg','Gym']]:null,no:('0'+i).slice(-2),name:'Chalet '+('0'+i).slice(-2),area:area,bed:bed,bath:bed+Math.floor(rnd()*2),guests:bed*2+(rnd()>.6?2:0),size:180+bed*60+Math.floor(rnd()*80),floors:2+Math.floor(rnd()*3),feat:f});
+  }
+  var sel=document.getElementById('fl-area');
+  AREAS.forEach(function(a){var o=document.createElement('option');o.textContent=a;sel.appendChild(o)});
+  var grid=document.getElementById('grid'),count=document.getElementById('count'),showAll=true;
+  function esc(s){return String(s).replace(/[&<>"]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]})}
+  function render(){
+    var a=sel.value,b=+document.getElementById('fl-bed').value,g=+document.getElementById('fl-guests').value,ft=document.getElementById('fl-feat').value;
+    var list=CH.filter(function(c){return (!a||c.area===a)&&c.bed>=b&&c.guests>=g&&(!ft||c.feat.indexOf(ft)>=0)});
+    count.textContent=list.length+(list.length===1?' chalet':' chalets');
+    var full=list.length;if(!showAll&&!a&&!b&&!g&&!ft)list=list.slice(0,9);
+    grid.innerHTML=list.length?list.map(function(c){return '<button class="ch" data-no="'+c.no+'"><div class="ph"><span class="no">N°'+c.no+'</span>'+(c.img?'<img src="'+c.img+'" alt="'+esc(c.name)+'" loading="lazy" decoding="async" style="object-position:'+(c.pos||'50% 50%')+'">':'<span>Photo · '+esc(c.name)+'</span>')+'</div><span class="kicker">'+esc(c.area)+'</span><h3>'+esc(c.name)+'</h3><span class="spec">'+c.bed+' bedrooms · '+c.guests+' guests · '+c.size+' m²</span><span class="from">From £ — per week</span></button>'}).join(''):'<p style="grid-column:1/-1;text-align:center;padding:40px 0">No chalet matches these filters. Try fewer filters, or <button class="more" data-enquire="Booking a stay or service" style="display:inline-flex">ask our concierge</button>.</p>';
+    var mb=document.getElementById('morech');mb.hidden=list.length>=full;mb.textContent='View all '+full+' chalets';
+  }
+  document.getElementById('morech').onclick=function(){showAll=true;render()};
+  var hc=document.getElementById('home-chalets');
+  hc.innerHTML=CH.slice(0,3).map(function(c){return '<button class="ch" data-no="'+c.no+'"><div class="ph"><span class="no">N°'+c.no+'</span>'+(c.img?'<img src="'+c.img+'" alt="'+esc(c.name)+'" loading="lazy" decoding="async" style="object-position:'+(c.pos||'50% 50%')+'">':'<span>Photo · '+esc(c.name)+'</span>')+'</div><span class="kicker">'+esc(c.area)+'</span><h3>'+esc(c.name)+'</h3><span class="spec">'+c.bed+' bedrooms · '+c.guests+' guests · '+c.size+' m²</span><span class="from">From £ — per week</span></button>'}).join('');
+  hc.addEventListener('click',function(e){var b=e.target.closest('.ch');if(b)location.hash='#chalet-'+b.getAttribute('data-no')});
+  ['fl-area','fl-bed','fl-guests','fl-feat'].forEach(function(id){document.getElementById(id).addEventListener('change',render)});
+  render();
+
+  var cp=document.getElementById('cp'),cur=null,week=null;
+  var WEEKS=[];var d=new Date(2026,11,12);while(d<new Date(2027,3,17)){WEEKS.push(new Date(d));d.setDate(d.getDate()+7)}
+  var M=['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+  function fmt(x){return x.getDate()+' '+M[x.getMonth()]}
+  function openChalet(no){
+    cur=CH.filter(function(c){return c.no===no})[0];week=null;
+    document.getElementById('cp-no').textContent='N°'+cur.no+' of 5';
+    document.getElementById('cp-area').textContent=cur.area;
+    document.getElementById('cp-name').textContent=cur.name;
+    document.getElementById('cp-desc').textContent='Sample description — your text for '+cur.name+' goes here: the setting, the views, the interiors and what makes this chalet special. Two or three short paragraphs work best.';
+    document.getElementById('cp-gal').innerHTML=(cur.gal||[['','Living room'],['','Exterior'],['','Master bedroom'],['','Spa'],['','Dining']]).map(function(g){return '<div class="ph">'+(g[0]?'<img src="'+g[0]+'" alt="'+esc(cur.name)+' – '+g[1]+'">':'<span>Photo · '+g[1]+'</span>')+'</div>'}).join('');
+    document.getElementById('cp-facts').innerHTML=[[cur.bed,'Bedrooms'],[cur.bath,'Bathrooms'],[cur.guests,'Guests'],[cur.size+' m²','Living space'],[cur.floors,'Floors'],[cur.feat.indexOf('Ski-in, ski-out')>=0?'Yes':'Shuttle','Ski-in, ski-out']].map(function(f){return '<div><b>'+f[0]+'</b><span>'+f[1]+'</span></div>'}).join('');
+    document.getElementById('cp-amen').innerHTML=cur.feat.map(function(f){return '<li>'+esc(f)+'</li>'}).join('');
+    document.getElementById('cp-price').innerHTML='£ — <small>per week</small>';
+    var s2=parseInt(cur.no,10)*13;
+    document.getElementById('cp-weeks').innerHTML=WEEKS.map(function(w,k){var booked=((s2+k*7)%10)<4;var e=new Date(w);e.setDate(e.getDate()+7);return '<button class="wk'+(booked?' booked':'')+'"'+(booked?' disabled':'')+' data-k="'+k+'">'+fmt(w)+'<small>to '+fmt(e)+'</small></button>'}).join('');
+    document.getElementById('cp-sel').textContent='Choose an available week.';
+    cp.classList.add('open');cp.setAttribute('aria-hidden','false');cp.scrollTop=0;document.body.style.overflow='hidden';
+    try{history.replaceState(null,'','#chalet-'+cur.no)}catch(e){}
+  }
+  function closeChalet(){if(!cp.classList.contains('open'))return;cp.classList.remove('open');cp.setAttribute('aria-hidden','true');document.body.style.overflow='';try{history.replaceState(null,'','#chalets')}catch(e){}}
+  grid.addEventListener('click',function(e){var b=e.target.closest('.ch');if(b)openChalet(b.getAttribute('data-no'))});
+  document.getElementById('cp-back').onclick=closeChalet;
+  document.getElementById('cp-weeks').addEventListener('click',function(e){var b=e.target.closest('.wk');if(!b||b.disabled)return;
+    this.querySelectorAll('.wk').forEach(function(x){x.classList.remove('sel')});b.classList.add('sel');
+    var w=WEEKS[+b.getAttribute('data-k')],e2=new Date(w);e2.setDate(e2.getDate()+7);week=fmt(w)+' – '+fmt(e2)+' '+e2.getFullYear();
+    document.getElementById('cp-sel').textContent='Selected: '+week;});
+  document.getElementById('cp-book').onclick=function(){
+    document.getElementById('f-msg').value=cur.name+' ('+cur.area+')'+(week?', week of '+week:'')+'. Number of guests: ';
+    openDr('Booking a stay or service',week?'':'Tip: choose a week in the calendar, or tell us your dates below.');
+  };
+  document.addEventListener('keydown',function(e){if(e.key==='Escape'&&!dr.classList.contains('open'))closeChalet()});
+  /* ---- Services listing: sample providers until the real list arrives ---- */
+  /* real providers from skiqueens.co.uk where known; others are samples */
+  var SV={
+    'Helicopter':{unit:'Per flight',price:'From €2,500',list:[['Helicopter Services','Private helicopter transfers from airports to resorts across the Alps.',1,'images/site/p-heli.jpg']]},
+    'Drivers':{unit:'Per transfer',list:[['Go Transfer Peak','Ski Queens recommends Go Transfer Peak\u2019s two-vehicle arrangement for safety and seamless comfort. A Renault Trafic leads the journey, handling road safety, luggage and passenger security, while a Mercedes-Benz V-Class carries you in VIP comfort, for a discreet, smooth arrival in the Alps.',1,'images/site/p-gotransfer.jpg','Promo code SKIQUEENS'],['4F Transfers','Touch down in style \u2014 we highly recommend 4F Transfers for seamless, private rides from Geneva to Courchevel. Chauffeured comfort, zero stress, all glamour. Use promo code SKIQUEENS for an exclusive little discount and arrive like royalty.',1,'images/site/p-4f.jpg','Promo code SKIQUEENS'],['Loyal Transfers','From an airport meet and greet by uniformed drivers to smooth journeys straight to your chalet, Loyal Transfers makes your travel as effortless as your apr\u00e8s-ski. Arrive in elegance, ski in style, like mountain royalty.',1,'images/site/p-loyal.jpg']]},
+    'Nannies':{unit:'Per day',list:[['Anastasia','Private nanny in Courchevel, caring for your little ones at the chalet while you ski. Daytime and evening care, by the day or for your whole stay.',1,'images/site/s-anastasia.jpg']]},
+    'Ski instructors':{unit:'Per day',list:[['Private ski instructors','Our own team of hand-picked private instructors for the 2026\u201327 season, for every level from first turns to off-piste. Tell us your level and dates and we will match you with the right instructor.',1]]},
+    'Private chefs':{unit:'Per dinner',list:[['Provider name 1','Chalet dinners and events.',0],['Provider name 2','Menus planned with you before arrival.',0],['Provider name 3','Breakfast, lunch and dinner service.',0]]},
+    'Butlers':{unit:'Per week',list:[['Provider name 1','Butler and house management for your stay.',0],['Provider name 2','Unpacking, reservations and daily service.',0],['Provider name 3','Discreet, multilingual service.',0]]},
+    'Stylists':{unit:'Per session',list:[['Provider name 1','Hair, make-up and wardrobe styling in your chalet.',0],['Provider name 2','Ski-wear shopping with a personal stylist.',0],['Provider name 3','Event and evening styling.',0]]},
+    'Events':{unit:'On request',list:[['Provider name 1','Private parties and dinners on the mountain.',0],['Provider name 2','Venues, music, flowers and photography.',0],['Provider name 3','Celebrations arranged for you.',0]]}
+  };
+  var CATS=Object.keys(SV),tabs=document.getElementById('tabs'),sg=document.getElementById('svc-grid');
+  tabs.innerHTML=CATS.map(function(c,i){return '<button role="tab" aria-selected="'+(i===0)+'" data-cat="'+c+'">'+c+'</button>'}).join('');
+  function showCat(c){
+    tabs.querySelectorAll('button').forEach(function(b){b.setAttribute('aria-selected',b.getAttribute('data-cat')===c)});
+    var hb=document.getElementById('heli-block'),isH=c==='Helicopter';hb.hidden=!isH;sg.hidden=isH;
+    var v=SV[c],L=v.list,one=L.length===1;
+    sg.style.gridTemplateColumns=one?'minmax(0,720px)':'';sg.style.justifyContent=one?'center':'';
+    sg.innerHTML=L.map(function(p){return '<div class="pv"><div class="ph">'+(p[3]?'<img src="'+p[3]+'" alt="'+esc(p[0])+'" loading="lazy" decoding="async" style="object-position:'+(p[0]==='Anastasia'?'48% 40%':'50% 35%')+'">':'<span>Photo · '+esc(p[0])+'</span>')+'</div><span class="kicker">'+c+(p[2]?' · Ski Queens partner':' · sample')+'</span><h3>'+esc(p[0])+'</h3><p>'+esc(p[1])+'</p>'+(p[4]?'<span class="perk">'+esc(p[4])+'</span>':'')+'<div class="row"><span class="from">'+(v.price||'From £ —')+' <small style="font-family:var(--sans);font-size:.62rem;letter-spacing:.12em;text-transform:uppercase;color:var(--soft)">'+v.unit+'</small></span>'+(p[0]==='Helicopter Services'?'<a class="more" href="#helicopter">View &amp; request</a>':'<button class="more" data-req="'+esc(c+' · '+p[0])+'">Request</button>')+'</div></div>'}).join('');
+  }
+  tabs.addEventListener('click',function(e){var b=e.target.closest('button');if(b)showCat(b.getAttribute('data-cat'))});
+  sg.addEventListener('click',function(e){var b=e.target.closest('[data-req]');if(!b)return;document.getElementById('f-msg').value=b.getAttribute('data-req')+'. Dates: ';openDr('Booking a stay or service')});
+  document.querySelectorAll('.card[data-cat]').forEach(function(a){a.addEventListener('click',function(){showCat(a.getAttribute('data-cat'))})});
+  showCat('Helicopter');
+  document.querySelectorAll('[data-cat-link]').forEach(function(a){a.addEventListener('click',function(){showCat(a.getAttribute('data-cat-link'))})});
+
+  /* Brand partners, from the Ski Queens Brand Partners page */
+  var PARTNERS=[
+    ['Bagatelle Courchevel','Dining','The mountain outpost of Bagatelle in Courchevel 1850: refined cuisine, a famously lively atmosphere and signature après parties.','','images/site/p-bagatelle.jpg'],
+    ['Rosewood Courchevel','Hotels','A mountain retreat with private chalets, personal service and a serene spa, steps from the slopes.','','images/site/p-rosewood.jpg'],
+    ['Madlein Ischgl','Hotels','A design-led hotel in Ischgl, loved for its attentive service, stylish comfort and vibrant spirit.','','images/site/p-madlein.jpg'],
+    ['Casa Malka','Drinks','Tequila made for high-altitude living, bold and confident from the first sip to the last.','','images/site/p-casamalka.jpg'],
+    ['4F Transfers','Transfers','Touch down in style \u2014 we highly recommend 4F Transfers for seamless, private rides from Geneva to Courchevel. Chauffeured comfort, zero stress, all glamour. Use promo code SKIQUEENS for an exclusive little discount and arrive like royalty.','Promo code SKIQUEENS','images/site/p-4f.jpg'],
+    ['Bluebird Ski Wear','Ski wear','Women\u2019s alpine clothing that pairs technical performance with elegant, modern design.','Ski Queens promo code','images/site/p-bluebird.jpg'],
+    ['High Society','Ski wear','Ski fashion since 1985, known for glamour, function and uncompromising quality.','','images/site/p-highsociety.jpg'],
+    ['Mrs Momma Bear','Ski wear','The Afterglow Collection: workwear-inspired pieces with the comfort of activewear.','',''],
+    ['Sloobie','Ski wear','Thermal base layers in a shape-enhancing hybrid fabric with 360\u00b0 stretch.','',''],
+    ['Go Transfer Peak','Transfers','Ski Queens recommends Go Transfer Peak\u2019s two-vehicle arrangement for safety and seamless comfort. A Renault Trafic leads the journey, handling road safety, luggage and passenger security, while a Mercedes-Benz V-Class carries you in VIP comfort, for a discreet, smooth arrival in the Alps.','Promo code SKIQUEENS','images/site/p-gotransfer.jpg'],
+    ['Apr\u00e8s Provence','Drinks','A light, vibrant ros\u00e9 made for the whole day, from lunch on the terrace into the night.','','images/site/p-apres.jpg'],
+    ['Helicopter Services','Aviation','Private helicopter transfers from airports to resorts across the Alps.','','images/site/p-heli.jpg'],
+    ['alt*ego','Goggles & eyewear','Ski and snowboard accessories that combine high performance with self-expression.','','images/site/p-altego.jpg'],
+    ['Sun Patch','Beauty','Sun protection patches in UPF 50+ zinc-oxide silicone, blocking 98% of UVA and UVB rays.','','images/site/p-sunpatch.jpg'],
+    ['Alpes H\u00f4tel du Pralong','Hotels','A five-star ski-in, ski-out hotel in Courchevel with alpine views and a spa.','','images/site/p-pralong.jpg'],
+    ['Perfect Protection','Goggles & eyewear','Sun visors that block 99.9% of harmful UV rays on the mountain.','','images/site/p-perfect.jpg'],
+    ['Diavolezza','Ski wear','Sustainable skiwear inspired by the legend of a mountain she-devil, bold and responsible.','','images/site/p-diavolezza.jpg'],
+    ['Loyal Transfers','Transfers','From an airport meet and greet by uniformed drivers to smooth journeys straight to your chalet, Loyal Transfers makes your travel as effortless as your apr\u00e8s-ski. Arrive in elegance, ski in style, like mountain royalty.','','images/site/p-loyal.jpg'],
+    ['Anarchic','Boutiques','A women\u2019s luxury fashion boutique in Courchevel 1850, available in store only.','','images/site/p-anarchic.jpg'],
+    ['Arctic Eco-Sno','Ski wear','Sustainable base layers made from recycled materials.','','images/site/p-arctic.jpg']
+  ];
+  var pf=document.getElementById('pfilter'),pg=document.getElementById('pgrid');
+  var PCATS=['All'].concat(PARTNERS.map(function(p){return p[1]}).filter(function(c,i,a){return a.indexOf(c)===i}));
+  pf.innerHTML=PCATS.map(function(c,i){return '<button aria-pressed="'+(i===0)+'" data-pc="'+c+'">'+c+'</button>'}).join('');
+  function showP(c){
+    pf.querySelectorAll('button').forEach(function(b){b.setAttribute('aria-pressed',b.getAttribute('data-pc')===c)});
+    pg.innerHTML=PARTNERS.filter(function(p){return c==='All'||p[1]===c}).map(function(p){return '<article class="pcard"><div class="ph">'+(p[4]?'<img src="'+p[4]+'" alt="'+esc(p[0])+' with Ski Queens" loading="lazy" decoding="async">':'<span>Photo · '+esc(p[0])+'</span>')+'</div><span class="kicker">'+esc(p[1])+'</span><h3>'+esc(p[0])+'</h3><p>'+esc(p[2])+'</p>'+(p[3]?'<span class="perk">'+esc(p[3])+'</span>':'')+'</article>'}).join('');
+  }
+  pf.addEventListener('click',function(e){var b=e.target.closest('button');if(b)showP(b.getAttribute('data-pc'))});
+  showP('All');
+
+  document.getElementById('heli-form').addEventListener('submit',function(e){e.preventDefault();
+    var r=document.getElementById('h-route').value,d=document.getElementById('h-date').value,n=document.getElementById('h-pax').value;
+    document.getElementById('f-msg').value='Helicopter Services: '+r+', '+d+', '+n+' passenger'+(n==='1'?'':'s')+'. Luggage / timing: ';
+    openDr('Booking a stay or service');});
+
+  var mainEl=document.getElementById('top');
+  var ROUTES={'chalets':'page-chalets','services':'page-services','brand-partners':'page-brands','media':'page-brands','ambassador':'page-brands','features':'page-features','helicopter':'page-services','brands':'page-brands','partners':'page-partners'};
+  function route(){
+    var h=location.hash.slice(1), m=h.match(/^chalet-(\d\d)$/), pid=m?'page-chalets':ROUTES[h];
+    document.querySelectorAll('.page').forEach(function(p){p.hidden=p.id!==pid});
+    mainEl.hidden=!!pid;
+    if(!m)closeChalet();
+    if(pid){
+      var t=(h==='media'||h==='brands'||h==='ambassador')&&document.getElementById(h);
+      if(h==='helicopter'){showCat('Helicopter');t=document.getElementById('tabs');}
+      setTimeout(function(){if(t)t.scrollIntoView({behavior:'instant'});else window.scrollTo({top:0,behavior:'instant'});},0);
+      if(m)openChalet(m[1]);
+    } else {
+      var t2=h&&h!=='top'&&document.getElementById(h); setTimeout(function(){if(t2)t2.scrollIntoView({behavior:'instant'}); else window.scrollTo({top:0,behavior:'instant'});},0);
+    }
+  }
+  window.addEventListener('hashchange',route);
+  route();
+})();
+</script>
+
+</body>
+</html>
