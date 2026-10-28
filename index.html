@@ -3,7 +3,13 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta name="description" content="Ski Queens: luxury chalets, services and brand partners in Courchevel and the Alps.">
+<meta name="description" content="Ski Queens: the luxury ski lifestyle platform. Private chalets in Courchevel, helicopter transfers, private chefs and nannies, Instagram features and brand partnerships.">
+<link rel="canonical" href="https://skiqueens.co.uk/">
+<meta property="og:type" content="website"><meta property="og:site_name" content="Ski Queens"><meta property="og:url" content="https://skiqueens.co.uk/">
+<meta property="og:title" content="Ski Queens · Luxury Ski Chalets, Services &amp; Brand Partners">
+<meta property="og:description" content="Private chalets in Courchevel, helicopter transfers, private chefs and nannies, Instagram features and brand partnerships.">
+<meta property="og:image" content="https://skiqueens.co.uk/images/opening-matterhorn-pair-1672.jpg">
+<meta name="twitter:card" content="summary_large_image">
 <link rel="preload" as="image" href="images/opening-matterhorn-pair-1672.jpg">
 <title>Ski Queens · Luxury Ski Chalets, Services &amp; Brand Partners</title>
 <meta name="claude:viewport-fit-sides" content="cover">
@@ -226,13 +232,9 @@ header{position:sticky;top:env(safe-area-inset-top,0px);z-index:80;background:va
 @media (max-width:860px){.won-grid{grid-template-columns:1fr}}
 
 /* quote */
-.quote{position:relative;padding:44px 46px;background:
-  conic-gradient(from 45deg at 20% 30%,#4A1920,#6D1F33,#8E4A55,#C7A3A7,#4A1920),
-  var(--burgundy)}
-.quote::before{content:"";position:absolute;inset:0;background:repeating-linear-gradient(115deg,rgba(255,255,255,.06) 0 18px,transparent 18px 46px),repeating-linear-gradient(25deg,rgba(0,0,0,.08) 0 30px,transparent 30px 80px)}
+.quote{padding:40px 0}
 .quote blockquote cite{display:block;margin-top:22px;font-family:var(--sans);font-style:normal;font-size:.8rem;letter-spacing:.24em;text-transform:uppercase;color:var(--wine)}
-.quote blockquote{position:relative;margin:0;background:var(--white);padding:42px clamp(20px,6vw,90px);text-align:center;font-family:var(--display);font-weight:300;font-size:clamp(2rem,3.8vw,3.1rem);line-height:1.22}
-@media (max-width:600px){.quote{padding:20px}}
+.quote blockquote{margin:0;padding:20px clamp(20px,6vw,90px);text-align:center;font-family:var(--display);font-weight:300;font-size:clamp(2rem,3.8vw,3.1rem);line-height:1.22}
 
 /* instagram */
 .ig{background:linear-gradient(var(--white),var(--cream));text-align:center}
@@ -397,6 +399,23 @@ footer ul a:hover{color:var(--wine)}
 
 
 .draft{background:#FFF4D6;color:#5A4300;font-size:.72rem;text-align:center;padding:7px 16px}
+
+/* contact page */
+.ct{display:grid;grid-template-columns:1fr 1.25fr;gap:70px;align-items:start}
+.ct-info{display:grid;gap:34px}
+.ct-info h2{font-size:clamp(2rem,3.2vw,2.8rem);color:var(--wine);line-height:1.1}
+.ct-line{display:grid;gap:6px}
+.ct-line a{font-family:var(--display);font-size:1.45rem;color:var(--ink);border-bottom:1px solid var(--line);justify-self:start}
+.ct-locs{display:grid;grid-template-columns:1fr 1fr 1fr;gap:24px;border-top:1px solid var(--line);padding-top:28px}
+.ct-locs p{font-size:1rem;line-height:1.7}
+.ct-form{background:var(--cream);padding:44px;display:grid;gap:22px}
+.ct-form h3{font-size:2rem;line-height:1.15}
+.ct-form .two{display:grid;grid-template-columns:1fr 1fr;gap:22px}
+.ct-form label{font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;color:var(--soft);display:grid;gap:8px}
+.ct-form input,.ct-form select,.ct-form textarea{font:inherit;font-size:1.05rem;letter-spacing:0;text-transform:none;color:var(--ink);border:0;border-bottom:1px solid var(--ink);padding:10px 0;background:transparent;width:100%;border-radius:0;min-width:0}
+.ct-form textarea{min-height:140px;resize:vertical}
+.ct-form .book{justify-self:start;padding:18px 44px}
+@media (max-width:900px){.ct{grid-template-columns:1fr;gap:50px}.ct-locs{grid-template-columns:1fr 1fr}.ct-form{padding:28px 22px}.ct-form .two{grid-template-columns:1fr}}
 </style>
 <style>body{margin:0}[hidden]{display:none!important}img{max-width:100%}</style>
 </head>
@@ -424,7 +443,7 @@ footer ul a:hover{color:var(--wine)}
     <a href="#partners">Our Partners</a>
     <a href="#instagram">Instagram</a>
     <a href="#founder">The Founder</a>
-    <a href="#" data-enquire="Booking a stay or service">Contact</a>
+    <a href="#contact">Contact</a>
   </nav>
   <div class="side"><img src="images/matterhorn-burgundy-pair-2576.jpg" srcset="images/matterhorn-burgundy-pair-800.jpg 800w, images/matterhorn-burgundy-pair-1400.jpg 1400w, images/matterhorn-burgundy-pair-2576.jpg 2576w" sizes="(max-width:860px) 100vw, 50vw" loading="lazy" decoding="async" alt="" style="object-position:22% 50%"></div>
 </div>
@@ -588,7 +607,7 @@ footer ul a:hover{color:var(--wine)}
       <div class="col">
         <h4>Bookings &amp; Partnerships</h4>
         <p>You can contact our team for stays, services and brand collaborations.</p>
-        <button class="more" data-enquire="Booking a stay or service">Contact us</button>
+        <a class="more" href="#contact">Contact us</a>
       </div>
     </div>
   </div>
@@ -634,6 +653,45 @@ footer ul a:hover{color:var(--wine)}
         </ul>
         <p class="paynote" style="text-align:left;margin-top:4px">Secure payment by Stripe · Card, Apple Pay and Google Pay</p>
       </div>
+    </div>
+  </section>
+</div>
+
+<div id="page-contact" class="page" hidden>
+  <div class="hero sub"><img src="images/founder-black-gown-2576.jpg" srcset="images/founder-black-gown-800.jpg 800w, images/founder-black-gown-1400.jpg 1400w, images/founder-black-gown-2576.jpg 2576w" sizes="(max-width:860px) 100vw, 50vw" loading="lazy" decoding="async" alt="" style="object-position:50% 40%"></div>
+  <div class="intro">
+    <h1>Contact <em>us</em></h1>
+    <div class="rule"></div>
+    <p>For chalet stays, services, Instagram features and brand partnerships, our team is here to help. Tell us what you have in mind and we will be in touch.</p>
+  </div>
+  <section class="sec c" style="padding-top:40px">
+    <div class="ct">
+      <div class="ct-info">
+        <h2>Speak to <em>Ski Queens</em></h2>
+        <div class="ct-line"><span class="kicker">Email</span><a href="mailto:arina@skiqueens.co.uk">arina@skiqueens.co.uk</a></div>
+        <div class="ct-line"><span class="kicker">Instagram</span><a href="https://www.instagram.com/skiqueens/" target="_blank" rel="noopener">@skiqueens ↗</a></div>
+        <div class="ct-locs">
+          <div class="loc"><span class="kicker">Headquarters</span><p>Knightsbridge<br>London<br>United Kingdom</p></div>
+          <div class="loc"><span class="kicker">The Alps</span><p>Courchevel 1850<br>73120<br>France</p></div>
+          <div class="loc"><span class="kicker">United States</span><p>Marina del Rey<br>Los Angeles<br>California</p></div>
+        </div>
+      </div>
+      <form class="ct-form" id="ct-form" name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+        <input type="hidden" name="form-name" value="contact"><input type="hidden" name="source" id="ct-src">
+        <p hidden><label>Leave empty<input name="bot-field"></label></p>
+        <h3>Send us a <em>message</em></h3>
+        <div class="two">
+          <label>Name<input name="name" required autocomplete="name"></label>
+          <label>Email<input name="email" type="email" required autocomplete="email"></label>
+        </div>
+        <div class="two">
+          <label>Phone<input name="phone" type="tel" autocomplete="tel" placeholder="Optional"></label>
+          <label>I am interested in<select name="topic"><option>Chalet stay</option><option>Services</option><option>Instagram feature</option><option>Brand partnership</option><option>Season ambassadorship</option><option>Listing my chalet or service</option><option>Press</option><option>Investment</option><option>Other</option></select></label>
+        </div>
+        <label>Message<textarea name="message" required placeholder="Resort, dates, number of guests, or your campaign idea"></textarea></label>
+        <button class="book" type="submit">Send message</button>
+        <p class="msg" id="ct-msg" aria-live="polite"></p>
+      </form>
     </div>
   </section>
 </div>
@@ -817,7 +875,7 @@ footer ul a:hover{color:var(--wine)}
         <form id="nl" name="newsletter" method="POST" data-netlify="true"><input type="hidden" name="form-name" value="newsletter"><label for="nl-email" style="position:absolute;left:-9999px">Email address</label><input id="nl-email" name="email" type="email" placeholder="Your email address" required><button class="more" type="submit">Sign up</button><span class="msg" id="nl-msg" aria-live="polite"></span></form>
         <div class="lang">Language: <u>English</u> · Français</div>
       </div>
-      <div><h4>Ski Queens</h4><ul><li><a href="#chalets">The Chalets</a></li><li><a href="#services">Services</a></li><li><a href="#features">Features on Instagram</a></li><li><a href="#brands">Brand Partnerships</a></li><li><a href="#partners">Partners</a></li><li><a href="#" data-enquire="Press">Press</a></li><li><a href="#" data-enquire="Investment">Investors</a></li><li><a href="#" data-enquire="Booking a stay or service">Contact</a></li></ul></div>
+      <div><h4>Ski Queens</h4><ul><li><a href="#chalets">The Chalets</a></li><li><a href="#services">Services</a></li><li><a href="#features">Features on Instagram</a></li><li><a href="#brands">Brand Partnerships</a></li><li><a href="#partners">Partners</a></li><li><a href="#" data-enquire="Press">Press</a></li><li><a href="#" data-enquire="Investment">Investors</a></li><li><a href="#contact">Contact</a></li></ul></div>
       <div><h4>Legal</h4><ul><li><a href="#">Privacy policy</a></li><li><a href="#">Cookies</a></li><li><a href="#">Terms</a></li><li><a href="#">Legal notice</a></li></ul></div>
     </div>
     <div class="legal"><span>© 2026 Ski Queens</span><span>Ski Queens® · Registered UK and EU trade mark</span></div>
@@ -867,7 +925,7 @@ footer ul a:hover{color:var(--wine)}
       <label>Name<input id="f-name" name="name" required autocomplete="name"></label>
       <label>Email<input id="f-email" name="email" type="email" required autocomplete="email"></label>
       <label>I am interested in<select id="f-topic" name="topic"><option>Booking a stay or service</option><option>Brand partnership</option><option>Listing my chalet or service</option><option>Press</option><option>Investment</option></select></label>
-      <label>Message<textarea id="f-msg" name="message" placeholder="Resort, dates, number of guests, or your campaign idea"></textarea></label>
+      <input type="hidden" name="source" id="f-src"><label>Message<textarea id="f-msg" name="message" placeholder="Resort, dates, number of guests, or your campaign idea"></textarea></label>
       <button class="book" type="submit">Send</button>
       <p class="msg" id="enq-msg" aria-live="polite"></p>
     </form>
@@ -886,8 +944,11 @@ footer ul a:hover{color:var(--wine)}
   document.querySelector('.arrows .prev').onclick=function(){step(-1)};
   document.querySelector('.arrows .next').onclick=function(){step(1)};
 
+  var SRC='',FROM='';
+  document.addEventListener('click',function(e){var el=e.target.closest('a,button');if(!el)return;var l=el.getAttribute('data-req')||el.getAttribute('data-pay')||el.getAttribute('data-enquire')||el.getAttribute('aria-label')||el.textContent.replace(/\s+/g,' ').trim();SRC=((location.hash||'#home').slice(1)||'home')+' page · '+l.slice(0,120)},true);
+  window.addEventListener('hashchange',function(e){if(location.hash==='#contact'){var o=(e.oldURL.split('#')[1]||'home');FROM=o==='contact'?FROM:o}});
   var dr=document.getElementById('drawer'),topic=document.getElementById('f-topic'),sub=document.getElementById('dr-sub'),msg=document.getElementById('enq-msg');
-  function openDr(t,note){if(t)topic.value=t;msg.textContent=note||'';dr.classList.add('open');dr.setAttribute('aria-hidden','false');setTimeout(function(){document.getElementById('f-name').focus()},50)}
+  function openDr(t,note){document.getElementById('f-src').value=SRC||((location.hash||'#home')+' · '+(t||''));if(t)topic.value=t;msg.textContent=note||'';dr.classList.add('open');dr.setAttribute('aria-hidden','false');setTimeout(function(){document.getElementById('f-name').focus()},50)}
   function closeDr(){dr.classList.remove('open');dr.setAttribute('aria-hidden','true')}
   document.querySelectorAll('[data-enquire]').forEach(function(el){el.addEventListener('click',function(e){e.preventDefault();openDr(el.getAttribute('data-enquire'))})});
   document.querySelectorAll('[data-pay]').forEach(function(el){el.addEventListener('click',function(e){e.preventDefault();openDr('Brand partnership','"'+el.getAttribute('data-pay')+'": send us your details and we will email you a secure payment link.')})});
@@ -1030,7 +1091,10 @@ footer ul a:hover{color:var(--wine)}
     openDr('Booking a stay or service');});
 
   var mainEl=document.getElementById('top');
-  var ROUTES={'chalets':'page-chalets','services':'page-services','brand-partners':'page-brands','media':'page-brands','ambassador':'page-brands','features':'page-features','helicopter':'page-services','brands':'page-brands','partners':'page-partners'};
+  (function(){var f=document.getElementById('ct-form'),m=document.getElementById('ct-msg');f.addEventListener('submit',function(e){e.preventDefault();document.getElementById('ct-src').value='Contact page'+(FROM?' · arrived from '+FROM+' page':' · direct visit');
+    if(!/skiqueens\.co\.uk$|netlify\.app$/.test(location.hostname)){m.textContent='Preview: messages will arrive in your inbox on the live site.';return}
+    m.textContent='Sending…';fetch('/',{method:'POST',headers:{'Content-Type':'application/x-www-form-urlencoded'},body:new URLSearchParams(new FormData(f)).toString()}).then(function(r){if(!r.ok)throw 0;m.textContent='Thank you. Our team will be in touch.';f.reset()}).catch(function(){m.textContent='Your message could not be sent. Please email arina@skiqueens.co.uk.'})})})();
+  var ROUTES={'chalets':'page-chalets','services':'page-services','brand-partners':'page-brands','media':'page-brands','ambassador':'page-brands','features':'page-features','helicopter':'page-services','brands':'page-brands','partners':'page-partners','contact':'page-contact'};
   function route(){
     var h=location.hash.slice(1), m=h.match(/^chalet-(\d\d)$/), pid=m?'page-chalets':ROUTES[h];
     document.querySelectorAll('.page').forEach(function(p){p.hidden=p.id!==pid});
@@ -1045,6 +1109,7 @@ footer ul a:hover{color:var(--wine)}
       var t2=h&&h!=='top'&&document.getElementById(h); setTimeout(function(){if(t2)t2.scrollIntoView({behavior:'instant'}); else window.scrollTo({top:0,behavior:'instant'});},0);
     }
   }
+  (function(){try{var g=new URLSearchParams(location.search).get('go');if(g&&/^[a-z0-9-]+$/.test(g))history.replaceState(null,'','/#'+g)}catch(e){}})();
   window.addEventListener('hashchange',route);
   route();
 })();
