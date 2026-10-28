@@ -230,6 +230,8 @@ header{position:sticky;top:env(safe-area-inset-top,0px);z-index:80;background:va
 .ig small{display:block;font-size:.8rem;margin-bottom:8px}
 .ig-row{display:grid;grid-template-columns:repeat(6,1fr);gap:12px;margin-top:40px}
 .ig-row a{aspect-ratio:4/5;position:relative;overflow:hidden;background:var(--ph)}
+.ig-row a::after{content:"";position:absolute;inset:0;background:rgba(74,25,32,0);transition:background .3s}
+.ig-row a:hover::after{background:rgba(74,25,32,.25)}
 .ig-row img{width:100%;height:100%;object-fit:cover;transition:transform .6s}
 .ig-row a:hover img{transform:scale(1.04)}
 @media (max-width:860px){.ig-row{grid-template-columns:repeat(3,1fr)}}
@@ -561,6 +563,9 @@ footer ul a:hover{color:var(--wine)}
         <a href="https://www.instagram.com/skiqueens/" target="_blank" rel="noopener"><img src="images/courchevel-chalets-dusk-2576.jpg" srcset="images/courchevel-chalets-dusk-800.jpg 800w, images/courchevel-chalets-dusk-1400.jpg 1400w, images/courchevel-chalets-dusk-2576.jpg 2576w" sizes="(max-width:860px) 100vw, 50vw" loading="lazy" decoding="async" alt="Ski Queens Instagram post" style="object-position:25% 50%"></a>
         <a href="https://www.instagram.com/skiqueens/" target="_blank" rel="noopener"><img src="images/heels-chairlift-zermatt-2576.jpg" srcset="images/heels-chairlift-zermatt-800.jpg 800w, images/heels-chairlift-zermatt-1400.jpg 1400w, images/heels-chairlift-zermatt-2576.jpg 2576w" sizes="(max-width:860px) 100vw, 50vw" loading="lazy" decoding="async" alt="Ski Queens Instagram post" style="object-position:20% 50%"></a>
         <a href="https://www.instagram.com/skiqueens/" target="_blank" rel="noopener"><img src="images/founder-black-gown-2576.jpg" srcset="images/founder-black-gown-800.jpg 800w, images/founder-black-gown-1400.jpg 1400w, images/founder-black-gown-2576.jpg 2576w" sizes="(max-width:860px) 100vw, 50vw" loading="lazy" decoding="async" alt="Ski Queens Instagram post" style="object-position:50% 50%"></a>
+      </div>
+      <div class="viewall" style="display:flex;gap:16px;justify-content:center;flex-wrap:wrap">
+        <a class="book" href="https://www.instagram.com/skiqueens/" target="_blank" rel="noopener">Follow @skiqueens ↗</a>
       </div>
     </div>
   </section>
