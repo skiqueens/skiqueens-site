@@ -348,6 +348,26 @@ footer ul a:hover{color:var(--wine)}
 .legend i{display:inline-block;width:10px;height:10px;border:1px solid var(--line);background:var(--white);margin-right:6px;vertical-align:-1px}
 .legend i.b{background:#E6DDD5}.legend i.s{background:var(--burgundy);border-color:var(--burgundy)}
 .aside .book{width:100%;padding:16px}
+.gal .ph[data-lb]{cursor:zoom-in}
+.gal-all{position:absolute;right:14px;bottom:14px;z-index:2;background:var(--white);color:var(--ink);border:0;font-family:var(--sans);font-size:.66rem;letter-spacing:.16em;text-transform:uppercase;padding:10px 14px;cursor:pointer}
+.gal-all:hover{background:var(--burgundy);color:var(--white)}
+.fp-tabs{display:flex;flex-wrap:wrap;border-bottom:1px solid var(--line)}
+.fp-tab{background:none;border:0;border-bottom:2px solid transparent;margin-bottom:-1px;padding:12px 16px 10px;font-family:var(--sans);font-size:.66rem;letter-spacing:.16em;text-transform:uppercase;color:var(--soft);cursor:pointer}
+.fp-tab.on{color:var(--ink);border-bottom-color:var(--burgundy)}
+.fp-fig{margin:0;background:var(--cream);padding:clamp(18px,4vw,40px);display:grid;gap:18px;justify-items:center}
+.fp-fig img{width:100%;max-height:560px;object-fit:contain;mix-blend-mode:multiply;cursor:zoom-in}
+.fp-fig figcaption{text-align:center;font-size:.88rem;line-height:1.6;color:var(--soft)}
+.fp-fig figcaption b{display:block;font-family:var(--display);font-weight:400;font-size:1.4rem;color:var(--ink)}
+.fp-note{font-size:.72rem;color:var(--soft);margin:0}
+.lb{position:fixed;inset:0;z-index:200;background:rgba(20,14,14,.94);display:none;align-items:center;justify-content:center;padding:60px 70px}
+.lb.open{display:flex}
+.lb img{max-width:100%;max-height:100%;object-fit:contain}
+.lb img.plan{background:#fff;padding:24px}
+.lb-x{position:absolute;top:14px;right:20px;background:none;border:0;color:#fff;font-size:2.4rem;cursor:pointer;line-height:1}
+.lb-nav{position:absolute;top:50%;transform:translateY(-50%);background:none;border:0;color:#fff;font-size:3rem;cursor:pointer;padding:10px 16px}
+.lb-nav.prev{left:6px}.lb-nav.next{right:6px}
+.lb-cap{position:absolute;bottom:16px;left:0;right:0;text-align:center;color:#E8DDD6;font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;margin:0}
+@media (max-width:600px){.lb{padding:56px 0}.lb-nav{font-size:2.2rem}.fp-tab{padding:10px 10px 8px;font-size:.6rem}}
 @media (max-width:900px){.cp-body{grid-template-columns:1fr;gap:40px}.aside{position:static}.gal{grid-template-columns:1fr 1fr;grid-template-rows:2fr 1fr 1fr;height:auto}.gal .ph{aspect-ratio:4/3}.gal .ph:first-child{grid-column:1/-1;grid-row:auto}.gal .ph:nth-child(n+4){display:none}.facts{grid-template-columns:repeat(2,1fr)}.amen{columns:1}}
 
 /* services listing */
@@ -1086,6 +1106,12 @@ footer ul a:hover{color:var(--wine)}
         <div class="facts" id="cp-facts"></div>
         <h3 style="font-size:1.8rem;margin-top:16px">The chalet</h3>
         <ul class="amen" id="cp-amen"></ul>
+        <div id="cp-plans" class="fp" hidden>
+          <h3 style="font-size:1.8rem;margin:16px 0 18px">Floor plans</h3>
+          <div class="fp-tabs" id="fp-tabs" role="tablist"></div>
+          <figure class="fp-fig"><img id="fp-img" alt="" decoding="async"><figcaption id="fp-cap"></figcaption></figure>
+          <p class="fp-note">Approximate measurements. Click a plan to enlarge.</p>
+        </div>
         <h3 style="font-size:1.8rem;margin-top:16px">Included in every stay</h3>
         <ul class="amen"><li>Chalet manager and housekeeping</li><li>Private chef, breakfast and dinner</li><li>Airport and resort transfers</li><li>Ski pass and equipment delivery</li><li>Concierge by Ski Queens</li><li>Add-ons: instructors, nannies, stylists</li></ul>
       </div>
@@ -1100,6 +1126,14 @@ footer ul a:hover{color:var(--wine)}
       </aside>
     </div>
   </div>
+</div>
+
+<div class="lb" id="lb" aria-hidden="true" role="dialog" aria-label="Photo viewer">
+  <button class="lb-x" id="lb-x" aria-label="Close">×</button>
+  <button class="lb-nav prev" id="lb-prev" aria-label="Previous">‹</button>
+  <img id="lb-img" alt="">
+  <button class="lb-nav next" id="lb-next" aria-label="Next">›</button>
+  <p class="lb-cap" id="lb-cap"></p>
 </div>
 
 <div class="drawer" id="drawer" aria-hidden="true">
@@ -1149,6 +1183,14 @@ footer ul a:hover{color:var(--wine)}
   var AREAS=['Courchevel 1850','Courchevel Moriond','Courchevel Village','Courchevel Le Praz'];
   var FEATS=['Ski-in, ski-out','Indoor pool','Spa & hammam','Cinema room','Private chef','Outdoor hot tub','Wine cellar','Boot room with heaters','Gym','Fireplace lounge','Kids’ playroom','Chauffeur service'];
   var seed=7;function rnd(){seed=(seed*9301+49297)%233280;return seed/233280}
+  var WDP='images/chalets/white-dream/';
+  var WDG=[['01-exterior','Exterior in winter','50% 55%'],['02-living-room','Living room with open fire'],['03-pool','Indoor pool'],['04-master-bedroom','Master bedroom'],['05-dining-room','Dining room'],['06-fireplace-lounge','Fireplace lounge'],['07-salon','Salon'],['08-view','The view over Courchevel'],['09-pool-jacuzzi','Pool and jacuzzi'],['10-family-room','Family room'],['11-bar','Glass bar'],['12-kitchen','Kitchen'],['13-gym','Gym'],['14-gym-lounge','Gym lounge'],['15-massage-room','Massage room'],['16-bedroom','Bedroom'],['17-bedroom-desk','Bedroom with desk'],['18-twin-bedroom','Twin bedroom'],['19-exterior-forest','The chalet among the pines']].map(function(g){return [WDP+g[0]+'.jpg',g[1],g[2]||'50% 50%',WDP+g[0]+'-800.jpg']});
+  var WD={real:true,no:'01',name:'Chalet White Dream',area:'Courchevel 1850',bed:6,bath:6,floors:5,guests:0,size:0,price:'',
+    img:WDP+'01-exterior-800.jpg',pos:'50% 55%',gal:WDG,
+    desc:['Set among snow-laden pines in Courchevel 1850, White Dream is a traditional Alpine chalet dressed entirely in white — whitewashed timber, soft furs, crystal chandeliers and an open fire at the heart of the living room.','Five floors unfold around a sweeping staircase and a lift. The living level opens onto two balconies; below it sit the bedrooms, including a master suite with a bay window, walk-in wardrobe and its own bathroom.','Further down is a private spa with an indoor pool, jacuzzi, sauna, massage room and a fully equipped gym, and on the lowest floor a family room with a glass bar — the place to gather after the last run.'],
+    facts:[[6,'Bedrooms'],[6,'Bathrooms'],[5,'Floors'],['Pool','Indoor, with jacuzzi'],['Spa','Sauna & massage'],['Lift','To every floor']],
+    feat:['Indoor pool','Jacuzzi','Sauna','Massage room','Gym','Lift to every floor','Open fireplace','Family room with glass bar','Two balconies','Master suite with walk-in wardrobe'],
+    plans:[['Living level','Living room, dining room, kitchen and two balconies','plan-living'],['Bedroom level','Master suite and three bedrooms, each with a bathroom','plan-bedrooms'],['Top floor','Bedroom, sitting room and bathroom','plan-top'],['Spa level','Indoor pool, sauna, gym and two bedrooms','plan-spa'],['Family level','Family room, sitting area and wet bar','plan-family']].map(function(x){return [x[0],x[1],WDP+x[2]+'.png']})};
   var CH=[];
   for(var i=1;i<=5;i++){
     var bed=4+Math.floor(rnd()*5), area=AREAS[i<=2?0:i-2];
@@ -1157,23 +1199,26 @@ footer ul a:hover{color:var(--wine)}
     var f=FEATS.slice().sort(function(){return rnd()-.5}).slice(0,6);
     if(area==='Courchevel 1850'&&f.indexOf('Ski-in, ski-out')<0)f[0]='Ski-in, ski-out';
     if(f.indexOf('Private chef')<0)f[5]='Private chef';
+    if(i===1){CH.push(WD);continue}
     CH.push({price:PRICE,img:['','images/site/c-ext.jpg','images/site/c-village1.jpg','images/site/c-village2.jpg','images/site/c-village1.jpg','images/site/c-village2.jpg'][i]||'',pos:['','50% 50%','45% 70%','30% 65%','78% 60%','80% 72%'][i],gal:i===1?[['images/site/c-living.jpg','Living room'],['images/site/c-ext.jpg','Exterior'],['images/site/c-dining.jpg','Dining room'],['images/site/c-pool.jpg','Pool'],['images/site/c-gym.jpg','Gym']]:null,no:('0'+i).slice(-2),name:'Chalet '+('0'+i).slice(-2),area:area,bed:bed,bath:bed+Math.floor(rnd()*2),guests:bed*2+(rnd()>.6?2:0),size:180+bed*60+Math.floor(rnd()*80),floors:2+Math.floor(rnd()*3),feat:f});
   }
   var sel=document.getElementById('fl-area');
   AREAS.forEach(function(a){var o=document.createElement('option');o.textContent=a;sel.appendChild(o)});
   var grid=document.getElementById('grid'),count=document.getElementById('count'),showAll=true;
+  function spec(c){return c.real?c.bed+' bedrooms · '+c.bath+' bathrooms · '+c.floors+' floors':c.bed+' bedrooms · '+c.guests+' guests · '+c.size+' m²'}
+  function fromTxt(c){return c.price?'From £'+c.price+' per week':(c.real?'Price on request':'From £ — per week')}
   function esc(s){return String(s).replace(/[&<>"]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]})}
   function render(){
     var a=sel.value,b=+document.getElementById('fl-bed').value,g=+document.getElementById('fl-guests').value,ft=document.getElementById('fl-feat').value;
     var list=CH.filter(function(c){return (!a||c.area===a)&&c.bed>=b&&c.guests>=g&&(!ft||c.feat.indexOf(ft)>=0)});
     count.textContent='';
     var full=list.length;if(!showAll&&!a&&!b&&!g&&!ft)list=list.slice(0,9);
-    grid.innerHTML=list.length?list.map(function(c){return '<button class="ch" data-no="'+c.no+'"><div class="ph"><span class="no">N°'+c.no+'</span>'+(c.img?'<img src="'+c.img+'" alt="'+esc(c.name)+'" loading="lazy" decoding="async" style="object-position:'+(c.pos||'50% 50%')+'">':'<span>Photo · '+esc(c.name)+'</span>')+'</div><span class="kicker">'+esc(c.area)+'</span><h3>'+esc(c.name)+'</h3><span class="spec">'+c.bed+' bedrooms · '+c.guests+' guests · '+c.size+' m²</span><span class="from">From '+(c.price?'£'+c.price:'£ —')+' per week</span></button>'}).join(''):'<p style="grid-column:1/-1;text-align:center;padding:40px 0">No chalet matches these filters. Try fewer filters, or <button class="more" data-enquire="Booking a stay or service" style="display:inline-flex">ask our concierge</button>.</p>';
+    grid.innerHTML=list.length?list.map(function(c){return '<button class="ch" data-no="'+c.no+'"><div class="ph"><span class="no">N°'+c.no+'</span>'+(c.img?'<img src="'+c.img+'" alt="'+esc(c.name)+'" loading="lazy" decoding="async" style="object-position:'+(c.pos||'50% 50%')+'">':'<span>Photo · '+esc(c.name)+'</span>')+'</div><span class="kicker">'+esc(c.area)+'</span><h3>'+esc(c.name)+'</h3><span class="spec">'+spec(c)+'</span><span class="from">'+fromTxt(c)+'</span></button>'}).join(''):'<p style="grid-column:1/-1;text-align:center;padding:40px 0">No chalet matches these filters. Try fewer filters, or <button class="more" data-enquire="Booking a stay or service" style="display:inline-flex">ask our concierge</button>.</p>';
     var mb=document.getElementById('morech');mb.hidden=list.length>=full;mb.textContent='View all chalets';
   }
   document.getElementById('morech').onclick=function(){showAll=true;render()};
   var hc=document.getElementById('home-chalets');
-  hc.innerHTML=CH.slice(0,3).map(function(c){return '<button class="ch" data-no="'+c.no+'"><div class="ph"><span class="no">N°'+c.no+'</span>'+(c.img?'<img src="'+c.img+'" alt="'+esc(c.name)+'" loading="lazy" decoding="async" style="object-position:'+(c.pos||'50% 50%')+'">':'<span>Photo · '+esc(c.name)+'</span>')+'</div><span class="kicker">'+esc(c.area)+'</span><h3>'+esc(c.name)+'</h3><span class="spec">'+c.bed+' bedrooms · '+c.guests+' guests · '+c.size+' m²</span><span class="from">From '+(c.price?'£'+c.price:'£ —')+' per week</span></button>'}).join('');
+  hc.innerHTML=CH.slice(0,3).map(function(c){return '<button class="ch" data-no="'+c.no+'"><div class="ph"><span class="no">N°'+c.no+'</span>'+(c.img?'<img src="'+c.img+'" alt="'+esc(c.name)+'" loading="lazy" decoding="async" style="object-position:'+(c.pos||'50% 50%')+'">':'<span>Photo · '+esc(c.name)+'</span>')+'</div><span class="kicker">'+esc(c.area)+'</span><h3>'+esc(c.name)+'</h3><span class="spec">'+spec(c)+'</span><span class="from">'+fromTxt(c)+'</span></button>'}).join('');
   hc.addEventListener('click',function(e){var b=e.target.closest('.ch');if(b)location.hash='#chalet-'+b.getAttribute('data-no')});
   ['fl-area','fl-bed','fl-guests','fl-feat'].forEach(function(id){document.getElementById(id).addEventListener('change',render)});
   render();
@@ -1187,18 +1232,38 @@ footer ul a:hover{color:var(--wine)}
     document.getElementById('cp-no').textContent='N°'+cur.no;
     document.getElementById('cp-area').textContent=cur.area;
     document.getElementById('cp-name').textContent=cur.name;
-    document.getElementById('cp-desc').textContent='Sample description — your text for '+cur.name+' goes here: the setting, the views, the interiors and what makes this chalet special. Two or three short paragraphs work best.';
-    document.getElementById('cp-gal').innerHTML=(cur.gal||[['','Living room'],['','Exterior'],['','Master bedroom'],['','Spa'],['','Dining']]).map(function(g){return '<div class="ph">'+(g[0]?'<img src="'+g[0]+'" alt="'+esc(cur.name)+' – '+g[1]+'">':'<span>Photo · '+g[1]+'</span>')+'</div>'}).join('');
-    document.getElementById('cp-facts').innerHTML=[[cur.bed,'Bedrooms'],[cur.bath,'Bathrooms'],[cur.guests,'Guests'],[cur.size+' m²','Living space'],[cur.floors,'Floors'],[cur.feat.indexOf('Ski-in, ski-out')>=0?'Yes':'Shuttle','Ski-in, ski-out']].map(function(f){return '<div><b>'+f[0]+'</b><span>'+f[1]+'</span></div>'}).join('');
+    document.getElementById('cp-desc').innerHTML=cur.desc?cur.desc.map(esc).join('<br><br>'):esc('Sample description — your text for '+cur.name+' goes here: the setting, the views, the interiors and what makes this chalet special. Two or three short paragraphs work best.');
+    var G=cur.gal||[['','Living room'],['','Exterior'],['','Master bedroom'],['','Spa'],['','Dining']];
+    document.getElementById('cp-gal').innerHTML=G.slice(0,5).map(function(g,k){return '<div class="ph"'+(g[0]?' data-lb="'+k+'"':'')+'>'+(g[0]?'<img src="'+g[0]+'" alt="'+esc(cur.name)+' – '+esc(g[1])+'" style="object-position:'+(g[2]||'50% 50%')+'">':'<span>Photo · '+g[1]+'</span>')+(k===4&&G.length>5?'<button class="gal-all" data-lb="0">View all '+G.length+' photos</button>':'')+'</div>'}).join('');
+    var pw=document.getElementById('cp-plans');
+    if(cur.plans){pw.hidden=false;
+      document.getElementById('fp-tabs').innerHTML=cur.plans.map(function(x,k){return '<button class="fp-tab'+(k?'':' on')+'" data-k="'+k+'">'+esc(x[0])+'</button>'}).join('');
+      showPlan(0)}else pw.hidden=true;
+    document.getElementById('cp-facts').innerHTML=(cur.facts||[[cur.bed,'Bedrooms'],[cur.bath,'Bathrooms'],[cur.guests,'Guests'],[cur.size+' m²','Living space'],[cur.floors,'Floors'],[cur.feat.indexOf('Ski-in, ski-out')>=0?'Yes':'Shuttle','Ski-in, ski-out']]).map(function(f){return '<div><b>'+f[0]+'</b><span>'+f[1]+'</span></div>'}).join('');
     document.getElementById('cp-amen').innerHTML=cur.feat.map(function(f){return '<li>'+esc(f)+'</li>'}).join('');
-    document.getElementById('cp-price').innerHTML=(cur.price?'From £'+cur.price:'£ —')+' <small>per week</small>';
+    document.getElementById('cp-price').innerHTML=cur.price?'From £'+cur.price+' <small>per week</small>':(cur.real?'Price on request':'£ — <small>per week</small>');
     var s2=parseInt(cur.no,10)*13;
-    document.getElementById('cp-weeks').innerHTML=WEEKS.map(function(w,k){var booked=((s2+k*7)%10)<4;var e=new Date(w);e.setDate(e.getDate()+7);return '<button class="wk'+(booked?' booked':'')+'"'+(booked?' disabled':'')+' data-k="'+k+'">'+fmt(w)+'<small>to '+fmt(e)+'</small></button>'}).join('');
+    document.getElementById('cp-weeks').innerHTML=WEEKS.map(function(w,k){var booked=cur.real?(cur.booked||[]).indexOf(k)>=0:((s2+k*7)%10)<4;var e=new Date(w);e.setDate(e.getDate()+7);return '<button class="wk'+(booked?' booked':'')+'"'+(booked?' disabled':'')+' data-k="'+k+'">'+fmt(w)+'<small>to '+fmt(e)+'</small></button>'}).join('');
     document.getElementById('cp-sel').textContent='Choose an available week.';
     cp.classList.add('open');cp.setAttribute('aria-hidden','false');cp.scrollTop=0;document.body.style.overflow='hidden';
     try{history.replaceState(null,'','#chalet-'+cur.no)}catch(e){}
   }
   function closeChalet(){if(!cp.classList.contains('open'))return;cp.classList.remove('open');cp.setAttribute('aria-hidden','true');document.body.style.overflow='';try{history.replaceState(null,'','#chalets')}catch(e){}}
+  function showPlan(k){var x=cur.plans[k];var im=document.getElementById('fp-img');im.src=x[2];im.alt=cur.name+' – floor plan, '+x[0];im.setAttribute('data-k',k);
+    document.getElementById('fp-cap').innerHTML='<b>'+esc(x[0])+'</b>'+esc(x[1]);
+    document.querySelectorAll('#fp-tabs .fp-tab').forEach(function(t){t.classList.toggle('on',+t.getAttribute('data-k')===k)})}
+  document.getElementById('fp-tabs').addEventListener('click',function(e){var t=e.target.closest('.fp-tab');if(t)showPlan(+t.getAttribute('data-k'))});
+  var lb=document.getElementById('lb'),LB=[],lbk=0;
+  function lbShow(){var x=LB[lbk];document.getElementById('lb-img').src=x[0];document.getElementById('lb-img').alt=x[1];document.getElementById('lb-cap').textContent=x[1]+'  ·  '+(lbk+1)+' / '+LB.length;document.getElementById('lb-img').className=x[2]?'plan':''}
+  function lbOpen(list,k){LB=list;lbk=k;lbShow();lb.classList.add('open');lb.setAttribute('aria-hidden','false')}
+  function lbClose(){lb.classList.remove('open');lb.setAttribute('aria-hidden','true')}
+  document.getElementById('cp-gal').addEventListener('click',function(e){var t=e.target.closest('[data-lb]');if(t&&cur.gal){e.stopPropagation();lbOpen(cur.gal.map(function(g){return [g[0],g[1]]}),+t.getAttribute('data-lb'))}});
+  document.getElementById('fp-img').addEventListener('click',function(){lbOpen(cur.plans.map(function(p){return [p[2],'Floor plan · '+p[0],1]}),+this.getAttribute('data-k'))});
+  document.getElementById('lb-x').onclick=lbClose;
+  document.getElementById('lb-prev').onclick=function(){lbk=(lbk-1+LB.length)%LB.length;lbShow()};
+  document.getElementById('lb-next').onclick=function(){lbk=(lbk+1)%LB.length;lbShow()};
+  lb.addEventListener('click',function(e){if(e.target===lb)lbClose()});
+  document.addEventListener('keydown',function(e){if(!lb.classList.contains('open'))return;if(e.key==='ArrowLeft')document.getElementById('lb-prev').click();if(e.key==='ArrowRight')document.getElementById('lb-next').click()});
   grid.addEventListener('click',function(e){var b=e.target.closest('.ch');if(b)openChalet(b.getAttribute('data-no'))});
   document.getElementById('cp-back').onclick=closeChalet;
   document.getElementById('cp-weeks').addEventListener('click',function(e){var b=e.target.closest('.wk');if(!b||b.disabled)return;
@@ -1209,7 +1274,7 @@ footer ul a:hover{color:var(--wine)}
     document.getElementById('f-msg').value=cur.name+' ('+cur.area+')'+(week?', week of '+week:'')+'. Number of guests: ';
     openDr('Booking a stay or service',week?'':'Tip: choose a week in the calendar, or tell us your dates below.');
   };
-  document.addEventListener('keydown',function(e){if(e.key==='Escape'&&!dr.classList.contains('open'))closeChalet()});
+  document.addEventListener('keydown',function(e){if(e.key!=='Escape')return;if(lb.classList.contains('open')){lbClose();return}if(!dr.classList.contains('open'))closeChalet()});
   /* ---- Services listing: sample providers until the real list arrives ---- */
   /* real providers from skiqueens.co.uk where known; others are samples */
   var SV={
