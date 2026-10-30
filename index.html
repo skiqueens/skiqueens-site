@@ -1253,7 +1253,11 @@ footer ul a:hover{color:var(--wine)}
     img:'images/chalets/perce-neige/01-800.jpg',gal:GAL('perce-neige',27,'Chalet Perce Neige'),
     desc:['Chalet Perce Neige is a ski-out chalet in Courchevel 1850, glowing among the pines at dusk — smoked oak, dark marble and a sunken living room gathered around an open fire.','Across 687 m², eight bedrooms and nine bathrooms sleep up to fifteen guests, with the slopes right at the door.','Downstairs, a spa brings together an indoor jacuzzi, a Nordic bath, a hammam, a massage room and a fitness room, alongside a cinema room, a game room and a bar.'],
     feat:['Ski-out','Indoor jacuzzi','Nordic bath','Hammam','Massage room','Fitness room','Cinema room','Game room','Bar']};
-  var CPOWPOW={no:'14',name:'Chalet PowPow',area:'Courchevel 1850',img:'images/chalets/powpow/01-800.jpg',gal:GAL('powpow',32,'Chalet PowPow'),feat:[]};
+  var CPOWPOW={opt:3,name:'Chalet Pow Pow',area:'Courchevel 1850',bed:7,bath:7,guests:15,size:650,price:'€90,000',
+    dist:{centre:'1 km',lift:'170 m',slopes:'50 m'},
+    img:'images/chalets/powpow/01-800.jpg',gal:GAL('powpow',32,'Chalet Pow Pow'),
+    desc:['Chalet Pow Pow is a bright, playful chalet in Courchevel 1850, just 50 m from the slopes — white timber, bold splashes of colour and a living room with a glass-sided fire and wide windows onto the trees.','Across 650 m², seven bedrooms and seven bathrooms sleep fifteen guests, with the ski lift 170 m away.','Downstairs, a long swimming pool sits beside an indoor jacuzzi, a hammam, a massage room and a fitness room, and a cinema and a games room with snooker and table football keep everyone entertained.'],
+    feat:['Swimming pool','Hammam','Indoor jacuzzi','Cinema','Fitness room','Massage room','Snooker','Table football']};
   var CH=[WD,NQ,CALBR,CALP,CBLRS,CBRL,CEDELSTONE,CEDN,CELIXIR,CELYA,CGR,CMOON,CPERCENEIGE,CPOWPOW];
   CH.forEach(function(c,i){c._i=i});CH.sort(function(a,b){return ((a.opt||99)-(b.opt||99))||(a._i-b._i)});CH.forEach(function(c,i){c.no=('0'+(i+1)).slice(-2)});
   var AREAS=CH.map(function(c){return c.area}).filter(function(a,i,arr){return arr.indexOf(a)===i});
