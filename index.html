@@ -1183,80 +1183,81 @@ footer ul a:hover{color:var(--wine)}
   function GAL(slug,n,name){var a=[];for(var i=1;i<=n;i++){var k=('0'+i).slice(-2);a.push(['images/chalets/'+slug+'/'+k+'.jpg',name,'50% 50%','images/chalets/'+slug+'/'+k+'-800.jpg'])}return a}
   function PLANS(slug,n){var a=[];for(var i=1;i<=n;i++)a.push(['Plan '+i,'','images/chalets/'+slug+'/plan-'+i+'.png']);return a}
   var WDP='images/chalets/white-dream/';
-  var WDG=[['01-exterior','Exterior in winter','50% 55%'],['02-living-room','Living room with open fire'],['03-pool','Indoor pool'],['04-master-bedroom','Master bedroom'],['05-dining-room','Dining room'],['06-fireplace-lounge','Fireplace lounge'],['07-salon','Salon'],['08-view','The view over Courchevel'],['09-pool-jacuzzi','Pool and jacuzzi'],['10-family-room','Family room'],['11-bar','Glass bar'],['12-kitchen','Kitchen'],['13-gym','Gym'],['14-gym-lounge','Gym lounge'],['15-massage-room','Massage room'],['16-bedroom','Bedroom'],['17-bedroom-desk','Bedroom with desk'],['18-twin-bedroom','Twin bedroom'],['19-exterior-forest','The chalet among the pines']].map(function(g){return [WDP+g[0]+'.jpg',g[1],g[2]||'50% 50%',WDP+g[0]+'-800.jpg']});
+  var WDG=[['01-exterior','Exterior in winter','50% 55%'],['02-living-room','Living room with open fire'],['03-pool','Indoor pool'],['04-master-bedroom','Master bedroom'],['05-dining-room','Dining room'],['06-fireplace-lounge','Fireplace lounge'],['07-salon','Salon'],['08-view','The view over Courchevel'],['09-pool-jacuzzi','Pool and jacuzzi'],['10-family-room','Family room'],['11-bar','Glass bar'],['12-kitchen','Kitchen'],['13-gym','Gym'],['14-gym-lounge','Gym lounge'],['15-massage-room','Massage room'],['16-bedroom','Bedroom'],['17-bedroom-desk','Bedroom with desk'],['18-twin-bedroom','Twin bedroom'],['19-exterior-forest','The chalet among the pines']].map(function(g){return [WDP+g[0]+'.jpg','Chalet White Dream',g[2]||'50% 50%',WDP+g[0]+'-800.jpg']});
   var WD={opt:1,no:'01',name:'Chalet White Dream',area:'Courchevel 1850',bed:6,bath:6,guests:12,size:450,price:'€40,000',booked:[0,1,2,3],
     dist:{centre:'350 m',lift:'150 m',slopes:'150 m'},
     img:WDP+'01-exterior-800.jpg',pos:'50% 55%',gal:WDG,
-    desc:['Set among snow-laden pines in Courchevel 1850, White Dream is a traditional Alpine chalet dressed entirely in white — whitewashed timber, soft furs, crystal chandeliers and an open fire at the heart of the living room.','Across 450 m², six bedrooms and six bathrooms sleep twelve guests. Five floors unfold around a sweeping staircase and a lift, with two balconies off the living room and a master suite with a bay window and walk-in wardrobe.','A private spa brings together an indoor pool, an indoor jacuzzi, a hammam and a massage room, alongside a fitness room, a cinema and a bar.'],
+    desc:['Chalet in Courchevel 1850.', '450 m² with six bedrooms and six bathrooms for twelve guests, with a swimming pool, hammam, indoor jacuzzi, cinema, fitness room, bar and massage room.'],
     feat:['Swimming pool','Hammam','Indoor jacuzzi','Cinema','Fitness room','Bar','Massage room'],
-    plans:[['Living level','Living room, dining room, kitchen and two balconies','plan-living'],['Bedroom level','Master suite and three bedrooms, each with a bathroom','plan-bedrooms'],['Top floor','Bedroom, sitting room and bathroom','plan-top'],['Spa level','Indoor pool, sauna, gym and two bedrooms','plan-spa'],['Family level','Family room, sitting area and wet bar','plan-family']].map(function(x){return [x[0],x[1],WDP+x[2]+'.png']})};
+    plans:['plan-living','plan-bedrooms','plan-top','plan-spa','plan-family'].map(function(x,k){return ['Plan '+(k+1),'',WDP+x+'.png']})
+  };
   var NQP='images/chalets/nanuq/';
-  var NQG=[['01-exterior','The chalet in winter'],['02-living-room','Living room with open fire'],['03-pool','Indoor pool'],['04-dining-room','Dining room'],['05-lounge-view','Lounge with mountain views'],['06-living-dining','Living and dining room'],['07-fireplace-lounge','Fireplace lounge'],['08-pool-lounge','Pool lounge'],['09-pool-spa','Pool and spa'],['10-outdoor-hot-tub','Outdoor hot tub'],['11-cinema','Cinema room'],['12-massage-room','Massage room'],['13-kids-room','Children’s playroom'],['14-kitchen','Kitchen'],['15-bedroom-balcony','Bedroom with balcony'],['16-bedroom-view','Bedroom'],['17-bedroom','Bedroom'],['18-bedroom-terrace','Bedroom'],['19-bedroom-mountain','Bedroom'],['20-bathroom','Bathroom'],['21-shower-room','Shower room'],['22-vanity','Bathroom']].map(function(g){return [NQP+g[0]+'.jpg',g[1],'50% 50%',NQP+g[0]+'-800.jpg']});
+  var NQG=[['01-exterior','The chalet in winter'],['02-living-room','Living room with open fire'],['03-pool','Indoor pool'],['04-dining-room','Dining room'],['05-lounge-view','Lounge with mountain views'],['06-living-dining','Living and dining room'],['07-fireplace-lounge','Fireplace lounge'],['08-pool-lounge','Pool lounge'],['09-pool-spa','Pool and spa'],['10-outdoor-hot-tub','Outdoor hot tub'],['11-cinema','Cinema room'],['12-massage-room','Massage room'],['13-kids-room','Children’s playroom'],['14-kitchen','Kitchen'],['15-bedroom-balcony','Bedroom with balcony'],['16-bedroom-view','Bedroom'],['17-bedroom','Bedroom'],['18-bedroom-terrace','Bedroom'],['19-bedroom-mountain','Bedroom'],['20-bathroom','Bathroom'],['21-shower-room','Shower room'],['22-vanity','Bathroom']].map(function(g){return [NQP+g[0]+'.jpg','Chalet Nanuq','50% 50%',NQP+g[0]+'-800.jpg']});
   var NQ={opt:2,no:'02',name:'Chalet Nanuq',area:'Courchevel 1850',bed:6,bath:6,guests:12,size:518,price:'€50,000',ski:true,
     dist:{centre:'400 m',lift:'150 m',slopes:'0 m'},
     img:NQP+'01-exterior-800.jpg',pos:'50% 50%',gal:NQG,
-    desc:['Chalet Nanuq is a warm, timber-clad retreat in Courchevel 1850 — ski-in, ski-out and close to La Ferme de Saint Amour, with weathered wood, soft lighting and generous sofas gathered around a long open fire.','Across 518 m², six bedrooms and six bathrooms sleep twelve guests, and the living and dining rooms look out over the slopes.','A private spa brings together an indoor pool, a hammam and a massage room, alongside a fitness room, a cinema, a game room and a bar.'],
+    desc:['Ski-in, ski-out chalet in Courchevel 1850, close to La Ferme de Saint Amour.', '518 m² with six bedrooms and six bathrooms for twelve guests, with a swimming pool, hammam, massage room, cinema, game room, fitness room and bar.'],
     feat:['Ski-in, ski-out','Swimming pool','Hammam','Massage room','Cinema','Game room','Fitness room','Bar']};
   var CALBR={name:'Chalet Albaron',area:'Courchevel 1850',bed:6,bath:6,guests:12,size:300,price:'€24,500',
     dist:{centre:'0 m',lift:'0 m',slopes:'150 m'},
     img:'images/chalets/albr/01-800.jpg',gal:GAL('albr',10,'Chalet Albaron'),
-    desc:['Chalet Albaron sits in the very centre of Courchevel 1850, right by the ski lift — carved timber, fur throws and gold mosaic, with a living and dining room gathered around an open fire.','Across 300 m², six bedrooms and six bathrooms sleep up to twelve guests, with the slopes 150 m away.','A private spa brings together a swimming pool, an indoor jacuzzi beside a stone fireplace, a hammam, a massage room and a fitness room, with a cinema for the evenings.'],
+    desc:['Chalet in Courchevel 1850, close to the centre.', '300 m² with six bedrooms and six bathrooms for up to twelve guests, with a swimming pool, hammam, massage room, cinema, indoor jacuzzi and fitness room.'],
     feat:['Swimming pool','Indoor jacuzzi','Hammam','Massage room','Fitness room','Cinema']};
   var CALP={opt:4,no:'03',name:'Chalet Alpin',area:'Courchevel 1850',bed:6,bath:6,guests:14,size:600,price:'€85,000',
     dist:{centre:'1.2 km',lift:'50 m',slopes:'20 m'},
     img:'images/chalets/alp/01-800.jpg',gal:GAL('alp',28,'Chalet Alpin'),
-    desc:['Chalet Alpin sits just above the slopes in Courchevel 1850, close to Cheval Blanc — stone and weathered timber outside, with balconies looking straight across the pistes to the peaks.','Across 600 m², six bedrooms and six bathrooms sleep fourteen guests, with a living room and open fire framed by wide windows onto the mountains, and the ski lift only 50 m away.','A private spa brings together an indoor swimming pool, a hammam, a jacuzzi and a massage room.'],
+    desc:['Chalet in Courchevel 1850, close to Cheval Blanc.', '600 m² with six bedrooms and six bathrooms for fourteen guests, with a swimming pool, hammam, jacuzzi and massage room.'],
     feat:['Swimming pool','Hammam','Jacuzzi','Massage room']};
   var CBLRS={opt:2,name:'Chalet Bellarossa',area:'Courchevel 1850',bed:6,bedTxt:'5 + 1',bath:6,guests:14,size:320,price:'€45,000',
     dist:{centre:'1.5 km',lift:'20 m',slopes:'0 m'},
     img:'images/chalets/blrs/01-800.jpg',gal:GAL('blrs',38,'Chalet Bellarossa'),
-    desc:['Chalet Bellarossa sits right by the slopes in Courchevel 1850, away from the bustle of the centre — weathered oak, white marble and a double-height living room with an open fire and tall windows onto the snow.','Five bedrooms plus one more sleep fourteen guests across 320 m², each bedroom calm and pared back, with six marble bathrooms between them.','An indoor swimming pool sits beneath a sweeping mountain panorama, and outside a sauna and a jacuzzi wait among the pines, with the ski lift only 20 m away.'],
+    desc:['Chalet in Courchevel 1850, close to the slopes and away from the centre.', '320 m² with five bedrooms plus one and six bathrooms for fourteen guests, with a swimming pool, sauna and outdoor jacuzzi.'],
     feat:['Swimming pool','Sauna','Outdoor jacuzzi']};
   var CBRL={opt:2,name:'Chalet Barolo',area:'Courchevel 1850',bed:6,bath:6,guests:12,size:300,price:'€22,000',
     dist:{centre:'350 m',lift:'100 m',slopes:'20 m'},
     img:'images/chalets/brl/01-800.jpg',gal:GAL('brl',14,'Chalet Barolo'),
-    desc:['Chalet Barolo is a warm, richly dressed chalet in Courchevel 1850, just 350 m from the centre — golden carved timber, deep red velvet and a long dining table set before windows onto the slopes.','Across 300 m², six bedrooms and six bathrooms sleep twelve guests, with the slopes only 20 m away and the lifts a short walk beyond.','Downstairs, a private spa brings together a pool, a jacuzzi and a hammam, and a cinema completes the chalet for evenings in.'],
+    desc:['Chalet in Courchevel 1850.', '300 m² with six bedrooms and six bathrooms for twelve guests, with a jacuzzi, hammam, pool and cinema.'],
     feat:['Swimming pool','Jacuzzi','Hammam','Cinema']};
   var CEDELSTONE={opt:3,name:'Chalet Edelstone',area:'Courchevel 1850',bed:8,bedTxt:'5 + 3',bath:8,guests:14,size:414,price:'€30,000',
     dist:{centre:'2 km',lift:'30 m',slopes:'20 m'},
     img:'images/chalets/edelstone/01-800.jpg',gal:GAL('edelstone',31,'Chalet Edelstone'),
-    desc:['Chalet Edelstone stands among snowy pines in Courchevel 1850, just 20 m from the slopes and 30 m from the lift — stone and timber outside, with a bright, double-height living room around a glass-sided fire.','Across 414 m², five bedrooms plus three more sleep fourteen guests, with eight bathrooms between them and a long dining table set before the windows.','A jacuzzi and a cinema complete the chalet for the evenings after skiing.'],
+    desc:['Chalet in Courchevel 1850.', '414 m² with five bedrooms plus three and eight bathrooms for fourteen guests, with a jacuzzi and cinema.'],
     feat:['Jacuzzi','Cinema']};
   var CEDN={opt:1,name:'Chalet Eden',area:'Courchevel 1850',bed:5,bath:5,guests:10,size:254,price:'€33,000',
     dist:{centre:'150 m',lift:'220 m',slopes:'220 m'},
     img:'images/chalets/edn/01-800.jpg',gal:GAL('edn',19,'Chalet Eden'),
-    desc:['Chalet Eden sits just 150 m from the centre of Courchevel 1850, on the same road as the K2 Palace — warm reclaimed timber, soft white sofas and a long dining table before wide windows onto the mountains.','Across 254 m², five bedrooms and five bathrooms sleep ten guests, with the slopes and the ski lift a short walk away.','Below, a private spa brings together a swimming pool framed in dark stone, a hammam and a massage room, with a bar for the evenings.'],
+    desc:['Chalet close to the centre of Courchevel 1850, on the same road as the K2 Palace.', '254 m² with five bedrooms and five bathrooms for ten guests, with a swimming pool, hammam, bar and massage room.'],
     feat:['Swimming pool','Hammam','Bar','Massage room']};
   var CELIXIR={opt:4,name:'Chalet Elixir',area:'Courchevel 1850',bed:6,bath:6,guests:14,size:717,price:'€80,000',
     dist:{centre:'400 m',lift:'150 m',slopes:'0 m'},
     img:'images/chalets/elixir/01-800.jpg',gal:GAL('elixir',41,'Chalet Elixir'),plans:PLANS('elixir',5),
-    desc:['Chalet Elixir is a grand, contemporary chalet close to the centre of Courchevel 1850 — pale oak, soft grey stone and a double-sided fire between the living and dining rooms, with views across the valley.','Across 717 m², six bedrooms and six bathrooms sleep fourteen guests, with the slopes right at the door and the ski lift 150 m away.','The lower floors are given over to leisure: a swimming pool beneath crystal chandeliers, a hammam, a massage room and a fitness room, alongside a cinema, a game room and a bar.'],
+    desc:['Chalet close to the centre of Courchevel 1850.', '717 m² with six bedrooms and six bathrooms for fourteen guests, with a swimming pool, hammam, massage room, cinema, game room, fitness room and bar.'],
     feat:['Swimming pool','Hammam','Massage room','Cinema','Game room','Fitness room','Bar']};
   var CELYA={opt:3,name:'Chalet Elya',area:'Courchevel 1850',bed:6,bath:6,size:890,price:'€115,000',
     dist:{centre:'200 m',lift:'300 m',slopes:'200 m'},
     img:'images/chalets/elya/01-800.jpg',gal:GAL('elya',20,'Chalet Elya'),
-    desc:['Chalet Elya is a brand-new chalet in the heart of Courchevel 1850, just 200 m from the centre — soaring timber ceilings, a suspended open fire and walls of glass looking out to the peaks.','Across 890 m², six bedrooms and six bathrooms are finished in warm walnut and veined stone, with the slopes 200 m away.','A private wellness floor brings together an indoor swimming pool, a swim spa, a hammam, a sauna, a sensory shower, a massage room and a fitness room, with a bar for the evenings.'],
+    desc:['Brand-new chalet in Courchevel 1850.', '890 m² with six bedrooms and six bathrooms, with an indoor swimming pool, swim spa, hammam, sauna, sensory shower, massage room, fitness room and bar.'],
     feat:['Indoor swimming pool','Swim spa','Hammam','Sauna','Sensory shower','Massage room','Fitness room','Bar']};
   var CGR={opt:2,name:'Chalet La Grande Roche',area:'Courchevel 1850',bed:6,bath:7,guests:14,size:709,price:'€90,000',
     dist:{centre:'230 m',lift:'350 m',slopes:'170 m'},
     img:'images/chalets/gr/01-800.jpg',gal:GAL('gr',24,'Chalet La Grande Roche'),
-    plans:[['Spa level','Swimming pool, spa and leisure rooms','plan-1'],['Bedroom level','Bedrooms and bathrooms','plan-2'],['Living level','Living room, dining room and kitchen','plan-3'],['Top floor','Master suite','plan-4']].map(function(x){return [x[0],x[1],'images/chalets/gr/'+x[2]+'.png']}),
-    desc:['Chalet La Grande Roche is a classic Courchevel 1850 chalet close to the centre — stone and weathered timber outside, with antique wood, fur throws and crystal chandeliers within, and the mountains framed in every window.','Across 709 m², six bedrooms and seven bathrooms sleep fourteen guests, with the slopes 170 m away.','The leisure floor brings together a swimming pool, a hammam, a massage room and a fitness room, alongside a cinema, a game room and a bar.'],
+    plans:PLANS('gr',4),
+    desc:['Chalet close to the centre of Courchevel 1850.', '709 m² with six bedrooms and seven bathrooms for fourteen guests, with a swimming pool, hammam, massage room, cinema, game room, fitness room and bar.'],
     feat:['Swimming pool','Hammam','Massage room','Cinema','Game room','Fitness room','Bar']};
   var CMOON={opt:4,name:'Chalet Moon',area:'Courchevel 1850',bed:7,bath:6,guests:14,size:905,price:'€110,000',
     dist:{centre:'200 m',lift:'300 m',slopes:'300 m'},
     img:'images/chalets/moon/01-800.jpg',gal:GAL('moon',38,'Chalet Moon'),
-    desc:['Chalet Moon is a new chalet close to the centre of Courchevel 1850 — vaulted timber ceilings, a suspended open fire and floor-to-ceiling windows onto the peaks, with a balcony made for long lunches in the sun.','Across 905 m², seven bedrooms and six bathrooms sleep fourteen guests, each finished in pale stone, oak and soft wool.','Below, a swimming pool looks out through glass onto snowy pines, with a hammam, a massage room and a fitness room, alongside a cinema and a bar.'],
+    desc:['New chalet in Courchevel 1850, close to the centre.', '905 m² with seven bedrooms and six bathrooms for fourteen guests, with a swimming pool, hammam, massage room, cinema, fitness room and bar.'],
     feat:['Swimming pool','Hammam','Massage room','Cinema','Fitness room','Bar']};
   var CPERCENEIGE={opt:2,name:'Chalet Perce Neige',area:'Courchevel 1850',bed:8,bath:9,guests:15,size:687,price:'€85,000',skiOut:true,booked:[0,1,2,3,4,5,6,7],
     dist:{centre:'1.1 km',lift:'400 m',slopes:'0 m'},
     img:'images/chalets/perce-neige/01-800.jpg',gal:GAL('perce-neige',27,'Chalet Perce Neige'),
-    desc:['Chalet Perce Neige is a ski-out chalet in Courchevel 1850, glowing among the pines at dusk — smoked oak, dark marble and a sunken living room gathered around an open fire.','Across 687 m², eight bedrooms and nine bathrooms sleep up to fifteen guests, with the slopes right at the door.','Downstairs, a spa brings together an indoor jacuzzi, a Nordic bath, a hammam, a massage room and a fitness room, alongside a cinema room, a game room and a bar.'],
+    desc:['Ski-out chalet in Courchevel 1850.', '687 m² with eight bedrooms and nine bathrooms for up to fifteen guests, with a bar, cinema room, hammam, indoor jacuzzi, Nordic bath, fitness room, game room and massage room.'],
     feat:['Ski-out','Indoor jacuzzi','Nordic bath','Hammam','Massage room','Fitness room','Cinema room','Game room','Bar']};
   var CPOWPOW={opt:3,name:'Chalet Pow Pow',area:'Courchevel 1850',bed:7,bath:7,guests:15,size:650,price:'€90,000',
     dist:{centre:'1 km',lift:'170 m',slopes:'50 m'},
     img:'images/chalets/powpow/01-800.jpg',gal:GAL('powpow',32,'Chalet Pow Pow'),
-    desc:['Chalet Pow Pow is a bright, playful chalet in Courchevel 1850, just 50 m from the slopes — white timber, bold splashes of colour and a living room with a glass-sided fire and wide windows onto the trees.','Across 650 m², seven bedrooms and seven bathrooms sleep fifteen guests, with the ski lift 170 m away.','Downstairs, a long swimming pool sits beside an indoor jacuzzi, a hammam, a massage room and a fitness room, and a cinema and a games room with snooker and table football keep everyone entertained.'],
+    desc:['Chalet in Courchevel 1850.', '650 m² with seven bedrooms and seven bathrooms for fifteen guests, with a swimming pool, hammam, indoor jacuzzi, cinema, fitness room, massage room, snooker and table football.'],
     feat:['Swimming pool','Hammam','Indoor jacuzzi','Cinema','Fitness room','Massage room','Snooker','Table football']};
   var CH=[WD,NQ,CALBR,CALP,CBLRS,CBRL,CEDELSTONE,CEDN,CELIXIR,CELYA,CGR,CMOON,CPERCENEIGE,CPOWPOW];
   CH.forEach(function(c,i){c._i=i});CH.sort(function(a,b){return ((a.opt||99)-(b.opt||99))||(a._i-b._i)});CH.forEach(function(c,i){c.no=('0'+(i+1)).slice(-2)});
