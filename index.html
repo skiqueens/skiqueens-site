@@ -1229,7 +1229,12 @@ footer ul a:hover{color:var(--wine)}
     img:'images/chalets/elya/01-800.jpg',gal:GAL('elya',20,'Chalet Elya'),
     desc:['Chalet Elya is a brand-new chalet in the heart of Courchevel 1850, just 200 m from the centre — soaring timber ceilings, a suspended open fire and walls of glass looking out to the peaks.','Across 890 m², six bedrooms and six bathrooms are finished in warm walnut and veined stone, with the slopes 200 m away.','A private wellness floor brings together an indoor swimming pool, a swim spa, a hammam, a sauna, a sensory shower, a massage room and a fitness room, with a bar for the evenings.'],
     feat:['Indoor swimming pool','Swim spa','Hammam','Sauna','Sensory shower','Massage room','Fitness room','Bar']};
-  var CGR={no:'11',name:'Chalet G.R',area:'Courchevel 1850',img:'images/chalets/gr/01-800.jpg',gal:GAL('gr',24,'Chalet G.R'),plans:PLANS('gr',4),feat:[]};
+  var CGR={opt:2,name:'Chalet La Grande Roche',area:'Courchevel 1850',bed:6,bath:7,guests:14,size:709,price:'€90,000',
+    dist:{centre:'230 m',lift:'350 m',slopes:'170 m'},
+    img:'images/chalets/gr/01-800.jpg',gal:GAL('gr',24,'Chalet La Grande Roche'),
+    plans:[['Spa level','Swimming pool, spa and leisure rooms','plan-1'],['Bedroom level','Bedrooms and bathrooms','plan-2'],['Living level','Living room, dining room and kitchen','plan-3'],['Top floor','Master suite','plan-4']].map(function(x){return [x[0],x[1],'images/chalets/gr/'+x[2]+'.png']}),
+    desc:['Chalet La Grande Roche is a classic Courchevel 1850 chalet close to the centre — stone and weathered timber outside, with antique wood, fur throws and crystal chandeliers within, and the mountains framed in every window.','Across 709 m², six bedrooms and seven bathrooms sleep fourteen guests, with the slopes 170 m away.','The leisure floor brings together a swimming pool, a hammam, a massage room and a fitness room, alongside a cinema, a game room and a bar.'],
+    feat:['Swimming pool','Hammam','Massage room','Cinema','Game room','Fitness room','Bar']};
   var CMOON={no:'12',name:'Chalet Moon',area:'Courchevel 1850',img:'images/chalets/moon/01-800.jpg',gal:GAL('moon',38,'Chalet Moon'),feat:[]};
   var CPERCENEIGE={no:'13',name:'Chalet Perce Neige',area:'Courchevel 1850',img:'images/chalets/perce-neige/01-800.jpg',gal:GAL('perce-neige',27,'Chalet Perce Neige'),feat:[]};
   var CPOWPOW={no:'14',name:'Chalet PowPow',area:'Courchevel 1850',img:'images/chalets/powpow/01-800.jpg',gal:GAL('powpow',32,'Chalet PowPow'),feat:[]};
