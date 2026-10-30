@@ -1197,7 +1197,11 @@ footer ul a:hover{color:var(--wine)}
     img:NQP+'01-exterior-800.jpg',pos:'50% 50%',gal:NQG,
     desc:['Chalet Nanuq is a warm, timber-clad retreat in Courchevel 1850 — ski-in, ski-out and close to La Ferme de Saint Amour, with weathered wood, soft lighting and generous sofas gathered around a long open fire.','Across 518 m², six bedrooms and six bathrooms sleep twelve guests, and the living and dining rooms look out over the slopes.','A private spa brings together an indoor pool, a hammam and a massage room, alongside a fitness room, a cinema, a game room and a bar.'],
     feat:['Ski-in, ski-out','Swimming pool','Hammam','Massage room','Cinema','Game room','Fitness room','Bar']};
-  var CALBR={no:'03',name:'Chalet ALBR',area:'Courchevel 1850',img:'images/chalets/albr/01-800.jpg',gal:GAL('albr',10,'Chalet ALBR'),feat:[]};
+  var CALBR={name:'Chalet Albaron',area:'Courchevel 1850',bed:6,bath:6,guests:12,size:300,price:'€24,500',
+    dist:{centre:'0 m',lift:'0 m',slopes:'150 m'},
+    img:'images/chalets/albr/01-800.jpg',gal:GAL('albr',10,'Chalet Albaron'),
+    desc:['Chalet Albaron sits in the very centre of Courchevel 1850, right by the ski lift — carved timber, fur throws and gold mosaic, with a living and dining room gathered around an open fire.','Across 300 m², six bedrooms and six bathrooms sleep up to twelve guests, with the slopes 150 m away.','A private spa brings together a swimming pool, an indoor jacuzzi beside a stone fireplace, a hammam, a massage room and a fitness room, with a cinema for the evenings.'],
+    feat:['Swimming pool','Indoor jacuzzi','Hammam','Massage room','Fitness room','Cinema']};
   var CALP={opt:4,no:'03',name:'Chalet Alpin',area:'Courchevel 1850',bed:6,bath:6,guests:14,size:600,price:'€85,000',
     dist:{centre:'1.2 km',lift:'50 m',slopes:'20 m'},
     img:'images/chalets/alp/01-800.jpg',gal:GAL('alp',28,'Chalet Alpin'),
@@ -1287,9 +1291,9 @@ footer ul a:hover{color:var(--wine)}
       document.getElementById('fp-tabs').innerHTML=cur.plans.map(function(x,k){return '<button class="fp-tab'+(k?'':' on')+'" data-k="'+k+'">'+esc(x[0])+'</button>'}).join('');
       showPlan(0)}else pw.hidden=true;
     var F=[];if(cur.bed)F.push([cur.bedTxt||cur.bed,'Bedrooms']);if(cur.bath)F.push([cur.bath,'Bathrooms']);if(cur.guests)F.push([cur.guests,'Guests']);if(cur.size)F.push([cur.size+' m²','Living space']);
-    if(cur.dist){F.push(cur.ski?['Ski-in','Ski-out']:cur.skiOut?['Ski-out','To the slopes']:[cur.dist.slopes,'To the slopes']);F.push([cur.dist.lift,'To the ski lift'])}
+    if(cur.dist){F.push(cur.ski?['Ski-in','Ski-out']:cur.skiOut?['Ski-out','To the slopes']:[cur.dist.slopes,'To the slopes']);F.push(cur.dist.lift==='0 m'?['At the lift','Ski lift']:[cur.dist.lift,'To the ski lift'])}
     var fx=document.getElementById('cp-facts');fx.hidden=!F.length;fx.innerHTML=F.map(function(f){return '<div><b>'+f[0]+'</b><span>'+f[1]+'</span></div>'}).join('');
-    var lc=document.getElementById('cp-loc');lc.hidden=!cur.dist;if(cur.dist)lc.textContent=cur.dist.centre+' from the centre of '+cur.area+' · '+cur.dist.lift+' to the ski lift · '+(cur.dist.slopes==='0 m'?'on the slopes':cur.dist.slopes+' to the slopes');
+    var lc=document.getElementById('cp-loc');lc.hidden=!cur.dist;if(cur.dist)lc.textContent=(cur.dist.centre==='0 m'?'In the centre of '+cur.area:cur.dist.centre+' from the centre of '+cur.area)+' · '+(cur.dist.lift==='0 m'?'at the ski lift':cur.dist.lift+' to the ski lift')+' · '+(cur.dist.slopes==='0 m'?'on the slopes':cur.dist.slopes+' to the slopes');
     document.getElementById('cp-amen-h').hidden=document.getElementById('cp-amen').hidden=!cur.feat.length;
     document.getElementById('cp-amen').innerHTML=cur.feat.map(function(f){return '<li>'+esc(f)+'</li>'}).join('');
     document.getElementById('cp-price').innerHTML=cur.price?'From '+cur.price+' <small>per week</small>':'Price on request';
