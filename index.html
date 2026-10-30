@@ -73,6 +73,7 @@ header{position:sticky;top:env(safe-area-inset-top,0px);z-index:80;background:va
 .logo small{display:block;font-size:.55rem;letter-spacing:.32em;margin-top:5px}
 .book{justify-self:end;background:var(--burgundy);color:var(--white);font-size:.78rem;letter-spacing:.12em;text-transform:uppercase;padding:13px 26px;border:0;cursor:pointer;font-family:var(--sans)}
 .book:hover{background:var(--wine)}
+@media (max-width:600px){.bk-x{display:none}}
 @media (max-width:600px){.hb{padding-left:var(--gl);padding-right:var(--gr)}.burger i{width:28px}.book{padding:11px 14px;font-size:.68rem}.logo b{font-size:1.15rem}}
 
 /* menu overlay */
@@ -458,7 +459,7 @@ footer ul a:hover{color:var(--wine)}
   <div class="hb">
     <button class="burger" id="openMenu" aria-label="Open menu"><i></i><i></i></button>
     <a class="logo" href="#top" aria-label="Ski Queens home"><img src="images/ski-queens-logo.png" alt="Ski Queens" class="logo-img"></a>
-    <a class="book" href="#chalets">Book</a>
+    <a class="book" href="#chalets">Book<span class="bk-x"> a chalet</span></a>
   </div>
 </header>
 
