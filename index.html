@@ -1108,6 +1108,8 @@ footer ul a:hover{color:var(--wine)}
         <p class="loc" id="cp-loc" hidden></p>
         <h3 style="font-size:1.8rem;margin-top:16px" id="cp-amen-h">The chalet</h3>
         <ul class="amen" id="cp-amen"></ul>
+        <h3 style="font-size:1.8rem;margin-top:16px" id="cp-inc-h">Included services</h3>
+        <ul class="amen" id="cp-inc"></ul>
         <div id="cp-plans" class="fp" hidden>
           <h3 style="font-size:1.8rem;margin:16px 0 18px">Floor plans</h3>
           <div class="fp-tabs" id="fp-tabs" role="tablist"></div>
@@ -1187,6 +1189,7 @@ footer ul a:hover{color:var(--wine)}
   var WD={opt:1,no:'01',name:'Chalet White Dream',area:'Courchevel 1850',bed:6,bath:6,guests:12,size:450,price:'€40,000',booked:[0,1,2,3],
     dist:{centre:'350 m',lift:'150 m',slopes:'150 m'},
     img:WDP+'01-exterior-800.jpg',pos:'50% 55%',gal:WDG,
+    inc:['Private chef, 3 hours a day', 'Housekeeping, 5 hours a day'],
     desc:['Chalet in Courchevel 1850.', '450 m² with six bedrooms and six bathrooms for twelve guests, with a swimming pool, hammam, indoor jacuzzi, cinema, fitness room, bar and massage room.'],
     feat:['Swimming pool','Hammam','Indoor jacuzzi','Cinema','Fitness room','Bar','Massage room'],
     plans:['plan-living','plan-bedrooms','plan-top','plan-spa','plan-family'].map(function(x,k){return ['Plan '+(k+1),'',WDP+x+'.png']})
@@ -1196,6 +1199,7 @@ footer ul a:hover{color:var(--wine)}
   var NQ={opt:2,no:'02',name:'Chalet Nanuq',area:'Courchevel 1850',bed:6,bath:6,guests:12,size:518,price:'€50,000',ski:true,
     dist:{centre:'400 m',lift:'150 m',slopes:'0 m'},
     img:NQP+'01-exterior-800.jpg',pos:'50% 50%',gal:NQG,
+    inc:['Private chef, 10 hours a day', 'Housekeeping, 10 hours a day', 'Butler, 10 hours a day', 'Driver, 10 hours a day'],
     desc:['Ski-in, ski-out chalet in Courchevel 1850, close to La Ferme de Saint Amour.', '518 m² with six bedrooms and six bathrooms for twelve guests, with a swimming pool, hammam, massage room, cinema, game room, fitness room and bar.'],
     feat:['Ski-in, ski-out','Swimming pool','Hammam','Massage room','Cinema','Game room','Fitness room','Bar']};
   var CALBR={name:'Chalet Albaron',area:'Courchevel 1850',bed:6,bath:6,guests:12,size:300,price:'€24,500',
@@ -1206,57 +1210,68 @@ footer ul a:hover{color:var(--wine)}
   var CALP={opt:4,no:'03',name:'Chalet Alpin',area:'Courchevel 1850',bed:6,bath:6,guests:14,size:600,price:'€85,000',
     dist:{centre:'1.2 km',lift:'50 m',slopes:'20 m'},
     img:'images/chalets/alp/01-800.jpg',gal:GAL('alp',28,'Chalet Alpin'),
+    inc:['Private chef, 9 hours a day', 'Housekeeping, 5 hours a day', 'Butler, 9 hours a day'],
     desc:['Chalet in Courchevel 1850, close to Cheval Blanc.', '600 m² with six bedrooms and six bathrooms for fourteen guests, with a swimming pool, hammam, jacuzzi and massage room.'],
     feat:['Swimming pool','Hammam','Jacuzzi','Massage room']};
   var CBLRS={opt:2,name:'Chalet Bellarossa',area:'Courchevel 1850',bed:6,bedTxt:'5 + 1',bath:6,guests:14,size:320,price:'€45,000',
     dist:{centre:'1.5 km',lift:'20 m',slopes:'0 m'},
     img:'images/chalets/blrs/01-800.jpg',gal:GAL('blrs',38,'Chalet Bellarossa'),
+    inc:['Chef for breakfast, 3 hours a day', 'Housekeeping, 5 hours a day'],
     desc:['Chalet in Courchevel 1850, close to the slopes and away from the centre.', '320 m² with five bedrooms plus one and six bathrooms for fourteen guests, with a swimming pool, sauna and outdoor jacuzzi.'],
     feat:['Swimming pool','Sauna','Outdoor jacuzzi']};
   var CBRL={opt:2,name:'Chalet Barolo',area:'Courchevel 1850',bed:6,bath:6,guests:12,size:300,price:'€22,000',
     dist:{centre:'350 m',lift:'100 m',slopes:'20 m'},
     img:'images/chalets/brl/01-800.jpg',gal:GAL('brl',14,'Chalet Barolo'),
+    inc:['Daily housekeeping'],
     desc:['Chalet in Courchevel 1850.', '300 m² with six bedrooms and six bathrooms for twelve guests, with a jacuzzi, hammam, pool and cinema.'],
     feat:['Swimming pool','Jacuzzi','Hammam','Cinema']};
   var CEDELSTONE={opt:3,name:'Chalet Edelstone',area:'Courchevel 1850',bed:8,bedTxt:'5 + 3',bath:8,guests:14,size:414,price:'€30,000',
     dist:{centre:'2 km',lift:'30 m',slopes:'20 m'},
     img:'images/chalets/edelstone/01-800.jpg',gal:GAL('edelstone',31,'Chalet Edelstone'),
+    inc:['Private chef, 3 hours a day', 'Housekeeping, 5 hours a day'],
     desc:['Chalet in Courchevel 1850.', '414 m² with five bedrooms plus three and eight bathrooms for fourteen guests, with a jacuzzi and cinema.'],
     feat:['Jacuzzi','Cinema']};
   var CEDN={opt:1,name:'Chalet Eden',area:'Courchevel 1850',bed:5,bath:5,guests:10,size:254,price:'€33,000',
     dist:{centre:'150 m',lift:'220 m',slopes:'220 m'},
     img:'images/chalets/edn/01-800.jpg',gal:GAL('edn',19,'Chalet Eden'),
+    inc:['Private chef for breakfast, 3 hours a day', 'Housekeeping, 5 hours a day'],
     desc:['Chalet close to the centre of Courchevel 1850, on the same road as the K2 Palace.', '254 m² with five bedrooms and five bathrooms for ten guests, with a swimming pool, hammam, bar and massage room.'],
     feat:['Swimming pool','Hammam','Bar','Massage room']};
   var CELIXIR={opt:4,name:'Chalet Elixir',area:'Courchevel 1850',bed:6,bath:6,guests:14,size:717,price:'€80,000',
     dist:{centre:'400 m',lift:'150 m',slopes:'0 m'},
     img:'images/chalets/elixir/01-800.jpg',gal:GAL('elixir',41,'Chalet Elixir'),plans:PLANS('elixir',5),
+    inc:['Private chef, 8 hours a day', 'Housekeeping, 10 hours a day', 'Butler, 8 hours a day', 'Driver, 11 hours a day'],
     desc:['Chalet close to the centre of Courchevel 1850.', '717 m² with six bedrooms and six bathrooms for fourteen guests, with a swimming pool, hammam, massage room, cinema, game room, fitness room and bar.'],
     feat:['Swimming pool','Hammam','Massage room','Cinema','Game room','Fitness room','Bar']};
   var CELYA={opt:3,name:'Chalet Elya',area:'Courchevel 1850',bed:6,bath:6,size:890,price:'€115,000',
     dist:{centre:'200 m',lift:'300 m',slopes:'200 m'},
     img:'images/chalets/elya/01-800.jpg',gal:GAL('elya',20,'Chalet Elya'),
+    inc:['Private chef, 8 hours a day', 'Housekeeping, 8 hours a day', 'Butler, 8 hours a day', 'Driver, 10 hours a day'],
     desc:['Brand-new chalet in Courchevel 1850.', '890 m² with six bedrooms and six bathrooms, with an indoor swimming pool, swim spa, hammam, sauna, sensory shower, massage room, fitness room and bar.'],
     feat:['Indoor swimming pool','Swim spa','Hammam','Sauna','Sensory shower','Massage room','Fitness room','Bar']};
   var CGR={opt:2,name:'Chalet La Grande Roche',area:'Courchevel 1850',bed:6,bath:7,guests:14,size:709,price:'€90,000',
     dist:{centre:'230 m',lift:'350 m',slopes:'170 m'},
     img:'images/chalets/gr/01-800.jpg',gal:GAL('gr',24,'Chalet La Grande Roche'),
     plans:PLANS('gr',4),
+    inc:['Private chef, 12 hours a day', 'Housekeeping, 10 hours a day', 'Butler, 10 hours a day', 'Driver, 12 hours a day'],
     desc:['Chalet close to the centre of Courchevel 1850.', '709 m² with six bedrooms and seven bathrooms for fourteen guests, with a swimming pool, hammam, massage room, cinema, game room, fitness room and bar.'],
     feat:['Swimming pool','Hammam','Massage room','Cinema','Game room','Fitness room','Bar']};
   var CMOON={opt:4,name:'Chalet Moon',area:'Courchevel 1850',bed:7,bath:6,guests:14,size:905,price:'€110,000',
     dist:{centre:'200 m',lift:'300 m',slopes:'300 m'},
     img:'images/chalets/moon/01-800.jpg',gal:GAL('moon',38,'Chalet Moon'),
+    inc:['Private chef', 'Housekeeping', 'Butler', 'Driver', 'Chalet manager'],
     desc:['New chalet in Courchevel 1850, close to the centre.', '905 m² with seven bedrooms and six bathrooms for fourteen guests, with a swimming pool, hammam, massage room, cinema, fitness room and bar.'],
     feat:['Swimming pool','Hammam','Massage room','Cinema','Fitness room','Bar']};
   var CPERCENEIGE={opt:2,name:'Chalet Perce Neige',area:'Courchevel 1850',bed:8,bath:9,guests:15,size:687,price:'€85,000',skiOut:true,booked:[0,1,2,3,4,5,6,7],
     dist:{centre:'1.1 km',lift:'400 m',slopes:'0 m'},
     img:'images/chalets/perce-neige/01-800.jpg',gal:GAL('perce-neige',27,'Chalet Perce Neige'),
+    inc:['Private chef, 10 hours a day', 'Housekeeping, 10 hours a day', 'Butler, 10 hours a day', 'Driver, 12 hours a day'],
     desc:['Ski-out chalet in Courchevel 1850.', '687 m² with eight bedrooms and nine bathrooms for up to fifteen guests, with a bar, cinema room, hammam, indoor jacuzzi, Nordic bath, fitness room, game room and massage room.'],
     feat:['Ski-out','Indoor jacuzzi','Nordic bath','Hammam','Massage room','Fitness room','Cinema room','Game room','Bar']};
   var CPOWPOW={opt:3,name:'Chalet Pow Pow',area:'Courchevel 1850',bed:7,bath:7,guests:15,size:650,price:'€90,000',
     dist:{centre:'1 km',lift:'170 m',slopes:'50 m'},
     img:'images/chalets/powpow/01-800.jpg',gal:GAL('powpow',32,'Chalet Pow Pow'),
+    inc:['Daily cleaning'],
     desc:['Chalet in Courchevel 1850.', '650 m² with seven bedrooms and seven bathrooms for fifteen guests, with a swimming pool, hammam, indoor jacuzzi, cinema, fitness room, massage room, snooker and table football.'],
     feat:['Swimming pool','Hammam','Indoor jacuzzi','Cinema','Fitness room','Massage room','Snooker','Table football']};
   var CH=[WD,NQ,CALBR,CALP,CBLRS,CBRL,CEDELSTONE,CEDN,CELIXIR,CELYA,CGR,CMOON,CPERCENEIGE,CPOWPOW];
@@ -1304,6 +1319,8 @@ footer ul a:hover{color:var(--wine)}
     var fx=document.getElementById('cp-facts');fx.hidden=!F.length;fx.innerHTML=F.map(function(f){return '<div><b>'+f[0]+'</b><span>'+f[1]+'</span></div>'}).join('');
     var lc=document.getElementById('cp-loc');lc.hidden=!cur.dist;if(cur.dist)lc.textContent=(cur.dist.centre==='0 m'?'In the centre of '+cur.area:cur.dist.centre+' from the centre of '+cur.area)+' · '+(cur.dist.lift==='0 m'?'at the ski lift':cur.dist.lift+' to the ski lift')+' · '+(cur.dist.slopes==='0 m'?'on the slopes':cur.dist.slopes+' to the slopes');
     document.getElementById('cp-amen-h').hidden=document.getElementById('cp-amen').hidden=!cur.feat.length;
+    var inc=cur.inc||[];document.getElementById('cp-inc-h').hidden=document.getElementById('cp-inc').hidden=!inc.length;
+    document.getElementById('cp-inc').innerHTML=inc.map(function(f){return '<li>'+esc(f)+'</li>'}).join('');
     document.getElementById('cp-amen').innerHTML=cur.feat.map(function(f){return '<li>'+esc(f)+'</li>'}).join('');
     document.getElementById('cp-price').innerHTML=cur.price?'From '+cur.price+' <small>per week</small>':'Price on request';
     var s2=parseInt(cur.no,10)*13;
