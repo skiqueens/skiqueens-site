@@ -1240,7 +1240,11 @@ footer ul a:hover{color:var(--wine)}
     img:'images/chalets/moon/01-800.jpg',gal:GAL('moon',38,'Chalet Moon'),
     desc:['Chalet Moon is a new chalet close to the centre of Courchevel 1850 — vaulted timber ceilings, a suspended open fire and floor-to-ceiling windows onto the peaks, with a balcony made for long lunches in the sun.','Across 905 m², seven bedrooms and six bathrooms sleep fourteen guests, each finished in pale stone, oak and soft wool.','Below, a swimming pool looks out through glass onto snowy pines, with a hammam, a massage room and a fitness room, alongside a cinema and a bar.'],
     feat:['Swimming pool','Hammam','Massage room','Cinema','Fitness room','Bar']};
-  var CPERCENEIGE={no:'13',name:'Chalet Perce Neige',area:'Courchevel 1850',img:'images/chalets/perce-neige/01-800.jpg',gal:GAL('perce-neige',27,'Chalet Perce Neige'),feat:[]};
+  var CPERCENEIGE={opt:2,name:'Chalet Perce Neige',area:'Courchevel 1850',bed:8,bath:9,guests:15,size:687,price:'€85,000',skiOut:true,booked:[0,1,2,3,4,5,6,7],
+    dist:{centre:'1.1 km',lift:'400 m',slopes:'0 m'},
+    img:'images/chalets/perce-neige/01-800.jpg',gal:GAL('perce-neige',27,'Chalet Perce Neige'),
+    desc:['Chalet Perce Neige is a ski-out chalet in Courchevel 1850, glowing among the pines at dusk — smoked oak, dark marble and a sunken living room gathered around an open fire.','Across 687 m², eight bedrooms and nine bathrooms sleep up to fifteen guests, with the slopes right at the door.','Downstairs, a spa brings together an indoor jacuzzi, a Nordic bath, a hammam, a massage room and a fitness room, alongside a cinema room, a game room and a bar.'],
+    feat:['Ski-out','Indoor jacuzzi','Nordic bath','Hammam','Massage room','Fitness room','Cinema room','Game room','Bar']};
   var CPOWPOW={no:'14',name:'Chalet PowPow',area:'Courchevel 1850',img:'images/chalets/powpow/01-800.jpg',gal:GAL('powpow',32,'Chalet PowPow'),feat:[]};
   var CH=[WD,NQ,CALBR,CALP,CBLRS,CBRL,CEDELSTONE,CEDN,CELIXIR,CELYA,CGR,CMOON,CPERCENEIGE,CPOWPOW];
   CH.forEach(function(c,i){c._i=i});CH.sort(function(a,b){return ((a.opt||99)-(b.opt||99))||(a._i-b._i)});CH.forEach(function(c,i){c.no=('0'+(i+1)).slice(-2)});
@@ -1248,7 +1252,7 @@ footer ul a:hover{color:var(--wine)}
   var sel=document.getElementById('fl-area');
   AREAS.forEach(function(a){var o=document.createElement('option');o.textContent=a;sel.appendChild(o)});
   var grid=document.getElementById('grid'),count=document.getElementById('count'),showAll=true;
-  function spec(c){var a=[];if(c.bed)a.push((c.bedTxt||c.bed)+' bedrooms');if(c.guests)a.push(c.guests+' guests');if(c.size)a.push(c.size+' m²');if(c.ski)a.push('ski-in, ski-out');return a.join(' · ')}
+  function spec(c){var a=[];if(c.bed)a.push((c.bedTxt||c.bed)+' bedrooms');if(c.guests)a.push(c.guests+' guests');if(c.size)a.push(c.size+' m²');if(c.ski)a.push('ski-in, ski-out');else if(c.skiOut)a.push('ski-out');return a.join(' · ')}
   function fromTxt(c){return c.price?'From '+c.price+' per week':'Price on request'}
   function esc(s){return String(s).replace(/[&<>"]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]})}
   function render(){
@@ -1283,7 +1287,7 @@ footer ul a:hover{color:var(--wine)}
       document.getElementById('fp-tabs').innerHTML=cur.plans.map(function(x,k){return '<button class="fp-tab'+(k?'':' on')+'" data-k="'+k+'">'+esc(x[0])+'</button>'}).join('');
       showPlan(0)}else pw.hidden=true;
     var F=[];if(cur.bed)F.push([cur.bedTxt||cur.bed,'Bedrooms']);if(cur.bath)F.push([cur.bath,'Bathrooms']);if(cur.guests)F.push([cur.guests,'Guests']);if(cur.size)F.push([cur.size+' m²','Living space']);
-    if(cur.dist){F.push([cur.ski?'Ski-in':cur.dist.slopes,cur.ski?'Ski-out':'To the slopes']);F.push([cur.dist.lift,'To the ski lift'])}
+    if(cur.dist){F.push(cur.ski?['Ski-in','Ski-out']:cur.skiOut?['Ski-out','To the slopes']:[cur.dist.slopes,'To the slopes']);F.push([cur.dist.lift,'To the ski lift'])}
     var fx=document.getElementById('cp-facts');fx.hidden=!F.length;fx.innerHTML=F.map(function(f){return '<div><b>'+f[0]+'</b><span>'+f[1]+'</span></div>'}).join('');
     var lc=document.getElementById('cp-loc');lc.hidden=!cur.dist;if(cur.dist)lc.textContent=cur.dist.centre+' from the centre of '+cur.area+' · '+cur.dist.lift+' to the ski lift · '+(cur.dist.slopes==='0 m'?'on the slopes':cur.dist.slopes+' to the slopes');
     document.getElementById('cp-amen-h').hidden=document.getElementById('cp-amen').hidden=!cur.feat.length;
