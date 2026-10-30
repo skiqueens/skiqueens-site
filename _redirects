@@ -1,3 +1,4 @@
+/press            /?go=press           301
 /book-online      /?go=chalets         301
 /book-online/*    /?go=chalets         301
 /brandcollaborations  /?go=brand-partners  301

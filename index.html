@@ -155,6 +155,19 @@ header{position:sticky;top:env(safe-area-inset-top,0px);z-index:80;background:va
 .promo3 h3{font-size:2rem;font-weight:400;margin-top:8px}
 .promo3 p{line-height:1.7;max-width:26em;margin:0 auto}
 @media (max-width:860px){.promo3{grid-template-columns:1fr}}
+.press{padding-top:40px;display:grid;gap:clamp(60px,8vw,110px);max-width:1180px;margin:0 auto}
+.pr{display:grid;grid-template-columns:minmax(0,440px) 1fr;gap:clamp(40px,7vw,100px);align-items:center}
+.pr-alt{grid-template-columns:1fr minmax(0,440px)}.pr-alt .pr-img{order:2}
+.pr-img{display:block;aspect-ratio:926/1174;overflow:hidden;box-shadow:0 30px 60px -30px rgba(0,0,0,.35)}
+.pr-img img{width:100%;height:100%;object-fit:cover;display:block}
+.pr-txt{display:flex;flex-direction:column;gap:18px;align-items:flex-start}
+.pr-txt h2{font-size:clamp(2.4rem,4.4vw,3.8rem);line-height:1.05}
+.pr-sub{font-family:var(--display);font-size:1.5rem;font-style:italic;margin:-6px 0 0;color:var(--wine)}
+.pr-txt blockquote{margin:6px 0;padding-left:20px;border-left:1px solid var(--wine);font-family:var(--display);font-size:1.35rem;line-height:1.5}
+.pr-links{display:flex;flex-wrap:wrap;gap:14px 32px}
+.pr-spreads{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:-40px}
+.pr-spreads img{width:100%;aspect-ratio:4/3;object-fit:cover;display:block}
+@media (max-width:860px){.pr,.pr-alt{grid-template-columns:1fr}.pr-alt .pr-img{order:0}.pr-img{max-width:440px}.pr-spreads{gap:8px;margin-top:0}}
 .feat{display:grid;grid-template-columns:minmax(0,380px) 1fr;gap:clamp(40px,7vw,110px);align-items:center;max-width:1180px;margin:0 auto}
 .phone{border:10px solid #111;border-radius:42px;overflow:hidden;aspect-ratio:1309/2576;max-width:100%;display:block;box-shadow:0 30px 60px -30px rgba(0,0,0,.35);background:#111}
 .phone img{width:100%;height:100%;object-fit:cover;object-position:50% 0}
@@ -473,6 +486,7 @@ footer ul a:hover{color:var(--wine)}
     <a href="#brand-partners">Brand Partners</a>
     <a href="#features">Features on Instagram</a>
     <a href="#partners">Our Partners</a>
+    <a href="#press">Press</a>
     <a href="#instagram">Instagram</a>
     <a href="#founder">The Founder</a>
     <a href="#contact">Contact</a>
@@ -905,6 +919,66 @@ footer ul a:hover{color:var(--wine)}
   </article>
 </div>
 
+<div id="page-press" class="page" hidden>
+  <div class="hero sub"><img src="images/press/spread-fur.jpg" alt="Elevated Snow Magazine open on the snow at the Ski Queens feature" style="object-position:50% 45%"></div>
+  <div class="intro">
+    <h1>In the <em>Press</em></h1>
+    <div class="rule"></div>
+  </div>
+  <section class="sec c press">
+    <article class="pr">
+      <a class="pr-img" href="https://www.instagram.com/p/DQSYJ_Zk16d/" target="_blank" rel="noopener" aria-label="Elevated Snow Magazine cover on Instagram"><img src="images/press/snow-cover.jpg" alt="Elevated Snow Magazine, Winter 2025–26 cover: Arina Sprynz, The Ski Queen" loading="lazy" decoding="async"></a>
+      <div class="pr-txt">
+        <span class="kicker">Elevated Snow Magazine · Winter 2025–26</span>
+        <h2>Diamonds, Snow <em>&amp;</em> Fashion</h2>
+        <p class="pr-sub">The Rise of Ski Queens</p>
+        <p>Cover story: Arina Sprynz, The Ski Queen.</p>
+        <blockquote>“Ski Queens is about showing that strength and elegance are inseparable — one enhances the other.”</blockquote>
+        <div class="pr-links"><a class="more" href="https://www.elevatedmagazines.com/single-post/diamonds-snow-fashion-the-rise-of-ski-queens" target="_blank" rel="noopener">Read the article</a><a class="more" href="https://www.instagram.com/p/DQSYJ_Zk16d/" target="_blank" rel="noopener">View on Instagram</a></div>
+      </div>
+    </article>
+    <div class="pr-spreads">
+      <img src="images/press/cover-open-900.jpg" srcset="images/press/cover-open-900.jpg 900w, images/press/cover-open.jpg 1553w" sizes="(max-width:860px) 100vw, 33vw" alt="Elevated Snow Magazine cover and opening spread" loading="lazy" decoding="async">
+      <img src="images/press/spread-fur-900.jpg" srcset="images/press/spread-fur-900.jpg 900w, images/press/spread-fur.jpg 1440w" sizes="(max-width:860px) 100vw, 33vw" alt="Diamonds, Snow and Fashion spread" loading="lazy" decoding="async">
+      <img src="images/press/spread-matterhorn-900.jpg" srcset="images/press/spread-matterhorn-900.jpg 900w, images/press/spread-matterhorn.jpg 1227w" sizes="(max-width:860px) 100vw, 33vw" alt="Ski Queens spread with the Matterhorn" loading="lazy" decoding="async">
+    </div>
+    <article class="pr pr-alt">
+      <a class="pr-img" href="https://www.instagram.com/stories/highlights/17935626641702303/" target="_blank" rel="noopener" aria-label="See the ELLE Croatia feature on Instagram"><img src="images/red-suit-matterhorn-1400.jpg" alt="Ski Queens in red beneath the Matterhorn" loading="lazy" decoding="async" style="object-position:84% 50%"></a>
+      <div class="pr-txt">
+        <span class="kicker">ELLE Croatia</span>
+        <h2>Featured in <em>ELLE</em></h2>
+        <a class="more" href="https://www.instagram.com/stories/highlights/17935626641702303/" target="_blank" rel="noopener">See the feature</a>
+      </div>
+    </article>
+    <article class="pr">
+      <a class="pr-img" href="https://medium.com/authority-magazine/arina-sprynz-of-ski-queens-5-things-i-wish-someone-told-me-before-i-became-a-founder-c80e46529015" target="_blank" rel="noopener" aria-label="Read the Authority Magazine interview"><img src="images/founder-black-gown-1400.jpg" alt="Arina Sprynz, founder of Ski Queens" loading="lazy" decoding="async" style="object-position:76% 50%"></a>
+      <div class="pr-txt">
+        <span class="kicker">Authority Magazine · 13 March 2026</span>
+        <h2>Arina Sprynz of Ski Queens</h2>
+        <p class="pr-sub">5 Things I Wish Someone Told Me Before I Became A Founder</p>
+        <a class="more" href="https://medium.com/authority-magazine/arina-sprynz-of-ski-queens-5-things-i-wish-someone-told-me-before-i-became-a-founder-c80e46529015" target="_blank" rel="noopener">Read the interview</a>
+      </div>
+    </article>
+    <article class="pr pr-alt">
+      <a class="pr-img" href="https://boldjourney.com/story-lesson-highlights-with-arina-sprynz-of-aspen-highlight/" target="_blank" rel="noopener" aria-label="Read the Bold Journey interview"><img src="images/gstaad-black-gown-1400.jpg" alt="Arina Sprynz in the mountains" loading="lazy" decoding="async" style="object-position:4% 50%"></a>
+      <div class="pr-txt">
+        <span class="kicker">Bold Journey · 30 December 2025</span>
+        <h2>Story <em>&amp;</em> Lesson Highlights</h2>
+        <p class="pr-sub">with Arina Sprynz</p>
+        <a class="more" href="https://boldjourney.com/story-lesson-highlights-with-arina-sprynz-of-aspen-highlight/" target="_blank" rel="noopener">Read the interview</a>
+      </div>
+    </article>
+    <article class="pr">
+      <a class="pr-img" href="https://voyagela.com/interview/check-out-arina-sprynzs-story/" target="_blank" rel="noopener" aria-label="Read the Voyage LA interview"><img src="images/heels-chairlift-zermatt-1400.jpg" alt="Ski Queens on a chairlift in Zermatt" loading="lazy" decoding="async" style="object-position:24% 50%"></a>
+      <div class="pr-txt">
+        <span class="kicker">Voyage LA · 9 December 2024</span>
+        <h2>Check Out Arina Sprynz’s <em>Story</em></h2>
+        <a class="more" href="https://voyagela.com/interview/check-out-arina-sprynzs-story/" target="_blank" rel="noopener">Read the interview</a>
+      </div>
+    </article>
+  </section>
+</div>
+
 <div id="page-partners" class="page" hidden>
   <div class="hero sub"><img src="images/gstaad-black-gown-2576.jpg" srcset="images/gstaad-black-gown-800.jpg 800w, images/gstaad-black-gown-1400.jpg 1400w, images/gstaad-black-gown-2576.jpg 2576w" sizes="(max-width:860px) 100vw, 50vw" loading="lazy" decoding="async" alt="" style="object-position:20% 45%"></div>
   <div class="intro">
@@ -1084,7 +1158,7 @@ footer ul a:hover{color:var(--wine)}
         <form id="nl" name="newsletter" method="POST" data-netlify="true"><input type="hidden" name="form-name" value="newsletter"><label for="nl-email" style="position:absolute;left:-9999px">Email address</label><input id="nl-email" name="email" type="email" placeholder="Your email address" required><button class="more" type="submit">Sign up</button><span class="msg" id="nl-msg" aria-live="polite"></span></form>
         <div class="lang">Language: <u>English</u> · Français</div>
       </div>
-      <div><h4>Ski Queens</h4><ul><li><a href="#chalets">The Chalets</a></li><li><a href="#services">Services</a></li><li><a href="#features">Features on Instagram</a></li><li><a href="#brands">Brand Partnerships</a></li><li><a href="#partners">Partners</a></li><li><a href="#" data-enquire="Press">Press</a></li><li><a href="#" data-enquire="Investment">Investors</a></li><li><a href="#contact">Contact</a></li></ul></div>
+      <div><h4>Ski Queens</h4><ul><li><a href="#chalets">The Chalets</a></li><li><a href="#services">Services</a></li><li><a href="#features">Features on Instagram</a></li><li><a href="#brands">Brand Partnerships</a></li><li><a href="#partners">Partners</a></li><li><a href="#press">Press</a></li><li><a href="#" data-enquire="Investment">Investors</a></li><li><a href="#contact">Contact</a></li></ul></div>
       <div><h4>Legal</h4><ul><li><a href="#privacy">Privacy policy</a></li><li><a href="#cookies">Cookies</a></li><li><a href="#terms">Terms</a></li><li><a href="#legal">Legal notice</a></li></ul></div>
     </div>
     <div class="legal"><span>© 2026 Ski Queens</span><span>Ski Queens® · Registered UK and EU trade mark</span></div>
@@ -1431,7 +1505,7 @@ footer ul a:hover{color:var(--wine)}
     function fail(){if(done)return;done=true;btn.disabled=false;btn.textContent='Send message';m.textContent='Your message could not be sent. Please try again, or message us on Instagram @skiqueens.'}
     var ctl=window.AbortController?new AbortController():null;setTimeout(function(){if(ctl)ctl.abort()},15000);
     fetch('/',{method:'POST',headers:{'Content-Type':'application/x-www-form-urlencoded'},body:new URLSearchParams(new FormData(f)).toString(),signal:ctl?ctl.signal:undefined}).then(function(r){if(!r.ok)throw 0;ok()}).catch(fail)})})();
-  var ROUTES={'chalets':'page-chalets','services':'page-services','brand-partners':'page-brands','media':'page-brands','ambassador':'page-brands','features':'page-features','helicopter':'page-services','brands':'page-brands','partners':'page-partners','contact':'page-contact','privacy':'page-privacy','cookies':'page-cookies','terms':'page-terms','legal':'page-legal'};
+  var ROUTES={'chalets':'page-chalets','services':'page-services','brand-partners':'page-brands','media':'page-brands','ambassador':'page-brands','features':'page-features','helicopter':'page-services','brands':'page-brands','partners':'page-partners','press':'page-press','contact':'page-contact','privacy':'page-privacy','cookies':'page-cookies','terms':'page-terms','legal':'page-legal'};
   function route(){
     var h=location.hash.slice(1), m=h.match(/^chalet-(\d\d)$/), pid=m?'page-chalets':ROUTES[h];
     document.querySelectorAll('.page').forEach(function(p){p.hidden=p.id!==pid});
