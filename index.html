@@ -940,7 +940,7 @@ footer ul a:hover{color:var(--wine)}
         <label for="fl-area">Resort<select id="fl-area"><option value="">All resorts</option></select></label>
         <label for="fl-bed">Bedrooms<select id="fl-bed"><option value="0">Any</option><option value="4">4+</option><option value="5">5+</option><option value="6">6+</option><option value="7">7+</option></select></label>
         <label for="fl-guests">Guests<select id="fl-guests"><option value="0">Any</option><option value="8">8+</option><option value="10">10+</option><option value="12">12+</option><option value="14">14+</option></select></label>
-        <label for="fl-feat">Must have<select id="fl-feat"><option value="">Anything</option><option>Ski-in, ski-out</option><option>Swimming pool</option><option>Hammam</option><option>Cinema</option><option>Massage room</option></select></label>
+        <label for="fl-feat">Must have<select id="fl-feat"><option value="">Anything</option><option>Ski-in, ski-out</option><option>Swimming pool</option><option>Hammam</option><option>Sauna</option><option>Jacuzzi</option><option>Cinema</option><option>Massage room</option></select></label>
         <span class="count" id="count"></span>
       </div>
       <div class="grid" id="grid"></div>
@@ -1203,7 +1203,11 @@ footer ul a:hover{color:var(--wine)}
     img:'images/chalets/alp/01-800.jpg',gal:GAL('alp',28,'Chalet Alpin'),
     desc:['Chalet Alpin sits just above the slopes in Courchevel 1850, close to Cheval Blanc — stone and weathered timber outside, with balconies looking straight across the pistes to the peaks.','Across 600 m², six bedrooms and six bathrooms sleep fourteen guests, with a living room and open fire framed by wide windows onto the mountains, and the ski lift only 50 m away.','A private spa brings together an indoor swimming pool, a hammam, a jacuzzi and a massage room.'],
     feat:['Swimming pool','Hammam','Jacuzzi','Massage room']};
-  var CBLRS={no:'05',name:'Chalet BLRS',area:'Courchevel 1850',img:'images/chalets/blrs/01-800.jpg',gal:GAL('blrs',38,'Chalet BLRS'),feat:[]};
+  var CBLRS={opt:2,name:'Chalet Bellarossa',area:'Courchevel 1850',bed:6,bedTxt:'5 + 1',bath:6,guests:14,size:320,price:'€45,000',
+    dist:{centre:'1.5 km',lift:'20 m',slopes:'0 m'},
+    img:'images/chalets/blrs/01-800.jpg',gal:GAL('blrs',38,'Chalet Bellarossa'),
+    desc:['Chalet Bellarossa sits right by the slopes in Courchevel 1850, away from the bustle of the centre — weathered oak, white marble and a double-height living room with an open fire and tall windows onto the snow.','Five bedrooms plus one more sleep fourteen guests across 320 m², each bedroom calm and pared back, with six marble bathrooms between them.','An indoor swimming pool sits beneath a sweeping mountain panorama, and outside a sauna and a jacuzzi wait among the pines, with the ski lift only 20 m away.'],
+    feat:['Swimming pool','Sauna','Outdoor jacuzzi']};
   var CBRL={no:'06',name:'Chalet BRL',area:'Courchevel 1850',img:'images/chalets/brl/01-800.jpg',gal:GAL('brl',14,'Chalet BRL'),feat:[]};
   var CEDELSTONE={no:'07',name:'Chalet Edelstone',area:'Courchevel 1850',img:'images/chalets/edelstone/01-800.jpg',gal:GAL('edelstone',31,'Chalet Edelstone'),feat:[]};
   var CEDN={no:'08',name:'Chalet EDN',area:'Courchevel 1850',img:'images/chalets/edn/01-800.jpg',gal:GAL('edn',19,'Chalet EDN'),feat:[]};
@@ -1219,12 +1223,12 @@ footer ul a:hover{color:var(--wine)}
   var sel=document.getElementById('fl-area');
   AREAS.forEach(function(a){var o=document.createElement('option');o.textContent=a;sel.appendChild(o)});
   var grid=document.getElementById('grid'),count=document.getElementById('count'),showAll=true;
-  function spec(c){var a=[];if(c.bed)a.push(c.bed+' bedrooms');if(c.guests)a.push(c.guests+' guests');if(c.size)a.push(c.size+' m²');if(c.ski)a.push('ski-in, ski-out');return a.join(' · ')}
+  function spec(c){var a=[];if(c.bed)a.push((c.bedTxt||c.bed)+' bedrooms');if(c.guests)a.push(c.guests+' guests');if(c.size)a.push(c.size+' m²');if(c.ski)a.push('ski-in, ski-out');return a.join(' · ')}
   function fromTxt(c){return c.price?'From '+c.price+' per week':'Price on request'}
   function esc(s){return String(s).replace(/[&<>"]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]})}
   function render(){
     var a=sel.value,b=+document.getElementById('fl-bed').value,g=+document.getElementById('fl-guests').value,ft=document.getElementById('fl-feat').value;
-    var list=CH.filter(function(c){return (!a||c.area===a)&&(!b||(c.bed||0)>=b)&&(!g||(c.guests||0)>=g)&&(!ft||c.feat.indexOf(ft)>=0)});
+    var list=CH.filter(function(c){return (!a||c.area===a)&&(!b||(c.bed||0)>=b)&&(!g||(c.guests||0)>=g)&&(!ft||c.feat.some(function(f){return f.toLowerCase().indexOf(ft.toLowerCase())>=0}))});
     count.textContent='';
     var full=list.length;if(!showAll&&!a&&!b&&!g&&!ft)list=list.slice(0,9);
     grid.innerHTML=list.length?list.map(function(c){return '<button class="ch" data-no="'+c.no+'"><div class="ph"><span class="no">N°'+c.no+'</span>'+(c.img?'<img src="'+c.img+'" alt="'+esc(c.name)+'" loading="lazy" decoding="async" style="object-position:'+(c.pos||'50% 50%')+'">':'<span>Photo · '+esc(c.name)+'</span>')+'</div><span class="kicker">'+esc(c.area)+'</span><h3>'+esc(c.name)+'</h3><span class="spec">'+spec(c)+'</span><span class="from">'+fromTxt(c)+'</span></button>'}).join(''):'<p style="grid-column:1/-1;text-align:center;padding:40px 0">No chalet matches these filters. Try fewer filters, or <button class="more" data-enquire="Booking a stay or service" style="display:inline-flex">ask our concierge</button>.</p>';
@@ -1253,7 +1257,7 @@ footer ul a:hover{color:var(--wine)}
     if(cur.plans){pw.hidden=false;
       document.getElementById('fp-tabs').innerHTML=cur.plans.map(function(x,k){return '<button class="fp-tab'+(k?'':' on')+'" data-k="'+k+'">'+esc(x[0])+'</button>'}).join('');
       showPlan(0)}else pw.hidden=true;
-    var F=[];if(cur.bed)F.push([cur.bed,'Bedrooms']);if(cur.bath)F.push([cur.bath,'Bathrooms']);if(cur.guests)F.push([cur.guests,'Guests']);if(cur.size)F.push([cur.size+' m²','Living space']);
+    var F=[];if(cur.bed)F.push([cur.bedTxt||cur.bed,'Bedrooms']);if(cur.bath)F.push([cur.bath,'Bathrooms']);if(cur.guests)F.push([cur.guests,'Guests']);if(cur.size)F.push([cur.size+' m²','Living space']);
     if(cur.dist){F.push([cur.ski?'Ski-in':cur.dist.slopes,cur.ski?'Ski-out':'To the slopes']);F.push([cur.dist.lift,'To the ski lift'])}
     var fx=document.getElementById('cp-facts');fx.hidden=!F.length;fx.innerHTML=F.map(function(f){return '<div><b>'+f[0]+'</b><span>'+f[1]+'</span></div>'}).join('');
     var lc=document.getElementById('cp-loc');lc.hidden=!cur.dist;if(cur.dist)lc.textContent=cur.dist.centre+' from the centre of '+cur.area+' · '+cur.dist.lift+' to the ski lift · '+(cur.dist.slopes==='0 m'?'on the slopes':cur.dist.slopes+' to the slopes');
