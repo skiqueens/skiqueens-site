@@ -9,273 +9,261 @@
 <meta property="og:type" content="website"><meta property="og:site_name" content="Ski Queens"><meta property="og:url" content="https://skiqueens.co.uk/magazine/">
 <meta property="og:title" content="Ski Queens Magazine · Winter 2026/27">
 <meta property="og:description" content="The season's new ski collections, luxury hotel openings, resort guides and where to be seen in the Alps.">
-<meta property="og:image" content="https://skiqueens.co.uk/images/magazine/cover-black-fur.jpg">
+<meta property="og:image" content="https://skiqueens.co.uk/images/magazine/hero-courchevel-night.jpg">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,300;0,400;1,300;1,400&family=Lato:wght@300;400&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,400&family=Lato:wght@300;400&display=swap">
 <style>
 :root{
-  --ink:#373737;--soft:#6B6B6B;--white:#FFFFFF;--cream:#FBF6F1;--burgundy:#4A1920;--wine:#6D1F33;--line:#E6DDD5;--ph:#EDE6DF;
-  --display:"Cormorant","Cormorant Garamond",Georgia,serif;
-  --sans:"Gill Sans","Gill Sans MT","Lato","Helvetica Neue",Arial,sans-serif;
-  --gl:max(15px,env(safe-area-inset-left,0px));--gr:max(15px,env(safe-area-inset-right,0px));
+  --bg:#F3EEE7;--ink:#313131;--soft:#585858;--line:#D9D1C6;--dark:#313131;
+  --serif:"Cormorant Garamond",Georgia,"Times New Roman",serif;
+  --sans:"Lato","Helvetica Neue",Arial,sans-serif;
+  --gl:max(24px,env(safe-area-inset-left,0px));--gr:max(24px,env(safe-area-inset-right,0px));
   color-scheme:light;
 }
 *{box-sizing:border-box}
-html{font-size:19px;scroll-behavior:smooth}
+html{scroll-behavior:smooth}
 @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
-body{margin:0;background:var(--white);color:var(--ink);font-family:var(--sans);font-size:18.5px;line-height:1.65;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--serif);font-weight:400;font-size:19px;line-height:1.6;letter-spacing:.02em;-webkit-font-smoothing:antialiased;overflow-x:hidden}
 a{color:inherit;text-decoration:none}
-h1,h2,h3{font-family:var(--display);font-weight:300;margin:0;line-height:1.1;text-wrap:balance}
-p{margin:0}
 img{display:block;max-width:100%}
-em{font-style:italic}
-:focus-visible{outline:1px solid var(--wine);outline-offset:4px}
-.c{max-width:1350px;margin:0 auto;padding-left:var(--gl);padding-right:var(--gr)}
-.kicker{font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--soft)}
-.more{display:inline-flex;align-items:center;gap:8px;font-size:.84rem;letter-spacing:.07em;text-transform:uppercase;border:0;border-bottom:1px solid currentColor;padding:0 0 6px;cursor:pointer;background:none;color:inherit;font-family:var(--sans)}
-.more::after{content:"";width:5px;height:5px;border-top:1px solid currentColor;border-right:1px solid currentColor;transform:rotate(45deg)}
-.more:hover{opacity:.7}
+h1,h2,h3{font-family:var(--serif);font-weight:400;margin:0;letter-spacing:.01em;line-height:1.3}
+p{margin:0}
+:focus-visible{outline:1px solid var(--ink);outline-offset:4px}
+.wrap{max-width:1440px;margin:0 auto;padding-left:var(--gl);padding-right:var(--gr)}
+.eyebrow{font-family:var(--sans);font-size:11px;font-weight:400;letter-spacing:.2em;text-transform:uppercase}
+.lnk{display:inline-block;font-family:var(--sans);font-size:13px;letter-spacing:.06em;padding-bottom:6px;border-bottom:1px solid currentColor}
+.lnk:hover{opacity:.6}
 
 /* header */
-header{position:sticky;top:0;z-index:80;background:var(--white);height:72px;box-shadow:0 1px 0 rgba(0,0,0,.06)}
-.hb{height:100%;display:grid;grid-template-columns:1fr auto 1fr;align-items:center;padding-left:max(30px,env(safe-area-inset-left,0px));padding-right:max(30px,env(safe-area-inset-right,0px))}
-.burger{width:40px;height:30px;background:none;border:0;cursor:pointer;display:flex;flex-direction:column;justify-content:center;gap:7px;padding:0;color:var(--ink)}
-.burger i{display:block;height:1px;background:currentColor;width:40px}
-.logo{display:flex;justify-content:center}
-.logo-img{height:54px;width:auto}
-.book{justify-self:end;background:var(--burgundy);color:var(--white);font-size:.78rem;letter-spacing:.12em;text-transform:uppercase;padding:13px 26px;font-family:var(--sans)}
-.book:hover{background:var(--wine)}
-@media (max-width:600px){.hb{padding-left:var(--gl);padding-right:var(--gr)}.burger i{width:28px}.logo-img{height:30px}.book{padding:11px 14px;font-size:.68rem}.bk-x{display:none}}
+header{position:sticky;top:0;z-index:50;background:var(--bg)}
+.hb{height:96px;display:grid;grid-template-columns:1fr auto 1fr;align-items:center;padding-left:var(--gl);padding-right:var(--gr);max-width:1440px;margin:0 auto}
+.menu-btn{display:flex;align-items:center;gap:16px;background:none;border:0;padding:0;cursor:pointer;font-family:var(--sans);font-size:14px;letter-spacing:.05em;color:var(--ink);min-height:44px}
+.menu-btn i{display:block;width:20px;height:1px;background:currentColor;box-shadow:0 6px 0 currentColor;position:relative;top:-3px}
+.brand{display:flex;flex-direction:column;align-items:center;gap:6px}
+.brand img{height:40px;width:auto}
+.brand span{font-family:var(--sans);font-size:9px;letter-spacing:.32em;text-transform:uppercase}
+.actions{justify-self:end;display:flex;gap:16px}
+.btn{font-family:var(--sans);font-size:13px;letter-spacing:.05em;padding:12px 26px;border:1px solid var(--dark);white-space:nowrap}
+.btn.solid{background:var(--dark);color:#fff}
+.btn:hover{opacity:.8}
+@media (max-width:820px){.actions .btn:not(.solid){display:none}.menu-btn span{display:none}.hb{height:76px}.brand img{height:30px}.btn{padding:10px 14px;font-size:12px}}
 
-/* menu */
-.menu{position:fixed;inset:0;z-index:100;background:var(--white);display:grid;grid-template-columns:1fr 1fr;transform:translateX(-100%);transition:transform .5s cubic-bezier(.7,0,.2,1)}
-.menu.open{transform:none}
-.menu nav{padding:calc(40px + env(safe-area-inset-top,0px)) 40px 40px max(40px,env(safe-area-inset-left,0px));display:flex;flex-direction:column;gap:6px;overflow:auto}
-.menu .close{align-self:flex-start;background:none;border:0;font-size:.78rem;letter-spacing:.14em;text-transform:uppercase;cursor:pointer;margin-bottom:40px;color:var(--ink);font-family:var(--sans)}
-.menu nav a{font-family:var(--display);font-size:clamp(1.8rem,3vw,2.5rem);font-weight:300;line-height:1.3}
-.menu nav a:hover,.menu nav a[aria-current]{font-style:italic;color:var(--wine)}
-.menu .side{position:relative;background:var(--cream)}
-.menu .side img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
-@media (max-width:760px){.menu{grid-template-columns:1fr}.menu .side{display:none}}
+/* menu drawer */
+.drawer{position:fixed;inset:0;z-index:100;background:var(--bg);transform:translateX(-100%);transition:transform .5s cubic-bezier(.7,0,.2,1);padding:40px var(--gr) 40px var(--gl);display:flex;flex-direction:column;gap:8px;overflow:auto}
+.drawer.open{transform:none}
+.drawer .close{align-self:flex-start;background:none;border:0;font-family:var(--sans);font-size:13px;letter-spacing:.1em;text-transform:uppercase;cursor:pointer;margin-bottom:36px;color:var(--ink);min-height:44px}
+.drawer a{font-size:clamp(1.8rem,3vw,2.4rem);line-height:1.35}
+.drawer a:hover,.drawer a[aria-current]{font-style:italic}
 
-/* hero — portrait opening */
-.hero{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);min-height:min(900px,calc(100vh - 72px));background:#F4F4F2}
-.hero .img{position:relative;overflow:hidden}
-.hero .img img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 20%}
-.hero .in{display:flex;flex-direction:column;justify-content:center;align-items:flex-start;gap:22px;padding:80px clamp(24px,7vw,110px)}
-.eyebrow{font-size:.7rem;letter-spacing:.24em;text-transform:uppercase}
-.hero .eyebrow{color:var(--wine)}
-.hero h1{font-size:clamp(3rem,6vw,5.4rem);line-height:1;color:var(--burgundy)}
-.hero p{max-width:28em;font-size:1.02rem;line-height:1.8}
-.links{display:flex;gap:34px;flex-wrap:wrap;margin-top:8px}
-@media (max-width:860px){.hero{grid-template-columns:1fr;min-height:0}.hero .img{aspect-ratio:765/1026}.hero .in{padding:48px var(--gr) 56px var(--gl)}}
+/* hero: inset image */
+.hero{padding-top:8px}
+.hero .frame{position:relative;aspect-ratio:16/9;overflow:hidden;background:#222}
+.hero .frame img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 30%}
+@media (max-width:700px){.hero .frame{aspect-ratio:4/5}.hero .frame img{object-position:45% 30%}}
 
-/* centred statement */
-.stmt{max-width:860px;margin:0 auto;text-align:center;padding:110px var(--gr) 100px var(--gl);display:flex;flex-direction:column;align-items:center;gap:22px}
-.stmt .eyebrow{color:var(--wine)}
-.stmt h2{font-size:clamp(2.6rem,5vw,4rem);color:var(--burgundy)}
-.stmt p{font-size:1.02rem;line-height:1.85}
-.stars{color:var(--wine);letter-spacing:.6em;font-size:.8rem;text-align:center;padding:10px 0}
+/* centred intro */
+.center{max-width:900px;margin:0 auto;text-align:center;padding:96px var(--gr) 110px var(--gl);display:flex;flex-direction:column;align-items:center;gap:24px}
+.center h1{font-size:clamp(2.2rem,3.6vw,3.1rem)}
+.center p{font-size:20px;line-height:1.7}
+.pair-links{display:flex;gap:28px;flex-wrap:wrap;justify-content:center;margin-top:8px}
 
-/* split blocks */
-.split{display:grid;grid-template-columns:1.15fr 1fr;min-height:640px}
-.split.rev .img{order:2}
-.split .img{position:relative;overflow:hidden;background:var(--ph);min-height:420px}
-.split .img img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
-.split .txt{display:flex;flex-direction:column;justify-content:center;gap:22px;padding:80px clamp(24px,7vw,110px)}
-.split.cream .txt{background:var(--cream)}
-.split .eyebrow{color:var(--wine)}
-.split h2{font-size:clamp(2.3rem,4vw,3.4rem)}
-.split .txt > p{font-size:1rem;line-height:1.8;max-width:30em}
-.toc{list-style:none;margin:6px 0 0;padding:0;border-top:1px solid var(--line);max-width:30em}
-.toc li{display:flex;justify-content:space-between;align-items:baseline;gap:18px;padding:16px 0;border-bottom:1px solid var(--line)}
-.toc b{font-family:var(--display);font-weight:400;font-size:1.35rem;line-height:1.25}
-.toc li a{display:flex;justify-content:space-between;align-items:baseline;gap:18px;width:100%}
-.toc li a:hover b{font-style:italic}
-.toc .rd{border-bottom:1px solid currentColor;padding-bottom:2px}
-.toc span{flex:none;font-size:.6rem;letter-spacing:.16em;text-transform:uppercase;color:var(--wine)}
-@media (max-width:900px){.split,.split.rev{grid-template-columns:1fr}.split.rev .img{order:0}.split .img{min-height:auto;aspect-ratio:4/3}.split .txt{padding:56px var(--gr) 64px var(--gl)}}
+/* split: image + text column */
+.split{display:grid;grid-template-columns:minmax(0,1.65fr) minmax(0,1fr);gap:clamp(28px,4vw,56px);align-items:start;padding-bottom:120px}
+.split.rev{grid-template-columns:minmax(0,1fr) minmax(0,1.65fr)}
+.split.rev .media{order:2}
+.split.portrait{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}
+.split .media{position:relative;overflow:hidden;background:#ddd}
+.split .media img{width:100%;height:100%;object-fit:cover}
+.split .copy{display:flex;flex-direction:column;gap:22px;padding-top:4px}
+.split .copy h2{font-size:clamp(1.8rem,2.4vw,2.2rem)}
+.split .copy p{font-size:19px;line-height:1.7}
+.split .copy .rule{border-top:1px solid var(--line);margin-top:12px}
+@media (max-width:860px){.split,.split.rev,.split.portrait{grid-template-columns:1fr;padding-bottom:84px}.split.rev .media{order:0}}
 
-/* full-width banner */
-.wide{position:relative;height:min(760px,86vh);min-height:480px;overflow:hidden;background:#222;color:var(--white);display:flex;align-items:flex-end}
-.wide img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
-.wide::after{content:"";position:absolute;inset:auto 0 0;height:65%;background:linear-gradient(to top,rgba(25,8,12,.78),rgba(25,8,12,0))}
-.wide .in{position:relative;z-index:1;width:100%;max-width:1350px;margin:0 auto;padding:0 var(--gr) 70px var(--gl);display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:end}
-.wide h2{font-size:clamp(2.4rem,4.6vw,3.8rem)}
-.wide .toc{border-color:rgba(255,255,255,.35)}
-.wide .toc li{border-color:rgba(255,255,255,.35)}
-.wide .toc span{color:rgba(255,255,255,.85)}
-@media (max-width:900px){.wide{height:auto;min-height:0;padding-top:300px}.wide .in{grid-template-columns:1fr}}
+/* two cards */
+.duo{display:grid;grid-template-columns:1fr 1fr;gap:clamp(20px,2.4vw,32px);padding-bottom:120px}
+.card{display:flex;flex-direction:column;gap:18px}
+.card .media{aspect-ratio:1/1;overflow:hidden;background:#ddd}
+.card .media img{width:100%;height:100%;object-fit:cover;transition:transform 1s ease}
+.card:hover .media img{transform:scale(1.02)}
+.card h2,.card h3{font-size:clamp(1.6rem,2vw,1.9rem)}
+.card p{font-size:19px;line-height:1.7;max-width:34em}
+.card .lnk{align-self:flex-start;margin-top:8px}
+@media (max-width:760px){.duo{grid-template-columns:1fr;padding-bottom:84px}}
 
-/* partner + newsletter pair */
-.pair{display:grid;grid-template-columns:1fr 1fr;border-top:1px solid var(--line)}
-.pair > div{padding:90px clamp(24px,6vw,90px);display:flex;flex-direction:column;gap:20px;align-items:flex-start}
-.pair > div + div{border-left:1px solid var(--line)}
-.pair .eyebrow{color:var(--wine)}
-.pair h2{font-size:clamp(2.1rem,3.4vw,2.8rem)}
-.pair p{font-size:1rem;line-height:1.8;max-width:30em}
-.pair form{display:flex;gap:16px;align-items:center;flex-wrap:wrap;width:100%;max-width:30em}
-.pair input{border:0;border-bottom:1px solid var(--ink);font:inherit;padding:8px 0;flex:1;min-width:0;background:transparent;color:var(--ink)}
-.pair .msg{width:100%;font-size:.78rem;color:var(--wine);min-height:1.2em}
-@media (max-width:860px){.pair{grid-template-columns:1fr}.pair > div + div{border-left:0;border-top:1px solid var(--line)}.pair > div{padding:64px var(--gr) 64px var(--gl)}}
+/* featured row */
+.featured{padding-bottom:120px}
+.featured .head{display:flex;flex-direction:column;gap:18px;margin-bottom:44px;max-width:640px}
+.featured .head h1{font-size:clamp(2.2rem,3.6vw,3.1rem)}
+.featured .head p{font-size:19px}
+.row{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(20px,2.4vw,32px)}
+.row .card .media{aspect-ratio:4/5}
+.soon{font-family:var(--sans);font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--soft)}
+@media (max-width:960px){.row{grid-template-columns:1fr 1fr}}
+@media (max-width:600px){.row{grid-template-columns:1fr}}
 
 /* footer */
-footer{padding-block:50px 30px;font-size:.84rem}
-.fg{display:grid;grid-template-columns:2fr 1fr 1fr;gap:40px}
-footer h4{margin:0 0 14px;font-weight:400;font-size:.95rem;letter-spacing:.06em;text-transform:uppercase}
-footer ul{list-style:none;margin:0;padding:0;display:grid;gap:6px;font-size:.74rem;letter-spacing:.06em;text-transform:uppercase}
-footer ul a:hover{color:var(--wine)}
-.nl p{line-height:1.7;max-width:30em;margin-bottom:16px}
-.nl form{display:flex;gap:14px;align-items:center;flex-wrap:wrap}
-.nl input{border:0;border-bottom:1px solid var(--ink);font:inherit;padding:8px 0;min-width:0;flex:1;max-width:280px;background:transparent;color:var(--ink)}
-.nl .msg{width:100%;font-size:.78rem;color:var(--wine);min-height:1.2em}
-.nl-consent{font-size:.72rem;line-height:1.6;color:var(--soft);margin:10px 0 0;max-width:34em}.nl-consent a{border-bottom:1px solid currentColor}
-.legal{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;border-top:1px solid var(--line);margin-top:46px;padding-top:20px;font-size:.62rem;letter-spacing:.1em;text-transform:uppercase}
-@media (max-width:760px){.fg{grid-template-columns:1fr 1fr}.nl{grid-column:1/-1}}
+footer{border-top:1px solid var(--line);padding:72px 0 40px}
+.fg{display:grid;grid-template-columns:1.2fr 1fr 1fr 1fr;gap:40px}
+footer h2{font-size:26px;margin-bottom:18px}
+footer .addr{font-family:var(--sans);font-size:13px;line-height:1.9;color:var(--soft);letter-spacing:.03em}
+footer ul{list-style:none;margin:0;padding:0;display:grid;gap:10px;font-family:var(--sans);font-size:13px;color:var(--soft);letter-spacing:.03em}
+footer ul a:hover{color:var(--ink)}
+.nl p{font-size:18px;color:var(--soft);margin-bottom:18px}
+.nl form{display:flex;gap:16px;align-items:center;flex-wrap:wrap}
+.nl input{flex:1;min-width:0;border:0;border-bottom:1px solid var(--ink);background:transparent;font:inherit;font-size:17px;padding:8px 0;color:var(--ink)}
+.nl button{background:var(--dark);color:#fff;border:0;font-family:var(--sans);font-size:13px;letter-spacing:.05em;padding:12px 24px;cursor:pointer;min-height:44px}
+.nl .msg{width:100%;font-family:var(--sans);font-size:12px;min-height:1.2em}
+.nl .consent{font-family:var(--sans);font-size:11px;line-height:1.6;color:var(--soft);margin-top:12px;max-width:36em}
+.nl .consent a{border-bottom:1px solid currentColor}
+.legal{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;margin-top:60px;padding-top:24px;border-top:1px solid var(--line);font-family:var(--sans);font-size:11px;letter-spacing:.06em;color:var(--soft)}
+@media (max-width:960px){.fg{grid-template-columns:1fr 1fr}}
+@media (max-width:560px){.fg{grid-template-columns:1fr}.nl{grid-column:auto!important}}
 </style>
 </head>
 <body>
 
 <header>
   <div class="hb">
-    <button class="burger" id="openMenu" aria-label="Open menu"><i></i><i></i></button>
-    <a class="logo" href="/" aria-label="Ski Queens home"><img src="/images/ski-queens-logo.png" alt="Ski Queens" class="logo-img"></a>
-    <a class="book" href="/#chalets">Book<span class="bk-x"> a chalet</span></a>
+    <button class="menu-btn" id="openMenu" aria-label="Open menu"><i aria-hidden="true"></i><span>Menu</span></button>
+    <a class="brand" href="/magazine/" aria-label="Ski Queens Magazine"><img src="/images/ski-queens-logo.png" alt="Ski Queens"><span>Magazine</span></a>
+    <div class="actions"><a class="btn" href="#subscribe">Subscribe</a><a class="btn solid" href="/#brand-partners">Partner with us</a></div>
   </div>
 </header>
 
-<div class="menu" id="menu" aria-hidden="true">
-  <nav>
-    <button class="close" id="closeMenu">Close</button>
-    <img src="/images/ski-queens-logo.png" alt="Ski Queens" style="width:200px;height:auto;margin-bottom:34px">
-    <a href="/">Home</a>
-    <a href="/magazine/" aria-current="page">The Magazine</a>
-    <a href="/#chalets">The Chalets</a>
-    <a href="/#services">Services</a>
-    <a href="/#brand-partners">Brand Partners</a>
-    <a href="/#features">Features on Instagram</a>
-    <a href="/#partners">Our Partners</a>
-    <a href="/#press">Press</a>
-    <a href="/#founder">The Founder</a>
-    <a href="/#contact">Contact</a>
-  </nav>
-  <div class="side"><img src="/images/matterhorn-burgundy-pair-1400.jpg" alt="" loading="lazy" style="object-position:22% 50%"></div>
-</div>
+<nav class="drawer" id="menu" aria-hidden="true" aria-label="Main menu">
+  <button class="close" id="closeMenu">Close</button>
+  <a href="/magazine/" aria-current="page">The Magazine</a>
+  <a href="/magazine/courchevel-2026-27/">What's new in Courchevel</a>
+  <a href="/magazine/ski-resort-opening-dates-2026-27/">Ski resort opening dates</a>
+  <a href="/">Ski Queens</a>
+  <a href="/#chalets">The Chalets</a>
+  <a href="/#services">Services</a>
+  <a href="/#brand-partners">Brand Partners</a>
+  <a href="/#contact">Contact</a>
+</nav>
 
 <main>
-  <section class="hero" aria-labelledby="hero-h">
-    <div class="img"><img src="/images/magazine/cover-black-fur.jpg" alt="Woman in a black feathered fur coat, in black and white"></div>
-    <div class="in">
-      <span class="eyebrow">Ski Queens Magazine · Issue 01</span>
-      <h1 id="hero-h">Winter 2026/27 in the <em>Alps</em></h1>
-      <p>New collections, new addresses and the resorts worth the journey, written from the mountains all season long.</p>
-      <div class="links"><a class="more" href="#opened">Discover the issue</a><a class="more" href="#subscribe">Subscribe</a></div>
+  <section class="hero wrap" aria-label="Cover">
+    <div class="frame"><img src="/images/magazine/hero-courchevel-night.jpg" alt="Woman in black sunglasses on a chalet balcony above Courchevel at night" width="2000" height="1120"></div>
+  </section>
+
+  <section class="center">
+    <h3 class="eyebrow">Issue 01 · Winter 2026/27</h3>
+    <h1>The season begins in the Alps</h1>
+    <p>New collections, new addresses and the resorts worth the journey. Ski Queens Magazine follows the season from the first lift in November to the last run in April — written from the mountains, for those who ski well and dress beautifully.</p>
+    <div class="pair-links"><a class="lnk" href="#stories">Discover the stories</a><a class="lnk" href="#subscribe">Subscribe</a></div>
+  </section>
+
+  <section class="split portrait wrap" aria-labelledby="about-h">
+    <div class="media" style="aspect-ratio:765/1026"><img src="/images/magazine/cover-black-fur.jpg" alt="Woman in a black feathered fur coat, in black and white"></div>
+    <div class="copy">
+      <h2 id="about-h">Ski Queens Magazine</h2>
+      <p>The world of Ski Queens, told in stories. The season's new ski collections, the hotel openings everyone is talking about, resort guides and where to be seen once you arrive — from Courchevel to St. Moritz, Zermatt to Gstaad.</p>
+      <div><a class="lnk" href="#stories">Discover more</a></div>
+      <div class="rule"></div>
     </div>
   </section>
 
-  <div class="stmt">
-    <span class="eyebrow">Written from the mountains</span>
-    <h2>Ski Queens <em>Magazine</em></h2>
-    <p>The season's new collections, the hotel openings everyone is talking about, the resorts worth the journey and where to be seen once you arrive. One issue each month, from the first lift in November to the last run in April.</p>
-  </div>
+  <section class="duo wrap" id="stories" aria-label="Latest stories">
+    <a class="card" href="/magazine/courchevel-2026-27/">
+      <div class="media"><img src="/images/magazine/card-courchevel.jpg" alt="Woman in sunglasses before Courchevel's lit chalets at night" loading="lazy"></div>
+      <p class="eyebrow">Just Opened</p>
+      <h2>What's new in Courchevel for 2026–2027</h2>
+      <p>Saint Roch reborn by Maisons Pariente, the Bourbon Hotel's London private-club spirit, Simonetta, ZIA and the new five-star addresses of Moriond — the hotels, tables and new names to know before the season.</p>
+      <span class="lnk">Read the story</span>
+    </a>
+    <a class="card" href="/magazine/ski-resort-opening-dates-2026-27/">
+      <div class="media"><img src="/images/magazine/card-opening-dates.jpg" alt="Woman in black against a burgundy and snow-white mountain collage" loading="lazy"></div>
+      <p class="eyebrow">Resort Guide</p>
+      <h2>Ski resort opening dates 2026/2027</h2>
+      <p>From Kitzbühel and Gstaad in early November to Courchevel on 4 December — the opening dates to know across the iconic resorts, from the Alps to Aspen and Niseko.</p>
+      <span class="lnk">Read the story</span>
+    </a>
+  </section>
 
-  <div class="stars" aria-hidden="true">* * *</div>
-
-  <section class="split" id="collections" aria-labelledby="col-h">
-    <div class="img"><img src="/images/red-suit-matterhorn-1400.jpg" alt="Woman in a burgundy suit holding skis before the Matterhorn" loading="lazy" style="object-position:82% 50%"></div>
-    <div class="txt">
-      <span class="eyebrow">The Collections</span>
-      <h2 id="col-h">The season's <em>new</em> looks</h2>
-      <p>From technical shells to the après wardrobe, the labels and pieces to wear on the mountain this winter.</p>
-      <ul class="toc">
-        <li><b>The season's best new ski collections</b><span>Coming soon</span></li>
-        <li><b>The après-ski edit</b><span>Coming soon</span></li>
-        <li><b>Altitude skincare</b><span>Coming soon</span></li>
-      </ul>
+  <section class="split wrap" aria-labelledby="col-h">
+    <div class="media" style="aspect-ratio:3/2"><img src="/images/red-suit-matterhorn-1400.jpg" alt="Woman in a burgundy suit holding skis before the Matterhorn" loading="lazy" style="object-position:82% 50%"></div>
+    <div class="copy">
+      <p class="eyebrow">The Collections</p>
+      <h2 id="col-h">The season's new looks</h2>
+      <p>From technical shells to the après wardrobe — the labels and pieces to wear on the mountain this winter, edited by Ski Queens.</p>
+      <p class="soon">Coming soon</p>
+      <div class="rule"></div>
     </div>
   </section>
 
-  <section class="split rev cream" id="opened" aria-labelledby="op-h">
-    <div class="img"><img src="/images/site/c-village1.jpg" alt="Snow-covered chalets among pine trees" loading="lazy"></div>
-    <div class="txt">
-      <span class="eyebrow">Just Opened</span>
-      <h2 id="op-h">The addresses of the <em>season</em></h2>
-      <p>New hotels, restaurants and chalets, reviewed in person, from the Alps to the city.</p>
-      <ul class="toc">
-        <li><a href="/magazine/courchevel-2026-27/"><b>What's new in Courchevel for 2026–2027</b><span class="rd">Read</span></a></li>
-        <li><b>From the city to the slopes</b><span>Coming soon</span></li>
-        <li><b>The openings to watch in 2027</b><span>Coming soon</span></li>
-      </ul>
+  <section class="split portrait rev wrap" aria-labelledby="seen-h">
+    <div class="media" style="aspect-ratio:765/1026"><img src="/images/magazine/portrait-cream-fur.jpg" alt="Woman in a cream fur coat and black lace trousers" loading="lazy"></div>
+    <div class="copy">
+      <p class="eyebrow">Where to Be Seen</p>
+      <h2 id="seen-h">The Little Snow Book</h2>
+      <p>The parties, openings and insider addresses of the season, resort by resort — our little book for the winter.</p>
+      <p class="soon">Coming soon</p>
+      <div class="rule"></div>
     </div>
   </section>
 
-  <section class="wide" id="resorts" aria-labelledby="rs-h">
-    <img src="/images/opening-matterhorn-pair-1672.jpg" alt="Two women in burgundy holding skis before snow-covered Alpine peaks" loading="lazy" style="object-position:52% 40%">
-    <div class="in">
-      <div>
-        <span class="eyebrow">Resort Guide</span>
-        <h2 id="rs-h" style="margin-top:16px">Where to stay, ski, dine and be <em>seen</em></h2>
+  <section class="featured wrap" aria-labelledby="feat-h">
+    <div class="head">
+      <h1 id="feat-h">Featured Stories</h1>
+      <p>A selection of stories that capture the spirit of the season — each written to inspire the journey.</p>
+      <div><a class="lnk" href="#stories">Discover all stories</a></div>
+    </div>
+    <div class="row">
+      <a class="card" href="/magazine/courchevel-2026-27/">
+        <div class="media"><img src="/images/magazine/courchevel-2026-27/tata-harper.jpg" alt="Woman in a towel turban and sunglasses before snowy peaks" loading="lazy"></div>
+        <p class="eyebrow">Courchevel 1850</p>
+        <h3>Saint Roch &amp; the Tata Harper Spa</h3>
+        <p>A Courchevel institution, transformed — reopening on 18 December 2026.</p>
+      </a>
+      <a class="card" href="/magazine/ski-resort-opening-dates-2026-27/">
+        <div class="media"><img src="/images/magazine/ski-resort-opening-dates-2026-27/zermatt.jpg" alt="Collage of the Matterhorn and a woman in white with a lace blindfold" loading="lazy"></div>
+        <p class="eyebrow">The Season</p>
+        <h3>Where to ski first</h3>
+        <p>Glacier skiing and the first resorts to open, from Zermatt to Kitzbühel.</p>
+      </a>
+      <div class="card">
+        <div class="media"><img src="/images/magazine/portrait-black-fur-2.jpg" alt="Woman in a black feathered fur coat, in black and white" loading="lazy" style="object-position:50% 20%"></div>
+        <p class="eyebrow">The Edit</p>
+        <h3>The après-ski edit</h3>
+        <p class="soon">Coming soon</p>
       </div>
-      <ul class="toc">
-        <li><a href="/magazine/ski-resort-opening-dates-2026-27/"><b>Ski resort opening dates 2026/2027</b><span class="rd">Read</span></a></li>
-        <li><b>Where to ski in November</b><span>Coming soon</span></li>
-        <li><b>The Ski Queens guide to Courchevel 1850</b><span>Coming soon</span></li>
-      </ul>
-    </div>
-  </section>
-
-  <section class="split" id="seen" aria-labelledby="sn-h">
-    <div class="img"><img src="/images/gstaad-black-gown-1400.jpg" alt="Woman in a black gown above the rooftops of Gstaad" loading="lazy" style="object-position:8% 40%"></div>
-    <div class="txt">
-      <span class="eyebrow">Where to Be Seen</span>
-      <h2 id="sn-h">The places of the <em>moment</em></h2>
-      <p>The parties, openings and insider addresses of the season, resort by resort.</p>
-      <ul class="toc">
-        <li><b>The season's openings and events</b><span>Coming soon</span></li>
-        <li><b>The Little Black Book</b><span>Coming soon</span></li>
-      </ul>
-    </div>
-  </section>
-
-  <div class="stars" aria-hidden="true" style="padding:70px 0 0">* * *</div>
-
-  <section class="pair" id="subscribe">
-    <div>
-      <span class="eyebrow">Partner with the magazine</span>
-      <h2>Bring your brand to the <em>Ski Queens</em> audience</h2>
-      <p>New collections, hotel openings and season partnerships, featured in the magazine and across Ski Queens, reaching over 16 million monthly views in peak season.</p>
-      <a class="more" href="/#brand-partners">Discover more</a>
-    </div>
-    <div>
-      <span class="eyebrow">Get inspired</span>
-      <h2>Each issue, in your <em>inbox</em></h2>
-      <p>Sign up to receive Ski Queens Magazine once a month, through the season.</p>
-      <form id="nl" name="newsletter" method="POST" data-netlify="true"><input type="hidden" name="form-name" value="newsletter"><input type="hidden" name="source" value="magazine"><label for="nl-email" style="position:absolute;left:-9999px">Email address</label><input id="nl-email" name="email" type="email" placeholder="Your email address" required><button class="more" type="submit">Sign up</button><span class="msg" id="nl-msg" aria-live="polite"></span></form>
-      <p class="nl-consent">By signing up you agree to receive the Ski Queens newsletter by email, once a month. You can unsubscribe at any time. See our <a href="/#privacy">privacy policy</a>.</p>
     </div>
   </section>
 </main>
 
-<footer>
-  <div class="c">
+<footer id="subscribe">
+  <div class="wrap">
     <div class="fg">
-      <div class="nl"><h4>Ski Queens Magazine</h4><p>New collections, hotel openings, resort guides and where to be seen in the Alps. Published by Ski Queens, London.</p></div>
-      <div><h4>Ski Queens</h4><ul><li><a href="/magazine/">The Magazine</a></li><li><a href="/#chalets">The Chalets</a></li><li><a href="/#services">Services</a></li><li><a href="/#brand-partners">Brand Partnerships</a></li><li><a href="/#partners">Partners</a></li><li><a href="/#press">Press</a></li><li><a href="/#contact">Contact</a></li></ul></div>
-      <div><h4>Legal</h4><ul><li><a href="/#privacy">Privacy policy</a></li><li><a href="/#cookies">Cookies</a></li><li><a href="/#terms">Terms</a></li><li><a href="/#legal">Legal notice</a></li></ul></div>
+      <div>
+        <h2>SKI QUEENS</h2>
+        <p class="addr">London · Courchevel<br>hello@skiqueens.co.uk<br>@skiqueens</p>
+      </div>
+      <div class="nl" style="grid-column:span 2">
+        <h2>Get inspired</h2>
+        <p>Receive each new issue of Ski Queens Magazine — the collections, openings and resorts of the season.</p>
+        <form id="nl" name="newsletter" method="POST" data-netlify="true"><input type="hidden" name="form-name" value="newsletter"><input type="hidden" name="source" value="magazine"><label for="nl-email" style="position:absolute;left:-9999px">Email address</label><input id="nl-email" name="email" type="email" placeholder="Your email address" required><button type="submit">Sign up</button><span class="msg" id="nl-msg" aria-live="polite"></span></form>
+        <p class="consent">By signing up you agree to receive the Ski Queens newsletter by email, once a month. You can unsubscribe at any time. See our <a href="/#privacy">privacy policy</a>.</p>
+      </div>
+      <div>
+        <h2>Ski Queens</h2>
+        <ul><li><a href="/">Home</a></li><li><a href="/#chalets">The Chalets</a></li><li><a href="/#services">Services</a></li><li><a href="/#brand-partners">Brand Partnerships</a></li><li><a href="/#press">Press</a></li><li><a href="/#contact">Contact</a></li></ul>
+      </div>
     </div>
-    <div class="legal"><span>© 2026 Ski Queens</span><span>Ski Queens® · Registered UK and EU trade mark</span></div>
+    <div class="legal"><span>© 2026 Ski Queens · Ski Queens® is a registered UK and EU trade mark</span><span><a href="/#privacy">Privacy policy</a> · <a href="/#cookies">Cookies</a> · <a href="/#terms">Terms</a></span></div>
   </div>
 </footer>
 
 <script>
 (function(){
-  var menu=document.getElementById('menu');
-  document.getElementById('openMenu').onclick=function(){menu.classList.add('open');menu.setAttribute('aria-hidden','false')};
-  document.getElementById('closeMenu').onclick=function(){menu.classList.remove('open');menu.setAttribute('aria-hidden','true')};
-  document.addEventListener('keydown',function(e){if(e.key==='Escape'){menu.classList.remove('open');menu.setAttribute('aria-hidden','true')}});
-  document.getElementById('nl').addEventListener('submit',function(e){e.preventDefault();var f=this,m=document.getElementById('nl-msg');m.textContent='Sending…';fetch('/',{method:'POST',headers:{'Content-Type':'application/x-www-form-urlencoded'},body:new URLSearchParams(new FormData(f)).toString()}).then(function(r){if(!r.ok)throw 0;m.textContent='Thank you for signing up.';f.reset()}).catch(function(){m.textContent='Your sign-up could not be sent. Please try again in a moment.'})});
+  var m=document.getElementById('menu');
+  document.getElementById('openMenu').onclick=function(){m.classList.add('open');m.setAttribute('aria-hidden','false')};
+  document.getElementById('closeMenu').onclick=function(){m.classList.remove('open');m.setAttribute('aria-hidden','true')};
+  document.addEventListener('keydown',function(e){if(e.key==='Escape'){m.classList.remove('open');m.setAttribute('aria-hidden','true')}});
+  document.getElementById('nl').addEventListener('submit',function(e){e.preventDefault();var f=this,s=document.getElementById('nl-msg');s.textContent='Sending…';fetch('/',{method:'POST',headers:{'Content-Type':'application/x-www-form-urlencoded'},body:new URLSearchParams(new FormData(f)).toString()}).then(function(r){if(!r.ok)throw 0;s.textContent='Thank you for signing up.';f.reset()}).catch(function(){s.textContent='Your sign-up could not be sent. Please try again in a moment.'})});
 })();
 </script>
 </body>
