@@ -9,7 +9,7 @@
 <meta property="og:type" content="website"><meta property="og:site_name" content="Ski Queens"><meta property="og:url" content="https://skiqueens.co.uk/magazine/">
 <meta property="og:title" content="Ski Queens Magazine · Winter 2026/27">
 <meta property="og:description" content="The season's new ski collections, luxury hotel openings, resort guides and where to be seen in the Alps.">
-<meta property="og:image" content="https://skiqueens.co.uk/images/site/c-hero.jpg">
+<meta property="og:image" content="https://skiqueens.co.uk/images/magazine/cover-black-fur.jpg">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -60,17 +60,17 @@ header{position:sticky;top:0;z-index:80;background:var(--white);height:72px;box-
 .menu .side img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
 @media (max-width:760px){.menu{grid-template-columns:1fr}.menu .side{display:none}}
 
-/* hero — full bleed, centred */
-.hero{position:relative;height:min(860px,92vh);min-height:560px;overflow:hidden;background:#2A1216;color:var(--white);display:flex;align-items:center;justify-content:center;text-align:center}
-.hero img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:30% 40%}
-.hero::after{content:"";position:absolute;inset:0;background:rgba(25,8,12,.48)}
-.hero .in{position:relative;z-index:1;padding:0 var(--gr) 0 var(--gl);display:flex;flex-direction:column;align-items:center;gap:20px}
+/* hero — portrait opening */
+.hero{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);min-height:min(900px,calc(100vh - 72px));background:#F4F4F2}
+.hero .img{position:relative;overflow:hidden}
+.hero .img img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 20%}
+.hero .in{display:flex;flex-direction:column;justify-content:center;align-items:flex-start;gap:22px;padding:80px clamp(24px,7vw,110px)}
 .eyebrow{font-size:.7rem;letter-spacing:.24em;text-transform:uppercase}
-.hero h1{font-size:clamp(2.8rem,7vw,5.6rem);line-height:1.02;max-width:12em}
-.hero p{max-width:32em;font-size:1rem;line-height:1.75;color:rgba(255,255,255,.92)}
-.links{display:flex;gap:34px;flex-wrap:wrap;justify-content:center;margin-top:8px}
-.hero .more{color:var(--white)}
-@media (max-width:640px){.hero img{object-position:12% 30%}}
+.hero .eyebrow{color:var(--wine)}
+.hero h1{font-size:clamp(3rem,6vw,5.4rem);line-height:1;color:var(--burgundy)}
+.hero p{max-width:28em;font-size:1.02rem;line-height:1.8}
+.links{display:flex;gap:34px;flex-wrap:wrap;margin-top:8px}
+@media (max-width:860px){.hero{grid-template-columns:1fr;min-height:0}.hero .img{aspect-ratio:765/1026}.hero .in{padding:48px var(--gr) 56px var(--gl)}}
 
 /* centred statement */
 .stmt{max-width:860px;margin:0 auto;text-align:center;padding:110px var(--gr) 100px var(--gl);display:flex;flex-direction:column;align-items:center;gap:22px}
@@ -92,6 +92,9 @@ header{position:sticky;top:0;z-index:80;background:var(--white);height:72px;box-
 .toc{list-style:none;margin:6px 0 0;padding:0;border-top:1px solid var(--line);max-width:30em}
 .toc li{display:flex;justify-content:space-between;align-items:baseline;gap:18px;padding:16px 0;border-bottom:1px solid var(--line)}
 .toc b{font-family:var(--display);font-weight:400;font-size:1.35rem;line-height:1.25}
+.toc li a{display:flex;justify-content:space-between;align-items:baseline;gap:18px;width:100%}
+.toc li a:hover b{font-style:italic}
+.toc .rd{border-bottom:1px solid currentColor;padding-bottom:2px}
 .toc span{flex:none;font-size:.6rem;letter-spacing:.16em;text-transform:uppercase;color:var(--wine)}
 @media (max-width:900px){.split,.split.rev{grid-template-columns:1fr}.split.rev .img{order:0}.split .img{min-height:auto;aspect-ratio:4/3}.split .txt{padding:56px var(--gr) 64px var(--gl)}}
 
@@ -163,12 +166,12 @@ footer ul a:hover{color:var(--wine)}
 
 <main>
   <section class="hero" aria-labelledby="hero-h">
-    <img src="/images/site/c-hero.jpg" alt="Two women in burgundy ski wear holding skis outside an Alpine chalet">
+    <div class="img"><img src="/images/magazine/cover-black-fur.jpg" alt="Woman in a black feathered fur coat, in black and white"></div>
     <div class="in">
       <span class="eyebrow">Ski Queens Magazine · Issue 01</span>
       <h1 id="hero-h">Winter 2026/27 in the <em>Alps</em></h1>
       <p>New collections, new addresses and the resorts worth the journey, written from the mountains all season long.</p>
-      <div class="links"><a class="more" href="#collections">Discover the issue</a><a class="more" href="#subscribe">Subscribe</a></div>
+      <div class="links"><a class="more" href="#opened">Discover the issue</a><a class="more" href="#subscribe">Subscribe</a></div>
     </div>
   </section>
 
@@ -201,7 +204,7 @@ footer ul a:hover{color:var(--wine)}
       <h2 id="op-h">The addresses of the <em>season</em></h2>
       <p>New hotels, restaurants and chalets, reviewed in person, from the Alps to the city.</p>
       <ul class="toc">
-        <li><b>New luxury hotel openings in the Alps</b><span>Coming soon</span></li>
+        <li><a href="/magazine/courchevel-2026-27/"><b>What's new in Courchevel for 2026–2027</b><span class="rd">Read</span></a></li>
         <li><b>From the city to the slopes</b><span>Coming soon</span></li>
         <li><b>The openings to watch in 2027</b><span>Coming soon</span></li>
       </ul>
@@ -216,7 +219,7 @@ footer ul a:hover{color:var(--wine)}
         <h2 id="rs-h" style="margin-top:16px">Where to stay, ski, dine and be <em>seen</em></h2>
       </div>
       <ul class="toc">
-        <li><b>When the top resorts open for 2026/27</b><span>Coming soon</span></li>
+        <li><a href="/magazine/ski-resort-opening-dates-2026-27/"><b>Ski resort opening dates 2026/2027</b><span class="rd">Read</span></a></li>
         <li><b>Where to ski in November</b><span>Coming soon</span></li>
         <li><b>The Ski Queens guide to Courchevel 1850</b><span>Coming soon</span></li>
       </ul>
