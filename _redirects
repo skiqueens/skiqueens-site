@@ -13,6 +13,7 @@
 /home             /                    301
 /intro            /                    301
 /studio           /                    301
-/blog             /                    301
-/blog/*           /                    301
+/blog             /magazine/           301
+/blog/*           /magazine/           301
+/journal          /magazine/           301
 /post/*           /                    301
