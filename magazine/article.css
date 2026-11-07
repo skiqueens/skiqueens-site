@@ -32,7 +32,9 @@ header{position:sticky;top:0;z-index:80;background:var(--white);height:72px;box-
 /* images: always shown whole, never cropped */
 .pic{margin:0;background:var(--cream);display:flex;align-items:center;justify-content:center}
 .pic img{width:100%;height:auto}
-.pic.ph{aspect-ratio:4/5;color:#9A8A7E;font-size:.66rem;letter-spacing:.2em;text-transform:uppercase}
+.pic.panel{aspect-ratio:4/5;background:var(--burgundy) radial-gradient(120% 90% at 20% 10%,rgba(255,255,255,.08),rgba(0,0,0,0) 60%);color:#F6EDE6;padding:30px;text-align:center}
+.pic.panel span{font-family:var(--display);font-style:italic;font-weight:300;font-size:clamp(2.4rem,5vw,4rem);line-height:1.05;text-transform:uppercase;letter-spacing:.02em}
+.close .pic{width:min(520px,100%)}
 
 .top{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);background:var(--cream)}
 .top .cover{background:#111}
