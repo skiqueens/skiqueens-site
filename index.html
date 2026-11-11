@@ -1574,14 +1574,16 @@ footer ul a:hover{color:var(--wine)}
   }
   function pageview(){
     if(!on()||first)return;
-    gtag('event','page_view',pageInfo());
+    var pi=pageInfo();gtag('set',{page_title:pi.page_title,page_location:pi.page_location});
+    gtag('event','page_view',pi);
   }
   function load(){
     if(loaded||!live)return;loaded=true;
-    var pi=pageInfo();pi.page_location+=location.search;pi.page_referrer=document.referrer;pi.cookie_flags='SameSite=None;Secure';
+    var pi=pageInfo();pi.page_location+=location.search;
     gtag('js',new Date());
-    // the landing page view is sent once, by config itself
-    gtag('config',GA,pi);
+    // the landing page view is sent once, by config itself, with the section name
+    gtag('set',{page_title:pi.page_title,page_location:pi.page_location,page_referrer:document.referrer});
+    gtag('config',GA,{page_title:pi.page_title,page_location:pi.page_location,cookie_flags:'SameSite=None;Secure'});
     var sc=document.createElement('script');sc.async=true;sc.src='https://www.googletagmanager.com/gtag/js?id='+GA;document.head.appendChild(sc);
     setTimeout(function(){first=false},0);
   }
