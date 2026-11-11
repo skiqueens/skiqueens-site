@@ -1566,20 +1566,24 @@ footer ul a:hover{color:var(--wine)}
   function track(name,params){if(on())gtag('event',name,params||{})}
   window.sqTrack=track;
   var NAMES={'chalets':'The Chalets','services':'Services','brand-partners':'Brand Partners','media':'Brand Partners','ambassador':'Brand Partners','brands':'Brand Partners','features':'Features on Instagram','helicopter':'Helicopter','partners':'Our Partners','press':'Press','contact':'Contact','privacy':'Privacy Policy','cookies':'Cookie Policy','terms':'Terms','legal':'Legal'};
-  function pageview(){
-    if(!on())return;
+  function pageInfo(){
     var h=location.hash.slice(1),m=h.match(/^chalet-(\d\d)$/),path='/',title='Home';
     if(m){path='/chalets/'+m[1];title='Chalet '+m[1]}
     else if(NAMES[h]){path='/'+h;title=NAMES[h]}
-    gtag('event','page_view',{page_location:location.origin+path+(first?location.search:''),page_title:title+' · Ski Queens',page_referrer:first?document.referrer:undefined});
-    first=false;
+    return {page_location:location.origin+path,page_title:title+' · Ski Queens'};
+  }
+  function pageview(){
+    if(!on()||first)return;
+    gtag('event','page_view',pageInfo());
   }
   function load(){
     if(loaded||!live)return;loaded=true;
+    var pi=pageInfo();pi.page_location+=location.search;pi.page_referrer=document.referrer;pi.cookie_flags='SameSite=None;Secure';
     gtag('js',new Date());
-    gtag('config',GA,{send_page_view:false,cookie_flags:'SameSite=None;Secure'});
+    // the landing page view is sent once, by config itself
+    gtag('config',GA,pi);
     var sc=document.createElement('script');sc.async=true;sc.src='https://www.googletagmanager.com/gtag/js?id='+GA;document.head.appendChild(sc);
-    pageview();
+    setTimeout(function(){first=false},0);
   }
   function choose(v){
     setC(v);cb.hidden=true;
