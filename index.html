@@ -757,6 +757,7 @@ footer ul a:hover{color:var(--wine)}
       <li><b>Newsletter sign-ups</b> — your email address.</li>
       <li><b>Bookings and purchases</b> — the details needed to arrange your stay, service, Instagram feature or brand partnership, such as dates, number of guests and billing contact. Card payments are handled by our payment provider; we never see or store your full card details.</li>
       <li><b>Technical information</b> — when you visit the site, our hosting provider automatically records basic technical data such as your IP address, browser type and the pages requested, for security and to keep the site running.</li>
+      <li><b>Analytics</b> — only if you accept analytics cookies: how you found the site, the pages you viewed and the buttons you clicked, collected through Google Analytics. See our <a href="#cookies">cookie policy</a>.</li>
     </ul>
 
     <h2>How we use your information</h2>
@@ -765,6 +766,7 @@ footer ul a:hover{color:var(--wine)}
       <li>To send our newsletter — with your consent, which you can withdraw at any time using the unsubscribe link or by contacting us.</li>
       <li>To keep records for accounting, tax and legal purposes — because the law requires it.</li>
       <li>To keep the website secure and working properly, and to prevent spam — in our legitimate interests.</li>
+      <li>To understand how visitors use the site and improve it — with your consent, given on our cookie banner and withdrawable at any time.</li>
     </ul>
     <p>We do not sell your personal information, and we do not use it for automated decision-making or profiling.</p>
 
@@ -773,6 +775,7 @@ footer ul a:hover{color:var(--wine)}
     <ul>
       <li><b>Chalet owners and service providers</b> — such as drivers, nannies, chefs, instructors and helicopter operators — only the details needed to fulfil a booking you have requested.</li>
       <li><b>Website hosting and forms</b> — Netlify, which hosts this site and receives form submissions.</li>
+      <li><b>Analytics</b> — Google, which provides Google Analytics, only if you accept analytics cookies.</li>
       <li><b>Payments</b> — Stripe, which processes card payments securely.</li>
       <li><b>Email</b> — our email provider, which delivers enquiry notifications and our replies.</li>
       <li><b>Professional advisers and authorities</b> — where we are required to by law.</li>
@@ -804,12 +807,16 @@ footer ul a:hover{color:var(--wine)}
 </div>
 
 <div id="page-cookies" class="page legal-page" hidden>
-  <div class="intro"><h1>Cookie <em>policy</em></h1><div class="rule"></div><p class="legal-date">Last updated 28 October 2026</p></div>
+  <div class="intro"><h1>Cookie <em>policy</em></h1><div class="rule"></div><p class="legal-date">Last updated 11 November 2026</p></div>
   <article class="legal-doc">
     <p>Cookies are small text files that a website places on your device. Similar technologies, such as local storage, work in the same way. This policy explains what we use on skiqueens.co.uk.</p>
 
     <h2>Our approach</h2>
-    <p>Ski Queens does not use advertising cookies, tracking pixels or cookies that follow you around the web. We do not set any cookies for analytics or marketing purposes, which is why you do not see a cookie banner when you visit.</p>
+    <p>Ski Queens does not use advertising cookies, tracking pixels or cookies that follow you around the web. With your consent, we use Google Analytics to understand how many people visit and which pages they find useful. Nothing is set until you choose Accept on our cookie banner.</p>
+
+    <h2>Analytics cookies — only with your consent</h2>
+    <p>If you accept, Google Analytics sets cookies named <b>_ga</b> and <b>_ga_LGYT0DHFTX</b>, which last up to two years. They tell us, for example, how many people visited, which pages and partners they looked at, and whether they arrived from Instagram or a search engine. Google acts as our data processor, and we do not use this information to identify you.</p>
+    <p>If you decline, no analytics cookies are set and the site works exactly the same. You can change your choice at any time: <button type="button" class="more" id="sq-cookie-settings" style="font-size:.95rem">Change cookie settings</button></p>
 
     <h2>Strictly necessary technology</h2>
     <p>Our hosting provider may use technology that is essential for delivering the site securely, such as protecting forms against spam. This does not identify you personally and cannot be switched off, because the site would not work without it. The law allows this without asking for consent.</p>
@@ -825,7 +832,7 @@ footer ul a:hover{color:var(--wine)}
     <p>You can block or delete cookies at any time in your browser settings. Guidance for the most common browsers is available at <a href="https://ico.org.uk/for-the-public/online/cookies/" target="_blank" rel="noopener">ico.org.uk</a>.</p>
 
     <h2>Changes</h2>
-    <p>If we ever introduce optional cookies, such as analytics, we will update this policy and ask for your consent first.</p>
+    <p>If we add any other optional cookies, we will update this policy and ask for your consent first.</p>
   </article>
 </div>
 
@@ -1525,11 +1532,93 @@ footer ul a:hover{color:var(--wine)}
       var t2=h&&h!=='top'&&document.getElementById(h); setTimeout(function(){if(t2)t2.scrollIntoView({behavior:'instant'}); else window.scrollTo({top:0,behavior:'instant'});},0);
     }
   }
-  (function(){try{var g=new URLSearchParams(location.search).get('go');if(g&&/^[a-z0-9-]+$/.test(g))history.replaceState(null,'','/#'+g)}catch(e){}})();
+  (function(){try{var q=new URLSearchParams(location.search),g=q.get('go');if(g&&/^[a-z0-9-]+$/.test(g)){q.delete('go');var r=q.toString();history.replaceState(null,'','/'+(r?'?'+r:'')+'#'+g)}}catch(e){}})();
   window.addEventListener('hashchange',route);
   route();
 })();
 </script>
 
+<!-- Analytics: Google Analytics 4 (G-LGYT0DHFTX), loaded only after consent -->
+<style>
+.sq-cb{position:fixed;left:16px;right:16px;bottom:16px;z-index:150;max-width:560px;margin:0 auto;background:var(--white);border:1px solid var(--line);box-shadow:0 20px 50px -20px rgba(42,17,20,.45);padding:22px 24px;display:flex;flex-direction:column;gap:14px}
+.sq-cb[hidden]{display:none!important}
+.sq-cb p{font-size:.86rem;line-height:1.65;margin:0}
+.sq-cb p a{border-bottom:1px solid currentColor}
+.sq-cb .row{display:flex;gap:12px;flex-wrap:wrap}
+.sq-cb .book{padding:12px 26px}
+.sq-cb .no{background:none;border:1px solid var(--burgundy);color:var(--burgundy);font-family:var(--sans);font-size:.78rem;letter-spacing:.12em;text-transform:uppercase;padding:12px 26px;cursor:pointer}
+.sq-cb .no:hover{background:var(--cream)}
+</style>
+<div class="sq-cb" id="sq-cb" role="dialog" aria-live="polite" aria-label="Cookie choice" hidden>
+  <p>We would like to use analytics cookies to understand how visitors find Ski Queens and which pages they enjoy. They are only set if you accept. <a href="#cookies">Cookie policy</a></p>
+  <div class="row"><button type="button" class="book" id="sq-cb-yes">Accept</button><button type="button" class="no" id="sq-cb-no">Decline</button></div>
+</div>
+<script>
+(function(){
+  var GA='G-LGYT0DHFTX',KEY='sq_consent',loaded=false,first=true;
+  var live=/(^|\.)skiqueens\.co\.uk$/.test(location.hostname);
+  var cb=document.getElementById('sq-cb');
+  function getC(){try{return localStorage.getItem(KEY)}catch(e){return null}}
+  function setC(v){try{localStorage.setItem(KEY,v)}catch(e){}}
+  window.dataLayer=window.dataLayer||[];
+  function gtag(){dataLayer.push(arguments)}
+  function on(){return loaded}
+  function track(name,params){if(on())gtag('event',name,params||{})}
+  window.sqTrack=track;
+  var NAMES={'chalets':'The Chalets','services':'Services','brand-partners':'Brand Partners','media':'Brand Partners','ambassador':'Brand Partners','brands':'Brand Partners','features':'Features on Instagram','helicopter':'Helicopter','partners':'Our Partners','press':'Press','contact':'Contact','privacy':'Privacy Policy','cookies':'Cookie Policy','terms':'Terms','legal':'Legal'};
+  function pageview(){
+    if(!on())return;
+    var h=location.hash.slice(1),m=h.match(/^chalet-(\d\d)$/),path='/',title='Home';
+    if(m){path='/chalets/'+m[1];title='Chalet '+m[1]}
+    else if(NAMES[h]){path='/'+h;title=NAMES[h]}
+    gtag('event','page_view',{page_location:location.origin+path+(first?location.search:''),page_title:title+' · Ski Queens',page_referrer:first?document.referrer:undefined});
+    first=false;
+  }
+  function load(){
+    if(loaded||!live)return;loaded=true;
+    gtag('js',new Date());
+    gtag('config',GA,{send_page_view:false,cookie_flags:'SameSite=None;Secure'});
+    var sc=document.createElement('script');sc.async=true;sc.src='https://www.googletagmanager.com/gtag/js?id='+GA;document.head.appendChild(sc);
+    pageview();
+  }
+  function choose(v){
+    setC(v);cb.hidden=true;
+    if(v==='granted')load();
+    else if(loaded){
+      // withdraw: clear GA cookies and reload without analytics
+      document.cookie.split(';').forEach(function(c){var n=c.split('=')[0].trim();if(/^_ga/.test(n)){['','.skiqueens.co.uk','skiqueens.co.uk'].forEach(function(d){document.cookie=n+'=;expires=Thu, 01 Jan 1970 00:00:00 GMT;path=/'+(d?';domain='+d:'')})}});
+      location.reload();
+    }
+  }
+  document.getElementById('sq-cb-yes').addEventListener('click',function(){choose('granted')});
+  document.getElementById('sq-cb-no').addEventListener('click',function(){choose('denied')});
+  var cs=document.getElementById('sq-cookie-settings');if(cs)cs.addEventListener('click',function(){cb.hidden=false;cb.querySelector('button').focus()});
+  var c=getC();
+  if(c==='granted')load();else if(!c&&live)cb.hidden=false;
+  window.addEventListener('hashchange',pageview);
+
+  // what people click
+  function txt(el){return (el&&el.textContent||'').replace(/\s+/g,' ').trim().slice(0,90)}
+  document.addEventListener('click',function(e){
+    if(!on())return;
+    var a=e.target.closest('a,button');if(!a)return;
+    var href=a.getAttribute('href')||'',card=a.closest('.pcard');
+    if(card){track('partner_click',{partner_name:txt(card.querySelector('h3')),partner_category:txt(card.querySelector('.kicker')),link_url:a.href||''});return}
+    if(a.hasAttribute('data-enquire')){track('enquiry_open',{enquiry_topic:a.getAttribute('data-enquire')});return}
+    if(a.hasAttribute('data-pay')){track('package_click',{package_name:a.getAttribute('data-pay')});return}
+    if(/instagram\.com|youtube\.com|tiktok\.com/.test(href)){track('social_click',{network:(href.match(/(instagram|youtube|tiktok)/)||[])[1],link_url:a.href});return}
+    if(/^mailto:|^tel:/.test(href)){track('contact_click',{method:href.slice(0,href.indexOf(':'))});return}
+    if(a.classList.contains('book')&&!a.closest('#sq-cb')){track('cta_click',{cta_text:txt(a),cta_target:href});return}
+    var ch=a.closest('.ch');if(ch){track('chalet_click',{chalet_name:txt(ch.querySelector('h3'))});return}
+  },true);
+  // forms (fires when the visitor submits)
+  document.addEventListener('submit',function(e){
+    if(!on())return;var f=e.target,id=f.id||f.getAttribute('name')||'form';
+    if(id==='nl')track('sign_up',{method:'newsletter'});
+    else if(id==='ct-form'||id==='enq')track('generate_lead',{form_name:id==='enq'?'enquiry':'contact',enquiry_topic:(f.querySelector('select[name=topic]')||{}).value||''});
+    else if(id==='heli-form')track('helicopter_quote',{route:(document.getElementById('h-route')||{}).value||''});
+  },true);
+})();
+</script>
 </body>
 </html>
